@@ -15,6 +15,9 @@
 		1C3D48A925E38BDB004D7AB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D48A725E38BDB004D7AB1 /* LaunchScreen.storyboard */; };
 		1C3D48B425E38BDB004D7AB1 /* KeepFitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D48B325E38BDB004D7AB1 /* KeepFitTests.swift */; };
 		1C3D48BF25E38BDB004D7AB1 /* KeepFitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D48BE25E38BDB004D7AB1 /* KeepFitUITests.swift */; };
+		1C6F668125FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */; };
+		1C6F668225FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */; };
+		1C6F668325FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,7 @@
 		1C3D48BA25E38BDB004D7AB1 /* KeepFitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeepFitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C3D48BE25E38BDB004D7AB1 /* KeepFitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepFitUITests.swift; sourceTree = "<group>"; };
 		1C3D48C025E38BDB004D7AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				1C3D48A525E38BDB004D7AB1 /* Assets.xcassets */,
 				1C3D48A725E38BDB004D7AB1 /* LaunchScreen.storyboard */,
 				1C3D48AA25E38BDB004D7AB1 /* Info.plist */,
+				1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */,
 			);
 			path = KeepFit;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C6F668125FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				1C3D48A125E38BDA004D7AB1 /* ViewController.swift in Sources */,
 				1C3D489D25E38BDA004D7AB1 /* AppDelegate.swift in Sources */,
 				1C3D489F25E38BDA004D7AB1 /* SceneDelegate.swift in Sources */,
@@ -268,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C6F668225FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				1C3D48B425E38BDB004D7AB1 /* KeepFitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C6F668325FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				1C3D48BF25E38BDB004D7AB1 /* KeepFitUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
