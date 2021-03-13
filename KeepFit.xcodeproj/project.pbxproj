@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,10 @@
 		1C6F668125FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */; };
 		1C6F668225FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */; };
 		1C6F668325FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */; };
+		1C6F668B25FC7C900085F2C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D48A025E38BDA004D7AB1 /* ViewController.swift */; };
+		1C6F668C25FC7C900085F2C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D48A025E38BDA004D7AB1 /* ViewController.swift */; };
+		1C6F669525FC7F660085F2C2 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1C6F669425FC7F660085F2C2 /* Realm */; };
+		1C6F669725FC7F660085F2C2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1C6F669625FC7F660085F2C2 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C6F669725FC7F660085F2C2 /* RealmSwift in Frameworks */,
+				1C6F669525FC7F660085F2C2 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,14 +109,13 @@
 		1C3D489B25E38BDA004D7AB1 /* KeepFit */ = {
 			isa = PBXGroup;
 			children = (
+				1C6F668A25FC7C810085F2C2 /* Controller */,
+				1C6F668925FC7C7C0085F2C2 /* Model */,
+				1C6F668725FC7C620085F2C2 /* View */,
 				1C3D489C25E38BDA004D7AB1 /* AppDelegate.swift */,
 				1C3D489E25E38BDA004D7AB1 /* SceneDelegate.swift */,
-				1C3D48A025E38BDA004D7AB1 /* ViewController.swift */,
-				1C3D48A225E38BDA004D7AB1 /* Main.storyboard */,
 				1C3D48A525E38BDB004D7AB1 /* Assets.xcassets */,
-				1C3D48A725E38BDB004D7AB1 /* LaunchScreen.storyboard */,
 				1C3D48AA25E38BDB004D7AB1 /* Info.plist */,
-				1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */,
 			);
 			path = KeepFit;
 			sourceTree = "<group>";
@@ -133,6 +138,31 @@
 			path = KeepFitUITests;
 			sourceTree = "<group>";
 		};
+		1C6F668725FC7C620085F2C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1C3D48A725E38BDB004D7AB1 /* LaunchScreen.storyboard */,
+				1C3D48A225E38BDA004D7AB1 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1C6F668925FC7C7C0085F2C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1C6F668A25FC7C810085F2C2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1C3D48A025E38BDA004D7AB1 /* ViewController.swift */,
+				1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,6 +179,10 @@
 			dependencies = (
 			);
 			name = KeepFit;
+			packageProductDependencies = (
+				1C6F669425FC7F660085F2C2 /* Realm */,
+				1C6F669625FC7F660085F2C2 /* RealmSwift */,
+			);
 			productName = KeepFit;
 			productReference = 1C3D489925E38BDA004D7AB1 /* KeepFit.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +254,9 @@
 				Base,
 			);
 			mainGroup = 1C3D489025E38BDA004D7AB1;
+			packageReferences = (
+				1C6F669325FC7F660085F2C2 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 1C3D489A25E38BDA004D7AB1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -274,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C6F668B25FC7C900085F2C2 /* ViewController.swift in Sources */,
 				1C6F668225FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				1C3D48B425E38BDB004D7AB1 /* KeepFitTests.swift in Sources */,
 			);
@@ -283,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C6F668C25FC7C900085F2C2 /* ViewController.swift in Sources */,
 				1C6F668325FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				1C3D48BF25E38BDB004D7AB1 /* KeepFitUITests.swift in Sources */,
 			);
@@ -595,6 +634,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1C6F669325FC7F660085F2C2 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.7.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1C6F669425FC7F660085F2C2 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C6F669325FC7F660085F2C2 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		1C6F669625FC7F660085F2C2 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C6F669325FC7F660085F2C2 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1C3D489125E38BDA004D7AB1 /* Project object */;
 }
