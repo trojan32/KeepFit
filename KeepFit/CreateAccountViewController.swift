@@ -61,6 +61,8 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
     
     @IBAction func createAccountTapped(_ sender: UIBarButtonItem) {
         personalAccountModel.createNewAccount(account: accountTF.text ?? "", password: passwordTF.text ?? "", nickname: nicknameTF.text ?? "", birthday: birthdayTF.text ?? "", height: heightTF.text ?? "", weight: weightTF.text ?? "", profilePhotoURL: profileImage ?? "")
+        
+        dismiss(animated: true, completion: nil)
     }
     
     

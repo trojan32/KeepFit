@@ -1,5 +1,5 @@
 //
-//  ProfilePageViewController.swift
+//  ProfileViewController.swift
 //  KeepFit
 //
 //  Created by Yi Xu on 3/13/21.
@@ -7,23 +7,13 @@
 
 import UIKit
 
-class ProfilePageViewController: UIViewController {
-    
-    let personalAccountModel = PersonalAccountModel.shared
+class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if !personalAccountModel.loggedIn {
-            performSegue(withIdentifier: "loginSegue", sender: self)
-        }
-        
-        
-        
 
         // Do any additional setup after loading the view.
     }
-    
     
 
     /*

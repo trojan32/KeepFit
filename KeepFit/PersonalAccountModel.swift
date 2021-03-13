@@ -12,6 +12,7 @@ import RealmSwift
 
 class PersonalAccountModel: NSObject {
     public var personalAccount: Account = Account()
+    public var loggedIn: Bool = false
     
     // Swift Singleton pattern
     static let shared = PersonalAccountModel()
