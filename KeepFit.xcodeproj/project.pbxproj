@@ -22,6 +22,15 @@
 		1C6F668C25FC7C900085F2C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D48A025E38BDA004D7AB1 /* ViewController.swift */; };
 		1C6F669525FC7F660085F2C2 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1C6F669425FC7F660085F2C2 /* Realm */; };
 		1C6F669725FC7F660085F2C2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1C6F669625FC7F660085F2C2 /* RealmSwift */; };
+		1C6F66C225FC85AA0085F2C2 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66C125FC85AA0085F2C2 /* Account.swift */; };
+		1C6F66C325FC85AA0085F2C2 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66C125FC85AA0085F2C2 /* Account.swift */; };
+		1C6F66C425FC85AA0085F2C2 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66C125FC85AA0085F2C2 /* Account.swift */; };
+		1C6F66CC25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */; };
+		1C6F66CD25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */; };
+		1C6F66CE25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */; };
+		1C6F66D725FC92860085F2C2 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */; };
+		1C6F66D825FC92860085F2C2 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */; };
+		1C6F66D925FC92860085F2C2 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +66,9 @@
 		1C3D48BE25E38BDB004D7AB1 /* KeepFitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepFitUITests.swift; sourceTree = "<group>"; };
 		1C3D48C025E38BDB004D7AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		1C6F66C125FC85AA0085F2C2 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccountModel.swift; sourceTree = "<group>"; };
+		1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,13 +121,10 @@
 		1C3D489B25E38BDA004D7AB1 /* KeepFit */ = {
 			isa = PBXGroup;
 			children = (
+				1C6F66D225FC89830085F2C2 /* Other */,
 				1C6F668A25FC7C810085F2C2 /* Controller */,
 				1C6F668925FC7C7C0085F2C2 /* Model */,
 				1C6F668725FC7C620085F2C2 /* View */,
-				1C3D489C25E38BDA004D7AB1 /* AppDelegate.swift */,
-				1C3D489E25E38BDA004D7AB1 /* SceneDelegate.swift */,
-				1C3D48A525E38BDB004D7AB1 /* Assets.xcassets */,
-				1C3D48AA25E38BDB004D7AB1 /* Info.plist */,
 			);
 			path = KeepFit;
 			sourceTree = "<group>";
@@ -150,6 +159,9 @@
 		1C6F668925FC7C7C0085F2C2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1C3D48A525E38BDB004D7AB1 /* Assets.xcassets */,
+				1C6F66C125FC85AA0085F2C2 /* Account.swift */,
+				1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -159,8 +171,19 @@
 			children = (
 				1C3D48A025E38BDA004D7AB1 /* ViewController.swift */,
 				1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */,
+				1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		1C6F66D225FC89830085F2C2 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				1C3D489C25E38BDA004D7AB1 /* AppDelegate.swift */,
+				1C3D489E25E38BDA004D7AB1 /* SceneDelegate.swift */,
+				1C3D48AA25E38BDB004D7AB1 /* Info.plist */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,10 +323,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C6F66C225FC85AA0085F2C2 /* Account.swift in Sources */,
 				1C6F668125FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				1C3D48A125E38BDA004D7AB1 /* ViewController.swift in Sources */,
 				1C3D489D25E38BDA004D7AB1 /* AppDelegate.swift in Sources */,
 				1C3D489F25E38BDA004D7AB1 /* SceneDelegate.swift in Sources */,
+				1C6F66D725FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
+				1C6F66CC25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,8 +338,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C6F668B25FC7C900085F2C2 /* ViewController.swift in Sources */,
+				1C6F66D825FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
+				1C6F66C325FC85AA0085F2C2 /* Account.swift in Sources */,
 				1C6F668225FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				1C3D48B425E38BDB004D7AB1 /* KeepFitTests.swift in Sources */,
+				1C6F66CD25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,8 +351,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C6F668C25FC7C900085F2C2 /* ViewController.swift in Sources */,
+				1C6F66D925FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
+				1C6F66C425FC85AA0085F2C2 /* Account.swift in Sources */,
 				1C6F668325FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				1C3D48BF25E38BDB004D7AB1 /* KeepFitUITests.swift in Sources */,
+				1C6F66CE25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

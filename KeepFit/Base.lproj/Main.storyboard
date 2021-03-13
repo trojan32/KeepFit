@@ -43,7 +43,7 @@
         <!--Profile-->
         <scene sceneID="l2I-Pt-vEm">
             <objects>
-                <viewController id="aLL-ol-dXt" sceneMemberID="viewController">
+                <viewController id="aLL-ol-dXt" customClass="ProfilePageViewController" customModule="KeepFit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ShA-Ax-wvv">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -257,8 +257,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create Account" id="fu0-nE-8Uk">
-                        <barButtonItem key="rightBarButtonItem" title="Create" id="rjQ-Uz-9he"/>
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="rjQ-Uz-9he">
+                            <connections>
+                                <action selector="createAccountTapped:" destination="2rD-gO-M0S" id="vHj-dJ-SOt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="accountTF" destination="mHq-yy-Eq7" id="FQb-mY-owy"/>
+                        <outlet property="birthdayTF" destination="b9p-Df-QNM" id="Mv5-cZ-ZXB"/>
+                        <outlet property="heightTF" destination="HF3-n2-ytq" id="Wfx-YS-cjq"/>
+                        <outlet property="nicknameTF" destination="3Mm-tw-pEw" id="H2a-Ee-Cao"/>
+                        <outlet property="passwordTF" destination="ObX-zr-pZA" id="0Un-2w-a1A"/>
+                        <outlet property="weightTF" destination="jXg-TK-rX0" id="AqF-PK-WLn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Hd-LJ-02Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

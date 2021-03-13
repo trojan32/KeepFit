@@ -10,7 +10,17 @@ import UIKit
 class CreateAccountViewController:  UIViewController, UITextViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     private var profileImage: String?
-
+    
+    @IBOutlet var accountTF: UITextField!
+    @IBOutlet var passwordTF: UITextField!
+    @IBOutlet var nicknameTF: UITextField!
+    @IBOutlet var birthdayTF: UITextField!
+    @IBOutlet var heightTF: UITextField!
+    @IBOutlet var weightTF: UITextField!
+    
+    let personalAccountModel = PersonalAccountModel.shared
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,6 +58,12 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         
         dismiss(animated: true)
     }
+    
+    @IBAction func createAccountTapped(_ sender: UIBarButtonItem) {
+        personalAccountModel.createNewAccount(account: accountTF.text ?? "", password: passwordTF.text ?? "", nickname: nicknameTF.text ?? "", birthday: birthdayTF.text ?? "", height: heightTF.text ?? "", weight: weightTF.text ?? "", profilePhotoURL: profileImage ?? "")
+    }
+    
+    
     
     /*
     // MARK: - Navigation
