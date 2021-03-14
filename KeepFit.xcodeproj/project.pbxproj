@@ -17,6 +17,15 @@
 		1C55444325FDD8A900DA46BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55444225FDD8A900DA46BD /* LoginViewController.swift */; };
 		1C55444425FDD8A900DA46BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55444225FDD8A900DA46BD /* LoginViewController.swift */; };
 		1C55444525FDD8A900DA46BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55444225FDD8A900DA46BD /* LoginViewController.swift */; };
+		1C55445D25FDFD6D00DA46BD /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55445C25FDFD6D00DA46BD /* UserProfile.swift */; };
+		1C55445E25FDFD6D00DA46BD /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55445C25FDFD6D00DA46BD /* UserProfile.swift */; };
+		1C55445F25FDFD6D00DA46BD /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55445C25FDFD6D00DA46BD /* UserProfile.swift */; };
+		1C55446425FDFD7500DA46BD /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55446325FDFD7500DA46BD /* UserProfileModel.swift */; };
+		1C55446525FDFD7500DA46BD /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55446325FDFD7500DA46BD /* UserProfileModel.swift */; };
+		1C55446625FDFD7500DA46BD /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55446325FDFD7500DA46BD /* UserProfileModel.swift */; };
+		1C55447B25FE016C00DA46BD /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55447A25FE016C00DA46BD /* RealmModel.swift */; };
+		1C55447C25FE016C00DA46BD /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55447A25FE016C00DA46BD /* RealmModel.swift */; };
+		1C55447D25FE016C00DA46BD /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55447A25FE016C00DA46BD /* RealmModel.swift */; };
 		1C6F668125FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */; };
 		1C6F668225FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */; };
 		1C6F668325FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */; };
@@ -68,6 +77,9 @@
 		1C3D48BE25E38BDB004D7AB1 /* KeepFitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepFitUITests.swift; sourceTree = "<group>"; };
 		1C3D48C025E38BDB004D7AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C55444225FDD8A900DA46BD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1C55445C25FDFD6D00DA46BD /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		1C55446325FDFD7500DA46BD /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
+		1C55447A25FE016C00DA46BD /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		1C6F66C125FC85AA0085F2C2 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccountModel.swift; sourceTree = "<group>"; };
@@ -165,6 +177,9 @@
 				1C3D48A525E38BDB004D7AB1 /* Assets.xcassets */,
 				1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */,
 				1C6F66C125FC85AA0085F2C2 /* Account.swift */,
+				1C55445C25FDFD6D00DA46BD /* UserProfile.swift */,
+				1C55446325FDFD7500DA46BD /* UserProfileModel.swift */,
+				1C55447A25FE016C00DA46BD /* RealmModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -332,10 +347,13 @@
 				1C6F668125FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				1C3D489D25E38BDA004D7AB1 /* AppDelegate.swift in Sources */,
 				1C3D489F25E38BDA004D7AB1 /* SceneDelegate.swift in Sources */,
+				1C55446425FDFD7500DA46BD /* UserProfileModel.swift in Sources */,
 				1C55444325FDD8A900DA46BD /* LoginViewController.swift in Sources */,
 				1C6F66D725FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
 				1C8E6C5325FCAF56004C2534 /* ProfileViewController.swift in Sources */,
 				1C6F66CC25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */,
+				1C55445D25FDFD6D00DA46BD /* UserProfile.swift in Sources */,
+				1C55447B25FE016C00DA46BD /* RealmModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,9 +362,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C55444425FDD8A900DA46BD /* LoginViewController.swift in Sources */,
+				1C55446525FDFD7500DA46BD /* UserProfileModel.swift in Sources */,
 				1C6F66D825FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
 				1C6F66C325FC85AA0085F2C2 /* Account.swift in Sources */,
 				1C6F668225FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
+				1C55447C25FE016C00DA46BD /* RealmModel.swift in Sources */,
+				1C55445E25FDFD6D00DA46BD /* UserProfile.swift in Sources */,
 				1C8E6C5425FCAF56004C2534 /* ProfileViewController.swift in Sources */,
 				1C3D48B425E38BDB004D7AB1 /* KeepFitTests.swift in Sources */,
 				1C6F66CD25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */,
@@ -358,9 +379,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C55444525FDD8A900DA46BD /* LoginViewController.swift in Sources */,
+				1C55446625FDFD7500DA46BD /* UserProfileModel.swift in Sources */,
 				1C6F66D925FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
 				1C6F66C425FC85AA0085F2C2 /* Account.swift in Sources */,
 				1C6F668325FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
+				1C55447D25FE016C00DA46BD /* RealmModel.swift in Sources */,
+				1C55445F25FDFD6D00DA46BD /* UserProfile.swift in Sources */,
 				1C8E6C5525FCAF56004C2534 /* ProfileViewController.swift in Sources */,
 				1C3D48BF25E38BDB004D7AB1 /* KeepFitUITests.swift in Sources */,
 				1C6F66CE25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */,

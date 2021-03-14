@@ -18,7 +18,7 @@ class PersonalAccountModel: NSObject {
     static let shared = PersonalAccountModel()
     
     // Initiate MongoDB Realm
-    let realm = try! Realm()
+    let realm = RealmModel.shared.localRealm
     
     override init() {
         // Debugging code for Realm
