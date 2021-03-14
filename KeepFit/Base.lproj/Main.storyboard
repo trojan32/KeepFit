@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Exercise-->
+        <!--Workout Now-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KeepFit" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,27 +18,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Exercise" image="sportscourt.fill" catalog="system" id="TBp-jS-uGp"/>
+                    <navigationItem key="navigationItem" title="Workout Now" id="kFU-X5-MoZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="962" y="98"/>
-        </scene>
-        <!--Stream-->
-        <scene sceneID="7hA-iU-5eC">
-            <objects>
-                <viewController id="BJ5-L0-tUE" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="x2h-QJ-RvP">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="aSt-iw-wn8"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Stream" image="video.fill" catalog="system" id="Cf1-Vy-Ktv"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HC4-et-cQ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="137" y="821"/>
+            <point key="canvasLocation" x="1890.7692307692307" y="97.393364928909946"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Uxe-Nc-RQb">
@@ -52,8 +36,8 @@
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="UPA-rz-hQn"/>
-                        <segue destination="BJ5-L0-tUE" kind="relationship" relationship="viewControllers" id="fXk-HO-17o"/>
+                        <segue destination="YzK-R5-PoO" kind="relationship" relationship="viewControllers" id="UPA-rz-hQn"/>
+                        <segue destination="N5H-WX-moK" kind="relationship" relationship="viewControllers" id="fXk-HO-17o"/>
                         <segue destination="TJR-1v-cdN" kind="relationship" relationship="viewControllers" id="c4h-vm-APS"/>
                     </connections>
                 </tabBarController>
@@ -368,6 +352,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYq-WN-T0j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="228" y="-736"/>
+        </scene>
+        <!--Stream-->
+        <scene sceneID="cBs-Pm-Qim">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N5H-WX-moK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stream" image="video.fill" catalog="system" id="Cf1-Vy-Ktv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fx7-SP-DPw">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LrE-cf-8cN" kind="relationship" relationship="rootViewController" id="LRu-6N-cag"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fzW-TY-2ao" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="228" y="830"/>
+        </scene>
+        <!--Workout Together-->
+        <scene sceneID="3ot-2Y-3fr">
+            <objects>
+                <tableViewController id="LrE-cf-8cN" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Dz-zs-aQK">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="o7v-lh-diS">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="U0D-Dt-T6m">
+                                <rect key="frame" x="0.0" y="72" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U0D-Dt-T6m" id="rW6-H2-GRM">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LrE-cf-8cN" id="Ypb-pk-VeE"/>
+                            <outlet property="delegate" destination="LrE-cf-8cN" id="DCf-YX-BB7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Workout Together" id="ciW-8h-4Ik">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZNe-UH-yKT"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fzk-cC-oju" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1282" y="805"/>
+        </scene>
+        <!--Exercise-->
+        <scene sceneID="Xoe-1E-x6T">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YzK-R5-PoO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Exercise" image="sportscourt.fill" catalog="system" id="TBp-jS-uGp"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GbT-z9-cMM">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mXj-bu-mPT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Kz-zb-RVv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="961.53846153846155" y="97.393364928909946"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
