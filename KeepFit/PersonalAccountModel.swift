@@ -53,4 +53,19 @@ class PersonalAccountModel: NSObject {
         save()
     }
     
+    func logIntoAccount(account: String, password: String) -> Bool {
+        // Need to have actual authentication below
+        
+        // Need to have actual authentication above
+        
+        loggedIn = true
+        return true
+    }
+    
+    func logOutOfAccount() -> Bool {
+        loggedIn = false
+        
+        return true
+    }
+    
 }
