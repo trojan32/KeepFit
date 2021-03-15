@@ -29,6 +29,9 @@
 		1C55447B25FE016C00DA46BD /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55447A25FE016C00DA46BD /* RealmModel.swift */; };
 		1C55447C25FE016C00DA46BD /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55447A25FE016C00DA46BD /* RealmModel.swift */; };
 		1C55447D25FE016C00DA46BD /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55447A25FE016C00DA46BD /* RealmModel.swift */; };
+		1C6186D925FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6186D825FF2B6400CCB74E /* StreamPageTableViewController.swift */; };
+		1C6186DA25FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6186D825FF2B6400CCB74E /* StreamPageTableViewController.swift */; };
+		1C6186DB25FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6186D825FF2B6400CCB74E /* StreamPageTableViewController.swift */; };
 		1C6F668125FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */; };
 		1C6F668225FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */; };
 		1C6F668325FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */; };
@@ -84,6 +87,7 @@
 		1C55445C25FDFD6D00DA46BD /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		1C55446325FDFD7500DA46BD /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
 		1C55447A25FE016C00DA46BD /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		1C6186D825FF2B6400CCB74E /* StreamPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamPageTableViewController.swift; sourceTree = "<group>"; };
 		1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		1C6F66C125FC85AA0085F2C2 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccountModel.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 				1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */,
 				1C55444225FDD8A900DA46BD /* LoginViewController.swift */,
 				0A8388BB25FF09D600276C7C /* WorkoutNowViewController.swift */,
+				1C6186D825FF2B6400CCB74E /* StreamPageTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				1C3D489D25E38BDA004D7AB1 /* AppDelegate.swift in Sources */,
 				1C3D489F25E38BDA004D7AB1 /* SceneDelegate.swift in Sources */,
 				1C55446425FDFD7500DA46BD /* UserProfileModel.swift in Sources */,
+				1C6186D925FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */,
 				1C55444325FDD8A900DA46BD /* LoginViewController.swift in Sources */,
 				1C6F66D725FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
 				0A8388BC25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */,
@@ -373,6 +379,7 @@
 				1C6F66C325FC85AA0085F2C2 /* Account.swift in Sources */,
 				1C6F668225FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				0A8388BD25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */,
+				1C6186DA25FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */,
 				1C55447C25FE016C00DA46BD /* RealmModel.swift in Sources */,
 				1C55445E25FDFD6D00DA46BD /* UserProfile.swift in Sources */,
 				1C8E6C5425FCAF56004C2534 /* ProfileViewController.swift in Sources */,
@@ -391,6 +398,7 @@
 				1C6F66C425FC85AA0085F2C2 /* Account.swift in Sources */,
 				1C6F668325FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				0A8388BE25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */,
+				1C6186DB25FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */,
 				1C55447D25FE016C00DA46BD /* RealmModel.swift in Sources */,
 				1C55445F25FDFD6D00DA46BD /* UserProfile.swift in Sources */,
 				1C8E6C5525FCAF56004C2534 /* ProfileViewController.swift in Sources */,
