@@ -62,4 +62,18 @@ class UserProfileModel: NSObject {
         
     }
     
+    func createNewProfile(account: String, nickname: String, birthday: String, height: String, weight: String, profilePhotoURL: String) {
+        userProfiles.append(UserProfile(account: account, nickname: nickname, birthday: birthday, height: height, weight: weight, profilePhotoURL: profilePhotoURL))
+        save()
+    }
+    
+    func save() {
+        try! realm.write {
+            realm.delete(realm.objects(UserProfile.self))
+            
+            for userProfile in userProfiles {
+                realm.add(userProfile)
+            }
+        }
+    }
 }

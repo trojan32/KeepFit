@@ -11,7 +11,7 @@ import Realm
 import RealmSwift
 
 class PersonalAccountModel: NSObject {
-    public var personalAccount: Account = Account()
+    public var personalAccount: PersonalAccount = PersonalAccount()
     public var loggedIn: Bool = false
     
     // Swift Singleton pattern
@@ -32,7 +32,7 @@ class PersonalAccountModel: NSObject {
     }
     
     func render() {
-        let saved_account = realm.objects(Account.self)
+        let saved_account = realm.objects(PersonalAccount.self)
         
         for saved in saved_account {
             personalAccount = saved
@@ -42,15 +42,17 @@ class PersonalAccountModel: NSObject {
     
     func save() {
         try! realm.write {
-            realm.delete(realm.objects(Account.self))
+            realm.delete(realm.objects(PersonalAccount.self))
             
             realm.add(personalAccount)
         }
     }
     
     func createNewAccount(account: String, password: String, nickname: String, birthday: String, height: String, weight: String, profilePhotoURL: String) {
-        personalAccount = Account(account: account, password: password, nickname: nickname, birthday: birthday, height: height, weight: weight, profilePhotoURL: profilePhotoURL)
+        personalAccount = PersonalAccount(account: account, password: password, nickname: nickname, birthday: birthday, height: height, weight: weight, profilePhotoURL: profilePhotoURL)
         save()
+        
+        UserProfileModel.shared.createNewProfile(account: account, nickname: nickname, birthday: birthday, height: height, weight: weight, profilePhotoURL: profilePhotoURL)
     }
     
     func logIntoAccount(account: String, password: String) -> Bool {

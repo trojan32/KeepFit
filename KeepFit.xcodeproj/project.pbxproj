@@ -37,9 +37,9 @@
 		1C6F668325FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */; };
 		1C6F669525FC7F660085F2C2 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1C6F669425FC7F660085F2C2 /* Realm */; };
 		1C6F669725FC7F660085F2C2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1C6F669625FC7F660085F2C2 /* RealmSwift */; };
-		1C6F66C225FC85AA0085F2C2 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66C125FC85AA0085F2C2 /* Account.swift */; };
-		1C6F66C325FC85AA0085F2C2 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66C125FC85AA0085F2C2 /* Account.swift */; };
-		1C6F66C425FC85AA0085F2C2 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66C125FC85AA0085F2C2 /* Account.swift */; };
+		1C6F66C225FC85AA0085F2C2 /* PersonalAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66C125FC85AA0085F2C2 /* PersonalAccount.swift */; };
+		1C6F66C325FC85AA0085F2C2 /* PersonalAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66C125FC85AA0085F2C2 /* PersonalAccount.swift */; };
+		1C6F66C425FC85AA0085F2C2 /* PersonalAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66C125FC85AA0085F2C2 /* PersonalAccount.swift */; };
 		1C6F66CC25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */; };
 		1C6F66CD25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */; };
 		1C6F66CE25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */; };
@@ -89,7 +89,7 @@
 		1C55447A25FE016C00DA46BD /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		1C6186D825FF2B6400CCB74E /* StreamPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamPageTableViewController.swift; sourceTree = "<group>"; };
 		1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		1C6F66C125FC85AA0085F2C2 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		1C6F66C125FC85AA0085F2C2 /* PersonalAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccount.swift; sourceTree = "<group>"; };
 		1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccountModel.swift; sourceTree = "<group>"; };
 		1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 			children = (
 				1C3D48A525E38BDB004D7AB1 /* Assets.xcassets */,
 				1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */,
-				1C6F66C125FC85AA0085F2C2 /* Account.swift */,
+				1C6F66C125FC85AA0085F2C2 /* PersonalAccount.swift */,
 				1C55445C25FDFD6D00DA46BD /* UserProfile.swift */,
 				1C55446325FDFD7500DA46BD /* UserProfileModel.swift */,
 				1C55447A25FE016C00DA46BD /* RealmModel.swift */,
@@ -353,7 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C6F66C225FC85AA0085F2C2 /* Account.swift in Sources */,
+				1C6F66C225FC85AA0085F2C2 /* PersonalAccount.swift in Sources */,
 				1C6F668125FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				1C3D489D25E38BDA004D7AB1 /* AppDelegate.swift in Sources */,
 				1C3D489F25E38BDA004D7AB1 /* SceneDelegate.swift in Sources */,
@@ -376,7 +376,7 @@
 				1C55444425FDD8A900DA46BD /* LoginViewController.swift in Sources */,
 				1C55446525FDFD7500DA46BD /* UserProfileModel.swift in Sources */,
 				1C6F66D825FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
-				1C6F66C325FC85AA0085F2C2 /* Account.swift in Sources */,
+				1C6F66C325FC85AA0085F2C2 /* PersonalAccount.swift in Sources */,
 				1C6F668225FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				0A8388BD25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */,
 				1C6186DA25FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */,
@@ -395,7 +395,7 @@
 				1C55444525FDD8A900DA46BD /* LoginViewController.swift in Sources */,
 				1C55446625FDFD7500DA46BD /* UserProfileModel.swift in Sources */,
 				1C6F66D925FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
-				1C6F66C425FC85AA0085F2C2 /* Account.swift in Sources */,
+				1C6F66C425FC85AA0085F2C2 /* PersonalAccount.swift in Sources */,
 				1C6F668325FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				0A8388BE25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */,
 				1C6186DB25FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */,

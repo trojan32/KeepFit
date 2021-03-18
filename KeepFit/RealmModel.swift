@@ -9,7 +9,7 @@ import Foundation
 import Realm
 import RealmSwift
 
-let app = App(id: "tasktracker-xwbdh")
+let app = App(id: "keepfit-tmuzu")
 
 class RealmModel: NSObject {
     
@@ -19,7 +19,7 @@ class RealmModel: NSObject {
         () -> Realm in
         var config = Realm.Configuration()
         config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("localRealm.realm")
-        config.objectTypes = [Account.self]
+        config.objectTypes = [PersonalAccount.self]
         let land = try! Realm(configuration: config)
         return land
 }()
@@ -27,7 +27,7 @@ class RealmModel: NSObject {
     public let synchronizedRealm: Realm = {
         () -> Realm in
     
-        let login = app.login(credentials: Credentials.emailPassword(email: "cindyxie2000@126.com", password: "00000000"))  { (result) in
+        let login = app.login(credentials: Credentials.emailPassword(email: "test@test.com", password: "testtest"))  { (result) in
             switch result {
             case .failure(let error):
                 print("Login failed: \(error)")
@@ -37,13 +37,14 @@ class RealmModel: NSObject {
         }
                 
         let user = app.currentUser!
-        let partitionValue = "some partition value"
+        let partitionValue = "keepfitpartition"
         var configuration = user.configuration(partitionValue: partitionValue)
 //            
-        var config = Realm.Configuration()
-        config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("synchronizedRealm.realm")
-        config.objectTypes = [UserProfile.self]
-        let land = try! Realm(configuration: config)
+        
+        configuration.fileURL = configuration.fileURL!.deletingLastPathComponent().appendingPathComponent("synchronizedRealm.realm")
+        configuration.objectTypes = [UserProfile.self]
+        let land = try! Realm(configuration: configuration)
+        print("Opened realm: \(land)")
         
         
         

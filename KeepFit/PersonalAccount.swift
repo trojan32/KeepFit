@@ -13,7 +13,7 @@ import Foundation
 import Realm
 import RealmSwift
 
-class Account: Object {
+class PersonalAccount: Object {
     convenience init(account: String = "", password: String = "", nickname: String = "", birthday: String = "", height: String = "", weight: String = "", profilePhotoURL: String = "") {
         self.init()
         self.account = account
