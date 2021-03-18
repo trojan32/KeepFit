@@ -17,6 +17,7 @@ class RealmModel: NSObject {
         () -> Realm in
     var config = Realm.Configuration()
     config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("localRealm.realm")
+    config.objectTypes = [Account.self]
     let land = try! Realm(configuration: config)
     return land
 }()
@@ -25,6 +26,7 @@ class RealmModel: NSObject {
         () -> Realm in
     var config = Realm.Configuration()
     config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("synchronizedRealm.realm")
+    config.objectTypes = [UserProfile.self]
     let land = try! Realm(configuration: config)
     return land
 }()
