@@ -9,27 +9,48 @@ import Foundation
 import Realm
 import RealmSwift
 
+let app = App(id: "tasktracker-xwbdh")
+
 class RealmModel: NSObject {
     
     // Cite: https://stackoverflow.com/questions/41977952/how-to-create-a-custom-realm-file
     
     public let localRealm: Realm = {
         () -> Realm in
-    var config = Realm.Configuration()
-    config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("localRealm.realm")
-    config.objectTypes = [Account.self]
-    let land = try! Realm(configuration: config)
-    return land
+        var config = Realm.Configuration()
+        config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("localRealm.realm")
+        config.objectTypes = [Account.self]
+        let land = try! Realm(configuration: config)
+        return land
 }()
     
     public let synchronizedRealm: Realm = {
         () -> Realm in
-    var config = Realm.Configuration()
-    config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("synchronizedRealm.realm")
-    config.objectTypes = [UserProfile.self]
-    let land = try! Realm(configuration: config)
-    return land
+    
+        let login = app.login(credentials: Credentials.emailPassword(email: "cindyxie2000@126.com", password: "00000000"))  { (result) in
+            switch result {
+            case .failure(let error):
+                print("Login failed: \(error)")
+            case .success(let user):
+                print("Login as \(user) succeeded!")
+            }
+        }
+                
+        let user = app.currentUser!
+        let partitionValue = "some partition value"
+        var configuration = user.configuration(partitionValue: partitionValue)
+//            
+        var config = Realm.Configuration()
+        config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("synchronizedRealm.realm")
+        config.objectTypes = [UserProfile.self]
+        let land = try! Realm(configuration: config)
+        
+        
+        
+        return land
 }()
+    
+    
     
     static let shared = RealmModel()
     
