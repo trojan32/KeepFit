@@ -78,17 +78,16 @@ class UserProfileModel{
     }
     
     func createNewProfile(account: String, nickname: String, birthday: String, height: String, weight: String, profilePhotoURL: String) {
-        userProfiles.append(UserProfile(account: account, nickname: nickname, birthday: birthday, height: height, weight: weight, profilePhotoURL: profilePhotoURL))
-        save()
+        let targetUserProfile = UserProfile(account: account, nickname: nickname, birthday: birthday, height: height, weight: weight, profilePhotoURL: profilePhotoURL)
+        userProfiles.append(targetUserProfile)
+        appendProfileToRealm(targetUserProfile: targetUserProfile)
     }
     
-    func save() {
+    func appendProfileToRealm(targetUserProfile: UserProfile) {
         try! RealmModel.shared.synchronizedRealm!.write {
-            RealmModel.shared.synchronizedRealm!.delete(RealmModel.shared.synchronizedRealm!.objects(UserProfile.self))
             
-            for userProfile in userProfiles {
-                RealmModel.shared.synchronizedRealm!.add(userProfile)
-            }
+            RealmModel.shared.synchronizedRealm!.add(targetUserProfile)
+            
         }
     }
 }

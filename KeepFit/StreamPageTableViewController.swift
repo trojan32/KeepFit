@@ -14,11 +14,18 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
     private var typed_text: String = ""
     private var searchedUserProfiles: Array<UserProfile> = UserProfileModel.shared.searchForZoomRooms(search_text: "")
     
+    override func viewDidAppear(_ animated: Bool) {
+        userProfileModel.render()
+        updateView(text: "")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userProfileModel.render()
+        
+        
+        
+
         
         // Cite: https://www.hackingwithswift.com/example-code/uikit/how-to-use-uisearchcontroller-to-let-users-enter-search-words
         let search = UISearchController(searchResultsController: nil)
@@ -26,6 +33,7 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
         search.obscuresBackgroundDuringPresentation = false
         search.searchBar.placeholder = "Type something here to search"
         navigationItem.searchController = search
+        
         
 
         // Uncomment the following line to preserve selection between presentations
@@ -50,8 +58,11 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
-        typed_text = text
-        
+        updateView(text: text)
+
+    }
+    
+    func updateView(text: String) {
         searchedUserProfiles = userProfileModel.searchForZoomRooms(search_text: text)
         
         tableView.reloadData()

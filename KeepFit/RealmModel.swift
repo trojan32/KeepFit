@@ -60,7 +60,7 @@ class RealmModel {
         configuration.fileURL = configuration.fileURL!.deletingLastPathComponent().appendingPathComponent("synchronizedRealm.realm")
         configuration.objectTypes = [UserProfile.self]
         let land = try! Realm(configuration: configuration)
-        print("Opened realm: \(land)")
+        print("Opened remote realm: \(land)")
         synchronizedRealm = land
     }
     
