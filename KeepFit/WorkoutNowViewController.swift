@@ -7,14 +7,56 @@
 
 import UIKit
 
-class WorkoutNowViewController: UIViewController {
-
+class WorkoutNowViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var workoutTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+
+        self.workoutTableView.delegate = self
+        self.workoutTableView.dataSource = self
     }
     
+    let workoutItems = ["Yoga","Swimming","Running","Cycling","HITT","Zumba","Crossfit","Orange Theory'","Lifting","Ping Pong","Stretching"]
+
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return workoutItems.count
+    }
+    
+//    @IBOutlet weak var workoiut: UITableViewCell!
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "workoutCell", for: indexPath)
+
+        cell.textLabel?.text = workoutItems[indexPath.row]
+//        let imageName = UIImage(named: transportItems[indexPath.row])
+//        cell.imageView?.image = imageName
+
+        return cell
+    }
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 1
+//    }
+////
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        return UITableViewCell()
+//    }
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//            // cell selected code here
+//        }
+    
+    
+
+
+  
 
     /*
     // MARK: - Navigation

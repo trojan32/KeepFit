@@ -10,6 +10,7 @@
 		0A8388BC25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8388BB25FF09D600276C7C /* WorkoutNowViewController.swift */; };
 		0A8388BD25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8388BB25FF09D600276C7C /* WorkoutNowViewController.swift */; };
 		0A8388BE25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8388BB25FF09D600276C7C /* WorkoutNowViewController.swift */; };
+		0AB5B19D2605588700CF8EAD /* workoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5B19C2605588700CF8EAD /* workoutTableViewController.swift */; };
 		1C3D489D25E38BDA004D7AB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D489C25E38BDA004D7AB1 /* AppDelegate.swift */; };
 		1C3D489F25E38BDA004D7AB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D489E25E38BDA004D7AB1 /* SceneDelegate.swift */; };
 		1C3D48A425E38BDA004D7AB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D48A225E38BDA004D7AB1 /* Main.storyboard */; };
@@ -70,6 +71,7 @@
 
 /* Begin PBXFileReference section */
 		0A8388BB25FF09D600276C7C /* WorkoutNowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutNowViewController.swift; sourceTree = "<group>"; };
+		0AB5B19C2605588700CF8EAD /* workoutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutTableViewController.swift; sourceTree = "<group>"; };
 		1C3D489925E38BDA004D7AB1 /* KeepFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeepFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C3D489C25E38BDA004D7AB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C3D489E25E38BDA004D7AB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				1C55444225FDD8A900DA46BD /* LoginViewController.swift */,
 				0A8388BB25FF09D600276C7C /* WorkoutNowViewController.swift */,
 				1C6186D825FF2B6400CCB74E /* StreamPageTableViewController.swift */,
+				0AB5B19C2605588700CF8EAD /* workoutTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				1C3D489F25E38BDA004D7AB1 /* SceneDelegate.swift in Sources */,
 				1C55446425FDFD7500DA46BD /* UserProfileModel.swift in Sources */,
 				1C6186D925FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */,
+				0AB5B19D2605588700CF8EAD /* workoutTableViewController.swift in Sources */,
 				1C55444325FDD8A900DA46BD /* LoginViewController.swift in Sources */,
 				1C6F66D725FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
 				0A8388BC25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */,
@@ -564,6 +568,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4F8Q446767;
 				INFOPLIST_FILE = KeepFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -582,6 +587,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4F8Q446767;
 				INFOPLIST_FILE = KeepFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
