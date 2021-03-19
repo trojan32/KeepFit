@@ -52,9 +52,11 @@ class UserProfileModel{
         }
         
         //Cite: https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift
-        let range = NSRange(location: 0, length: search_text.utf16.count)
+        
         let regex = try! NSRegularExpression(pattern: "\(search_text)")
+        
         for targetUserProfile in userProfiles {
+            let range = NSRange(location: 0, length: targetUserProfile.nickname.utf16.count)
             if regex.firstMatch(in: targetUserProfile.nickname, options: [], range: range) != nil {
                 result.append(targetUserProfile)
             }
