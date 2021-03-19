@@ -9,22 +9,37 @@ import Foundation
 import Realm
 import RealmSwift
 
-class UserProfileModel: NSObject {
+class UserProfileModel{
     public var userProfiles: Array<UserProfile> = Array<UserProfile>()
     
     static let shared = UserProfileModel()
     
     // Initiate MongoDB Realm
-    let realm = RealmModel.shared.synchronizedRealm
     
-    override init() {
+    init() {
         // For testing
 //        var testing_profile = UserProfile(account: "User", nickname: "R Pattis", birthday: "12/12", height: "100", weight: "50", profilePhotoURL: "...", zoomLink: "ZoomLink")
 //
 //        userProfiles.append(testing_profile)
         
-        super.init()
-        render()
+        
+        app.login(credentials: Credentials.anonymous) { (result) in
+            // Remember to dispatch back to the main thread in completion handlers
+            // if you want to do anything on the UI.
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print("Login failed: \(error)")
+                case .success(let user):
+                    print("Login as \(user) succeeded!")
+                }
+                    
+                RealmModel.shared.connectToRemoteRealm()
+                
+            }
+        }
+        
+        
         
     }
     
@@ -52,8 +67,8 @@ class UserProfileModel: NSObject {
         return userProfiles.count
     }
     
-    func render() {
-        let saved_profiles = realm.objects(UserProfile.self)
+    public func render() {
+        let saved_profiles = RealmModel.shared.synchronizedRealm!.objects(UserProfile.self)
         
         userProfiles = Array<UserProfile>()
         for saved in saved_profiles {
@@ -68,11 +83,11 @@ class UserProfileModel: NSObject {
     }
     
     func save() {
-        try! realm.write {
-            realm.delete(realm.objects(UserProfile.self))
+        try! RealmModel.shared.synchronizedRealm!.write {
+            RealmModel.shared.synchronizedRealm!.delete(RealmModel.shared.synchronizedRealm!.objects(UserProfile.self))
             
             for userProfile in userProfiles {
-                realm.add(userProfile)
+                RealmModel.shared.synchronizedRealm!.add(userProfile)
             }
         }
     }

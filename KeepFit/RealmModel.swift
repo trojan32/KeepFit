@@ -11,7 +11,7 @@ import RealmSwift
 
 let app = App(id: "keepfit-tmuzu")
 
-class RealmModel: NSObject {
+class RealmModel {
     
     // Cite: https://stackoverflow.com/questions/41977952/how-to-create-a-custom-realm-file
     
@@ -24,41 +24,49 @@ class RealmModel: NSObject {
         return land
 }()
     
-    public let synchronizedRealm: Realm = {
-        () -> Realm in
+    public var synchronizedRealm: Realm? = nil // = {
+//        () -> Realm in
+//
+//        let login = app.login(credentials: Credentials.emailPassword(email: "test@test.com", password: "testtest"))  { (result) in
+//            switch result {
+//            case .failure(let error):
+//                print("Login failed: \(error)")
+//            case .success(let user):
+//                print("Login as \(user) succeeded!")
+//            }
+//        }
+//
+//        let user = app.currentUser!
+//        let partitionValue = "keepfitpartition"
+//        var configuration = user.configuration(partitionValue: partitionValue)
+//
+//
+//        configuration.fileURL = configuration.fileURL!.deletingLastPathComponent().appendingPathComponent("synchronizedRealm.realm")
+//        configuration.objectTypes = [UserProfile.self]
+//        let land = try! Realm(configuration: configuration)
+//        print("Opened realm: \(land)")
+//
+//
+//
+//        return land
+//}()
     
-        let login = app.login(credentials: Credentials.emailPassword(email: "test@test.com", password: "testtest"))  { (result) in
-            switch result {
-            case .failure(let error):
-                print("Login failed: \(error)")
-            case .success(let user):
-                print("Login as \(user) succeeded!")
-            }
-        }
-                
+    public func connectToRemoteRealm() {
         let user = app.currentUser!
         let partitionValue = "keepfitpartition"
         var configuration = user.configuration(partitionValue: partitionValue)
-//            
-        
+
+
         configuration.fileURL = configuration.fileURL!.deletingLastPathComponent().appendingPathComponent("synchronizedRealm.realm")
         configuration.objectTypes = [UserProfile.self]
         let land = try! Realm(configuration: configuration)
         print("Opened realm: \(land)")
-        
-        
-        
-        return land
-}()
-    
+        synchronizedRealm = land
+    }
     
     
     static let shared = RealmModel()
     
-    override init() {
-        
-        return
-    }
     
 }
 

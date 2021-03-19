@@ -18,6 +18,8 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userProfileModel.render()
+        
         // Cite: https://www.hackingwithswift.com/example-code/uikit/how-to-use-uisearchcontroller-to-let-users-enter-search-words
         let search = UISearchController(searchResultsController: nil)
         search.searchResultsUpdater = self
