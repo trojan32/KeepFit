@@ -31,6 +31,22 @@
             </objects>
             <point key="canvasLocation" x="1890.7692307692307" y="97.393364928909946"/>
         </scene>
+        <!--Add Streaming Zoom Link-->
+        <scene sceneID="4le-wk-gTU">
+            <objects>
+                <viewController id="dq8-51-xvn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="70G-9T-n7K">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="nVr-e2-N4l"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Streaming Zoom Link" id="5xW-Be-Lwi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4DV-bc-Bzf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2598" y="830"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Uxe-Nc-RQb">
             <objects>
@@ -240,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Hd-LJ-02Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3762" y="-555"/>
+            <point key="canvasLocation" x="4690.7692307692305" y="-555.21327014218002"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PHN-vj-19t">
@@ -415,7 +431,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Workout Together" id="ciW-8h-4Ik">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZNe-UH-yKT"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZNe-UH-yKT">
+                            <connections>
+                                <segue destination="K0I-D5-Vfr" kind="presentation" id="GKX-qc-OMh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fzk-cC-oju" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -441,6 +461,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Kz-zb-RVv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="961.53846153846155" y="97.393364928909946"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4M9-eJ-7OB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K0I-D5-Vfr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zy1-1w-p9q">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dq8-51-xvn" kind="relationship" relationship="rootViewController" id="zBC-32-tI6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KJ2-29-jYY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1769" y="830"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
