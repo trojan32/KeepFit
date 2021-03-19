@@ -9,7 +9,7 @@ import Foundation
 import Realm
 import RealmSwift
 
-let app = App(id: "keepfit")
+let app = App(id: "keepfit-tmuzu")
 
 class RealmModel: NSObject {
     
@@ -27,24 +27,24 @@ class RealmModel: NSObject {
     public let synchronizedRealm: Realm = {
         () -> Realm in
     
-//        let login = app.login(credentials: Credentials.emailPassword(email: "", password: ""))  { (result) in
-//            switch result {
-//            case .failure(let error):
-//                print("Login failed: \(error)")
-//            case .success(let user):
-//                print("Login as \(user) succeeded!")
-//            }
-//        }
+        let login = app.login(credentials: Credentials.emailPassword(email: "test@test.com", password: "testtest"))  { (result) in
+            switch result {
+            case .failure(let error):
+                print("Login failed: \(error)")
+            case .success(let user):
+                print("Login as \(user) succeeded!")
+            }
+        }
                 
-        let user = app.emailPasswordAuth
+        let user = app.currentUser!
         let partitionValue = "keepfitpartition"
-//        var configuration = user.configuration(partitionValue: partitionValue)
+        var configuration = user.configuration(partitionValue: partitionValue)
 //            
         
-//        configuration.fileURL = configuration.fileURL!.deletingLastPathComponent().appendingPathComponent("synchronizedRealm.realm")
-//        configuration.objectTypes = [UserProfile.self]
-        let land = try! Realm()
-//        print("Opened realm: \(land)")
+        configuration.fileURL = configuration.fileURL!.deletingLastPathComponent().appendingPathComponent("synchronizedRealm.realm")
+        configuration.objectTypes = [UserProfile.self]
+        let land = try! Realm(configuration: configuration)
+        print("Opened realm: \(land)")
         
         
         
