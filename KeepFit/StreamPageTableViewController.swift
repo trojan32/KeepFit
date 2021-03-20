@@ -9,7 +9,7 @@ import UIKit
 
 class StreamPageTableViewController: UITableViewController, UISearchResultsUpdating {
     
-    
+    static public var selectedProfile: UserProfile? = nil
     let userProfileModel = UserProfileModel.shared
     private var typed_text: String = ""
     private var searchedUserProfiles: Array<UserProfile> = UserProfileModel.shared.searchForZoomRooms(search_text: "")
@@ -92,6 +92,14 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
         print("Updating rows")
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Unselect the row.
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        
+        StreamPageTableViewController.selectedProfile = searchedUserProfiles[indexPath.row]
     }
 
 
