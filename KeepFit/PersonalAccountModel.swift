@@ -14,6 +14,10 @@ class PersonalAccountModel: NSObject {
     public var personalAccount: PersonalAccount = PersonalAccount()
     public var loggedIn: Bool = false
     
+    
+    
+    public var myAccountProfile: UserProfile? = nil
+    
     // Swift Singleton pattern
     static let shared = PersonalAccountModel()
     
@@ -28,6 +32,9 @@ class PersonalAccountModel: NSObject {
         print("filepath=\(filepath)")
         
         super.init()
+        
+        
+        
         render()
     }
     
@@ -48,9 +55,17 @@ class PersonalAccountModel: NSObject {
         }
     }
     
+    func EditZoomLink(link: String) {
+        
+        guard let profile = myAccountProfile else {
+            return
+        }
+        
+        UserProfileModel.shared.updateProfileToRealm(targetUserProfile: profile, link: link)
+    }
+    
     func createNewAccount(account: String, password: String, nickname: String, birthday: String, height: String, weight: String, profilePhotoURL: String) {
-        personalAccount = PersonalAccount(account: account, password: password, nickname: nickname, birthday: birthday, height: height, weight: weight, profilePhotoURL: profilePhotoURL)
-        save()
+        
         
         UserProfileModel.shared.createNewProfile(account: account, nickname: nickname, birthday: birthday, height: height, weight: weight, profilePhotoURL: profilePhotoURL)
     }
@@ -58,9 +73,23 @@ class PersonalAccountModel: NSObject {
     func logIntoAccount(account: String, password: String) -> Bool {
         // Need to have actual authentication below
         
+        guard let targetProfile: UserProfile = UserProfileModel.shared.authenticate(account: account, password: password) else {
+            return false
+        }
+        
         // Need to have actual authentication above
         
+        
+    
+        
         loggedIn = true
+        myAccountProfile = targetProfile
+        personalAccount = PersonalAccount(account: targetProfile._id, password: targetProfile._id, nickname: targetProfile.nickname, birthday: targetProfile.birthday, height: targetProfile.height, weight: targetProfile.weight, profilePhotoURL: targetProfile.profilePhotoURL)
+        
+        
+        save()
+        
+        
         return true
     }
     

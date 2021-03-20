@@ -48,6 +48,11 @@
 		1C8E6C5325FCAF56004C2534 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */; };
 		1C8E6C5425FCAF56004C2534 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */; };
 		1C8E6C5525FCAF56004C2534 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */; };
+		1CBFFCE02605E067000D2AB1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1C94BBE526049385000927AD /* Realm */; };
+		1CBFFCE12605E067000D2AB1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1C94BBEA26049395000927AD /* RealmSwift */; };
+		1CBFFCE32605E211000D2AB1 /* MyStreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */; };
+		1CBFFCE42605E211000D2AB1 /* MyStreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */; };
+		1CBFFCE52605E211000D2AB1 /* MyStreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +98,7 @@
 		1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccountModel.swift; sourceTree = "<group>"; };
 		1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStreamingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CBFFCE12605E067000D2AB1 /* RealmSwift in Frameworks */,
+				1CBFFCE02605E067000D2AB1 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +210,7 @@
 				0A8388BB25FF09D600276C7C /* WorkoutNowViewController.swift */,
 				1C6186D825FF2B6400CCB74E /* StreamPageTableViewController.swift */,
 				0AB5B19C2605588700CF8EAD /* workoutTableViewController.swift */,
+				1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -215,13 +224,6 @@
 				1C3D48AA25E38BDB004D7AB1 /* Info.plist */,
 			);
 			name = Other;
-			sourceTree = "<group>";
-		};
-		1C94BBC72604913D000927AD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,12 +370,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C6F66C225FC85AA0085F2C2 /* PersonalAccount.swift in Sources */,
+				1CBFFCE32605E211000D2AB1 /* MyStreamingViewController.swift in Sources */,
 				1C6F668125FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				1C3D489D25E38BDA004D7AB1 /* AppDelegate.swift in Sources */,
 				1C3D489F25E38BDA004D7AB1 /* SceneDelegate.swift in Sources */,
 				1C55446425FDFD7500DA46BD /* UserProfileModel.swift in Sources */,
 				1C6186D925FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */,
-				0AB5B19D2605588700CF8EAD /* workoutTableViewController.swift in Sources */,
 				1C55444325FDD8A900DA46BD /* LoginViewController.swift in Sources */,
 				1C6F66D725FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
 				0A8388BC25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */,
@@ -388,9 +390,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C94BBDD2604934E000927AD /* SceneDelegate.swift in Sources */,
-				1C94BBD9260492C7000927AD /* RealmModel.swift in Sources */,
 				1C55444425FDD8A900DA46BD /* LoginViewController.swift in Sources */,
+				1CBFFCE42605E211000D2AB1 /* MyStreamingViewController.swift in Sources */,
 				1C55446525FDFD7500DA46BD /* UserProfileModel.swift in Sources */,
 				1C6F66D825FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
 				1C6F66C325FC85AA0085F2C2 /* PersonalAccount.swift in Sources */,
@@ -408,9 +409,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C94BBE12604935B000927AD /* SceneDelegate.swift in Sources */,
 				1C55444525FDD8A900DA46BD /* LoginViewController.swift in Sources */,
 				1C55446625FDFD7500DA46BD /* UserProfileModel.swift in Sources */,
+				1CBFFCE52605E211000D2AB1 /* MyStreamingViewController.swift in Sources */,
 				1C6F66D925FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
 				1C6F66C425FC85AA0085F2C2 /* PersonalAccount.swift in Sources */,
 				1C6F668325FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,

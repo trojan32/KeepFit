@@ -44,21 +44,56 @@
             </objects>
             <point key="canvasLocation" x="1890.7692307692307" y="97.393364928909946"/>
         </scene>
-        <!--Add Streaming Zoom Link-->
+        <!--My Streaming-->
         <scene sceneID="4le-wk-gTU">
             <objects>
-                <viewController id="dq8-51-xvn" sceneMemberID="viewController">
+                <viewController id="dq8-51-xvn" customClass="MyStreamingViewController" customModule="KeepFit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="70G-9T-n7K">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit your Zoom steaming link below. If you want to start streaming, hit the &quot;start&quot; button." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfq-wE-xA7">
+                                <rect key="frame" x="20" y="108.00000000000001" width="350" height="40.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zoom Link" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ojU-sl-Nig">
+                                <rect key="frame" x="20" y="168.66666666666666" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="zoomLinkModified:" destination="dq8-51-xvn" eventType="editingDidEnd" id="N3o-rS-o3w"/>
+                                    <action selector="zoomLinkModified:" destination="dq8-51-xvn" eventType="editingChanged" id="nZc-jY-Dly"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="nVr-e2-N4l"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hfq-wE-xA7" firstAttribute="top" secondItem="nVr-e2-N4l" secondAttribute="top" constant="20" id="1ng-eF-6b7"/>
+                            <constraint firstItem="nVr-e2-N4l" firstAttribute="trailing" secondItem="hfq-wE-xA7" secondAttribute="trailing" constant="20" id="kOy-cJ-hcM"/>
+                            <constraint firstItem="ojU-sl-Nig" firstAttribute="top" secondItem="hfq-wE-xA7" secondAttribute="bottom" constant="20" id="kWo-8d-dZi"/>
+                            <constraint firstItem="hfq-wE-xA7" firstAttribute="leading" secondItem="nVr-e2-N4l" secondAttribute="leading" constant="20" id="srw-fp-s9O"/>
+                            <constraint firstItem="ojU-sl-Nig" firstAttribute="leading" secondItem="nVr-e2-N4l" secondAttribute="leading" constant="20" id="uuQ-Uu-EHU"/>
+                            <constraint firstItem="nVr-e2-N4l" firstAttribute="trailing" secondItem="ojU-sl-Nig" secondAttribute="trailing" constant="20" id="z0w-Yn-NeB"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Streaming Zoom Link" id="5xW-Be-Lwi"/>
+                    <navigationItem key="navigationItem" title="My Streaming" id="5xW-Be-Lwi">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="HSJ-fj-dVG">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="dq8-51-xvn" id="IgA-nK-OUR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="U4n-IY-X7e"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="zoomLinkTF" destination="ojU-sl-Nig" id="c1b-JE-SF3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4DV-bc-Bzf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2598" y="830"/>
+            <point key="canvasLocation" x="2596.9230769230767" y="829.62085308056874"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Uxe-Nc-RQb">
@@ -446,7 +481,7 @@
                     <navigationItem key="navigationItem" title="Workout Together" id="ciW-8h-4Ik">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZNe-UH-yKT">
                             <connections>
-                                <segue destination="K0I-D5-Vfr" kind="presentation" id="GKX-qc-OMh"/>
+                                <segue destination="K0I-D5-Vfr" kind="presentation" modalPresentationStyle="fullScreen" id="GKX-qc-OMh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -481,7 +516,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K0I-D5-Vfr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zy1-1w-p9q">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>

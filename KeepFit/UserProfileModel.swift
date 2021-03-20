@@ -80,7 +80,7 @@ class UserProfileModel{
     }
     
     func createNewProfile(account: String, nickname: String, birthday: String, height: String, weight: String, profilePhotoURL: String) {
-        let targetUserProfile = UserProfile(account: account, nickname: nickname, birthday: birthday, height: height, weight: weight, profilePhotoURL: profilePhotoURL)
+        let targetUserProfile = UserProfile(_id: account, nickname: nickname, birthday: birthday, height: height, weight: weight, profilePhotoURL: profilePhotoURL)
         userProfiles.append(targetUserProfile)
         appendProfileToRealm(targetUserProfile: targetUserProfile)
     }
@@ -92,4 +92,35 @@ class UserProfileModel{
             
         }
     }
+    
+    public func authenticate(account: String, password: String) -> UserProfile? {
+        
+        render()
+        
+        for profile in userProfiles {
+            print("Comparing \(profile._id) to \(account).")
+            
+            if profile._id == account {
+                
+                return profile
+            }
+        }
+        
+        return nil
+    }
+    
+    func updateProfileToRealm(targetUserProfile: UserProfile, link: String) {
+        
+        for profile in RealmModel.shared.synchronizedRealm!.objects(UserProfile.self) {
+    
+        }
+        
+        try! RealmModel.shared.synchronizedRealm!.write {
+            
+            targetUserProfile.zoomLink = link
+            
+        }
+    }
+    
+    
 }
