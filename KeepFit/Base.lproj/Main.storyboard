@@ -333,8 +333,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mEN-Nu-61g">
-                                <rect key="frame" x="120" y="64" width="150" height="149"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mEN-Nu-61g">
+                                <rect key="frame" x="120" y="65.666666666666671" width="150" height="146.33333333333331"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mEN-Nu-61g" secondAttribute="height" multiplier="1:1" constant="1" id="q0L-5V-Lel"/>
                                 </constraints>
@@ -540,8 +540,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1tA-4m-sa5">
-                                <rect key="frame" x="120" y="76" width="150" height="149"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1tA-4m-sa5">
+                                <rect key="frame" x="120" y="77.666666666666671" width="150" height="146.33333333333331"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1tA-4m-sa5" secondAttribute="height" multiplier="1:1" constant="1" id="k9g-rZ-LIX"/>
                                 </constraints>
@@ -612,6 +612,7 @@
         <segue reference="Ef9-Vn-Gol"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="sportscourt.fill" catalog="system" width="128" height="84"/>
         <image name="video.fill" catalog="system" width="128" height="82"/>
