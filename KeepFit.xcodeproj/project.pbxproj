@@ -51,6 +51,7 @@
 		1C8E6C5325FCAF56004C2534 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */; };
 		1C8E6C5425FCAF56004C2534 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */; };
 		1C8E6C5525FCAF56004C2534 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */; };
+		1CBC169A2609DE6E002962EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CBC16992609DE6E002962EF /* GoogleService-Info.plist */; };
 		1CBFFCE02605E067000D2AB1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1C94BBE526049385000927AD /* Realm */; };
 		1CBFFCE12605E067000D2AB1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1C94BBEA26049395000927AD /* RealmSwift */; };
 		1CBFFCE32605E211000D2AB1 /* MyStreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */; };
@@ -60,7 +61,6 @@
 		57CFC6E56CF9FA0647782CFE /* Pods_KeepFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AF4A8C3720313782E5C6C0 /* Pods_KeepFit.framework */; };
 		7118F1EF2B7D2BC11EEEC679 /* Pods_KeepFitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4AF81D650C1E0674BA462A /* Pods_KeepFitTests.framework */; };
 		E187F99B66FD1EAB7CE016A8 /* Pods_KeepFit_KeepFitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89235D30AF3C3E66BE41161 /* Pods_KeepFit_KeepFitUITests.framework */; };
-		E2EA002D2609B1930032569F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2EA002C2609B1930032569F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +108,7 @@
 		1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccountModel.swift; sourceTree = "<group>"; };
 		1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1CBC16992609DE6E002962EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStreamingViewController.swift; sourceTree = "<group>"; };
 		3E4DEDEA396C7DD64A7BA469 /* Pods-KeepFitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepFitTests.release.xcconfig"; path = "Target Support Files/Pods-KeepFitTests/Pods-KeepFitTests.release.xcconfig"; sourceTree = "<group>"; };
 		503FA6292609C7DA00CAD1AF /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -118,7 +119,6 @@
 		A4BE690C343FBCC603CDB2DA /* Pods-KeepFit-KeepFitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepFit-KeepFitUITests.debug.xcconfig"; path = "Target Support Files/Pods-KeepFit-KeepFitUITests/Pods-KeepFit-KeepFitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7AF4A8C3720313782E5C6C0 /* Pods_KeepFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeepFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89235D30AF3C3E66BE41161 /* Pods_KeepFit_KeepFitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeepFit_KeepFitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2EA002C2609B1930032569F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,8 +156,8 @@
 		1C3D489025E38BDA004D7AB1 = {
 			isa = PBXGroup;
 			children = (
+				1CBC16992609DE6E002962EF /* GoogleService-Info.plist */,
 				1C3D489B25E38BDA004D7AB1 /* KeepFit */,
-				E2EA002C2609B1930032569F /* GoogleService-Info.plist */,
 				1C3D48B225E38BDB004D7AB1 /* KeepFitTests */,
 				1C3D48BD25E38BDB004D7AB1 /* KeepFitUITests */,
 				1C3D489A25E38BDA004D7AB1 /* Products */,
@@ -405,9 +405,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C3D48A925E38BDB004D7AB1 /* LaunchScreen.storyboard in Resources */,
+				1CBC169A2609DE6E002962EF /* GoogleService-Info.plist in Resources */,
 				1C3D48A625E38BDB004D7AB1 /* Assets.xcassets in Resources */,
 				1C3D48A425E38BDA004D7AB1 /* Main.storyboard in Resources */,
-				E2EA002D2609B1930032569F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
