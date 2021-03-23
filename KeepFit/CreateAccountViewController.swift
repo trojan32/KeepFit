@@ -6,25 +6,51 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class CreateAccountViewController:  UIViewController, UITextViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     private var profileImage: String?
     
-    @IBOutlet var accountTF: UITextField!
-    @IBOutlet var passwordTF: UITextField!
-    @IBOutlet var nicknameTF: UITextField!
-    @IBOutlet var birthdayTF: UITextField!
-    @IBOutlet var heightTF: UITextField!
-    @IBOutlet var weightTF: UITextField!
+//    @IBOutlet var accountTF: UITextField!
+//    @IBOutlet var passwordTF: UITextField!
+//    @IBOutlet var nicknameTF: UITextField!
+//    @IBOutlet var birthdayTF: UITextField!
+//    @IBOutlet var heightTF: UITextField!
+//    @IBOutlet var weightTF: UITextField!
     
-    let personalAccountModel = PersonalAccountModel.shared
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var nickname: UITextField!
+    @IBOutlet weak var birthday: UITextField!
+    @IBOutlet weak var height: UITextField!
+    @IBOutlet weak var weight: UITextField!
+    @IBOutlet weak var error: UILabel!
+    
+    
+    //    let personalAccountModel = PersonalAccountModel.shared
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setUpElements()
         // Do any additional setup after loading the view.
+    }
+    
+    func setUpElements() {
+        // Hide the error label
+        error.alpha = 0
+        // Style the elements
+        Utilities.styleTextField(username)
+        Utilities.styleTextField(password)
+        Utilities.styleTextField(email)
+        Utilities.styleTextField(nickname)
+        Utilities.styleTextField(birthday)
+        Utilities.styleFilledButton(height)
+        Utilities.styleFilledButton(weight)
     }
     
     @IBAction func addImagePressed(_ sender: UIButton) {
@@ -59,11 +85,96 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         dismiss(animated: true)
     }
     
-    @IBAction func createAccountTapped(_ sender: UIBarButtonItem) {
-        personalAccountModel.createNewAccount(account: accountTF.text ?? "", password: passwordTF.text ?? "", nickname: nicknameTF.text ?? "", birthday: birthdayTF.text ?? "", height: heightTF.text ?? "", weight: weightTF.text ?? "", profilePhotoURL: profileImage ?? "")
+    func validateFields() -> String? {
+
+        // Check that all fields are filled in
+        if username.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || nickname.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            birthday.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || height.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || weight.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            
+            return "Please fill in all fields."
+        }
         
-        dismiss(animated: true, completion: nil)
+        // Check if the password is secure
+        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if Utilities.isPasswordValid(cleanedPassword) == false {
+            // Password isn't secure enough
+            return "Please make sure your password is at least 8 characters, contains a special character and a number."
+        }
+        
+        return nil
     }
+    
+    @IBAction func createAccountTapped(_ sender: UIBarButtonItem)
+    {
+//        personalAccountModel.createNewAccount(account: accountTF.text ?? "", password: passwordTF.text ?? "", nickname: nicknameTF.text ?? "", birthday: birthdayTF.text ?? "", height: heightTF.text ?? "", weight: weightTF.text ?? "", profilePhotoURL: profileImage ?? "")
+        
+//        dismiss(animated: true, completion: nil)
+        
+        // Validate the fields
+        let error = validateFields()
+        
+        if error != nil
+        {
+            // There's something wrong with the fields, show error message
+            showError(error!)
+        }
+        else
+        {
+            // Create cleaned versions of the data
+            let username_txt = username.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password_txt = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let email_txt = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let nickname_txt = nickname.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let birthday_txt = birthday.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let height_txt = height.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let weight_txt = weight.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            // Create the user
+            Auth.auth().createUser(withEmail: email_txt, password: password_txt) { (result, err) in
+                // Check for errors
+                if err != nil
+                {
+                    // There was an error creating the user
+                    self.showError("Error creating user")
+                }
+                else
+                {
+                    // User was created successfully, now store the first name and last name
+                    let db = Firestore.firestore()
+
+                    db.collection("users").addDocument(data: ["username":username_txt, "email":email_txt, "nickname":nickname_txt, "birthday":birthday_txt, "height":height_txt, "weight":weight_txt, "uid": result!.user.uid ]) { (error) in
+                        
+                        if error != nil
+                        {
+                            // Show error message
+                            self.showError("Error saving user data")
+                        }
+                    }
+                    // Transition to the home screen
+//                    self.transitionToHome()
+                    dismiss(animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
+    func showError(_ message:String) {
+        
+        error.text = message
+        error.alpha = 1
+    }
+    
+//    func transitionToHome() {
+//
+//        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+//
+//        view.window?.rootViewController = homeViewController
+//        view.window?.makeKeyAndVisible()
+//
+//    }
     
     
     
