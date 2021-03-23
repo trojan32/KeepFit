@@ -49,8 +49,8 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         Utilities.styleTextField(email)
         Utilities.styleTextField(nickname)
         Utilities.styleTextField(birthday)
-        Utilities.styleFilledButton(height)
-        Utilities.styleFilledButton(weight)
+        Utilities.styleTextField(height)
+        Utilities.styleTextField(weight)
     }
     
     @IBAction func addImagePressed(_ sender: UIButton) {
@@ -97,7 +97,7 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         }
         
         // Check if the password is secure
-        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanedPassword = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if Utilities.isPasswordValid(cleanedPassword) == false {
             // Password isn't secure enough
@@ -155,7 +155,7 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
                     }
                     // Transition to the home screen
 //                    self.transitionToHome()
-                    dismiss(animated: true, completion: nil)
+                    self.dismiss(animated: true, completion: nil)
                 }
             }
         }
