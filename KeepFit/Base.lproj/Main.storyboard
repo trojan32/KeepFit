@@ -28,6 +28,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="358" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="coi-wv-Ei7" kind="presentation" id="IqF-JP-NuZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -43,6 +46,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1890.7692307692307" y="97.393364928909946"/>
+        </scene>
+        <!--Exercise Detail View Controller-->
+        <scene sceneID="gvf-Ye-Iuf">
+            <objects>
+                <viewController id="BBU-nk-WKA" customClass="ExerciseDetailViewController" customModule="KeepFit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h7a-1K-jUp">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minute:Second" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYN-1P-nhr">
+                                <rect key="frame" x="20" y="76" width="350" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJt-e3-gvC">
+                                <rect key="frame" x="20" y="637" width="350" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Start"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pX7-hU-pY9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pX7-hU-pY9" firstAttribute="trailing" secondItem="yJt-e3-gvC" secondAttribute="trailing" constant="20" id="1DJ-NZ-KQk"/>
+                            <constraint firstItem="IYN-1P-nhr" firstAttribute="top" secondItem="pX7-hU-pY9" secondAttribute="top" constant="20" id="53C-pA-LKt"/>
+                            <constraint firstItem="pX7-hU-pY9" firstAttribute="bottom" secondItem="yJt-e3-gvC" secondAttribute="bottom" constant="80" id="Bfc-UB-Zfd"/>
+                            <constraint firstItem="yJt-e3-gvC" firstAttribute="leading" secondItem="pX7-hU-pY9" secondAttribute="leading" constant="20" id="PJC-hy-fYb"/>
+                            <constraint firstItem="pX7-hU-pY9" firstAttribute="trailing" secondItem="IYN-1P-nhr" secondAttribute="trailing" constant="20" id="os4-rk-zVk"/>
+                            <constraint firstItem="IYN-1P-nhr" firstAttribute="leading" secondItem="pX7-hU-pY9" secondAttribute="leading" constant="20" id="osX-GU-ZXx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FKf-vH-NQf"/>
+                    <connections>
+                        <outlet property="startStopButton" destination="yJt-e3-gvC" id="6Ah-Sa-fOV"/>
+                        <outlet property="timerDisplay" destination="IYN-1P-nhr" id="JBC-UI-GlX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G6m-Ud-yOD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3576.9230769230767" y="96.682464454976298"/>
         </scene>
         <!--My Streaming-->
         <scene sceneID="4le-wk-gTU">
@@ -605,6 +649,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3H0-uQ-k1O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1804.6153846153845" y="1576.7772511848341"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Itu-J7-oVh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="coi-wv-Ei7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GCe-hI-x2K">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BBU-nk-WKA" kind="relationship" relationship="rootViewController" id="BID-4u-RdU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8N4-DR-yhX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2647.6923076923076" y="96.682464454976298"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

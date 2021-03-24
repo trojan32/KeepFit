@@ -48,6 +48,9 @@
 		1C6F66D725FC92860085F2C2 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */; };
 		1C6F66D825FC92860085F2C2 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */; };
 		1C6F66D925FC92860085F2C2 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */; };
+		1C81D448260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */; };
+		1C81D449260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */; };
+		1C81D44A260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */; };
 		1C8E6C5325FCAF56004C2534 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */; };
 		1C8E6C5425FCAF56004C2534 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */; };
 		1C8E6C5525FCAF56004C2534 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */; };
@@ -107,6 +110,7 @@
 		1C6F66C125FC85AA0085F2C2 /* PersonalAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccount.swift; sourceTree = "<group>"; };
 		1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccountModel.swift; sourceTree = "<group>"; };
 		1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
+		1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewController.swift; sourceTree = "<group>"; };
 		1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1CBC16992609DE6E002962EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStreamingViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 				0AB5B19C2605588700CF8EAD /* workoutTableViewController.swift */,
 				1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */,
 				1C5F2A992605F76300E899AC /* UserStreamingViewController.swift */,
+				1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -547,6 +552,7 @@
 				1C55444325FDD8A900DA46BD /* LoginViewController.swift in Sources */,
 				1C6F66D725FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
 				0A8388BC25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */,
+				1C81D448260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */,
 				1C8E6C5325FCAF56004C2534 /* ProfileViewController.swift in Sources */,
 				1C6F66CC25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */,
 				1C55445D25FDFD6D00DA46BD /* UserProfile.swift in Sources */,
@@ -571,6 +577,7 @@
 				1C8E6C5425FCAF56004C2534 /* ProfileViewController.swift in Sources */,
 				1C3D48B425E38BDB004D7AB1 /* KeepFitTests.swift in Sources */,
 				1C6F66CD25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */,
+				1C81D449260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +593,7 @@
 				1C6F668325FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				0A8388BE25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */,
 				1C6186DB25FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */,
+				1C81D44A260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */,
 				1C5F2A9C2605F76300E899AC /* UserStreamingViewController.swift in Sources */,
 				1C55447D25FE016C00DA46BD /* RealmModel.swift in Sources */,
 				1C55445F25FDFD6D00DA46BD /* UserProfile.swift in Sources */,
