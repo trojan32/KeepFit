@@ -58,6 +58,7 @@
 		1CBFFCE42605E211000D2AB1 /* MyStreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */; };
 		1CBFFCE52605E211000D2AB1 /* MyStreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */; };
 		503FA62A2609C7DA00CAD1AF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FA6292609C7DA00CAD1AF /* Utilities.swift */; };
+		50FEE379260C76BE00BAEE3D /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FEE378260C76BE00BAEE3D /* ProfileEditViewController.swift */; };
 		57CFC6E56CF9FA0647782CFE /* Pods_KeepFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AF4A8C3720313782E5C6C0 /* Pods_KeepFit.framework */; };
 		7118F1EF2B7D2BC11EEEC679 /* Pods_KeepFitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4AF81D650C1E0674BA462A /* Pods_KeepFitTests.framework */; };
 		E187F99B66FD1EAB7CE016A8 /* Pods_KeepFit_KeepFitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89235D30AF3C3E66BE41161 /* Pods_KeepFit_KeepFitUITests.framework */; };
@@ -112,6 +113,7 @@
 		1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStreamingViewController.swift; sourceTree = "<group>"; };
 		3E4DEDEA396C7DD64A7BA469 /* Pods-KeepFitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepFitTests.release.xcconfig"; path = "Target Support Files/Pods-KeepFitTests/Pods-KeepFitTests.release.xcconfig"; sourceTree = "<group>"; };
 		503FA6292609C7DA00CAD1AF /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		50FEE378260C76BE00BAEE3D /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		7B4AF81D650C1E0674BA462A /* Pods_KeepFitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeepFitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8687D5FE1358F13817D6BB18 /* Pods-KeepFitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepFitTests.debug.xcconfig"; path = "Target Support Files/Pods-KeepFitTests/Pods-KeepFitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8706337E79C6AADACDEFD8E8 /* Pods-KeepFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepFit.debug.xcconfig"; path = "Target Support Files/Pods-KeepFit/Pods-KeepFit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */,
 				1C5F2A992605F76300E899AC /* UserStreamingViewController.swift */,
 				1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */,
+				50FEE378260C76BE00BAEE3D /* ProfileEditViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				1C6186D925FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */,
 				1C55444325FDD8A900DA46BD /* LoginViewController.swift in Sources */,
 				1C6F66D725FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
+				50FEE379260C76BE00BAEE3D /* ProfileEditViewController.swift in Sources */,
 				0A8388BC25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */,
 				1C81D448260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */,
 				1C6F66CC25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */,
