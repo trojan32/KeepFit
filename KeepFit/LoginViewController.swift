@@ -85,9 +85,8 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
                         let uid = user.uid
                         let email = user.email
                         print(email)
-                        
                     }
-                    //  let currentUID = currentUser?.uid as! String
+                    self.dismiss(animated: true, completion: nil)                    //  let currentUID = currentUser?.uid as! String
 //                    users.child(currentUID).observeSingleEvent(of: .value, with: { (snapshot) in
 //                    // Get user snapshot (dictionary)
 //                    let userSnapshot = snapshot.value as? NSDictionary
