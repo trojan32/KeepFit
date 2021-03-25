@@ -49,20 +49,30 @@ class ProfilePageViewController: UIViewController {
         let db = Firestore.firestore()
         let currentUser = Auth.auth().currentUser
         let currentUID = currentUser?.uid as! String
-        let usersRef = db.collection("users")
-        usersRef.child(currentUID).observeSingleEvent(of: .value, with: { (snapshot) in
-        let userSnapshot = snapshot.value as? NSDictionary
-        let nickname = userSnapshot?["nickname"] as? String ?? ""
-        let birthday = userSnapshot?["birthday"] as? String ?? ""
-        let height = userSnapshot?["height"] as? String ?? ""
-        let weight = userSnapshot?["weight"] as? String ?? ""
-        }) { (error) in print(error.localizedDescription) }
-        
-        loadProfileImage()
-        nicknameLabel.text = nickname
-        birthdayLabel.text = "Birthday: \(birthday)"
-        heightLabel.text = "Height: \(height) cm"
-        weightLabel.text = "Weight: \(weight) kg"
+        let userRef = db.collection("users").document(currentUID)
+
+        userRef.getDocument
+        {
+            (document, error) in
+            if let document = document, document.exists
+            {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
+                let nickname = dataDescription?["nickname"] as? String ?? ""
+                let birthday = dataDescription?["birthday"] as? String ?? ""
+                let height = dataDescription?["height"] as? String ?? ""
+                let weight = dataDescription?["weight"] as? String ?? ""
+                loadProfileImage()
+                nicknameLabel.text = nickname
+                birthdayLabel.text = "Birthday: \(birthday)"
+                heightLabel.text = "Height: \(height) cm"
+                weightLabel.text = "Weight: \(weight) kg"
+            }
+            else
+            {
+                print("Document does not exist")
+            }
+        }
         return
     }
     
