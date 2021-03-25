@@ -56,17 +56,17 @@ class ProfilePageViewController: UIViewController {
             (document, error) in
             if let document = document, document.exists
             {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
+                let dataDescription = document.data()
+//                print("Document data: \(dataDescription)")
                 let nickname = dataDescription?["nickname"] as? String ?? ""
                 let birthday = dataDescription?["birthday"] as? String ?? ""
                 let height = dataDescription?["height"] as? String ?? ""
                 let weight = dataDescription?["weight"] as? String ?? ""
-                loadProfileImage()
-                nicknameLabel.text = nickname
-                birthdayLabel.text = "Birthday: \(birthday)"
-                heightLabel.text = "Height: \(height) cm"
-                weightLabel.text = "Weight: \(weight) kg"
+                self.loadProfileImage()
+                self.nicknameLabel.text = nickname
+                self.birthdayLabel.text = "Birthday: \(birthday)"
+                self.heightLabel.text = "Height: \(height) cm"
+                self.weightLabel.text = "Weight: \(weight) kg"
             }
             else
             {
