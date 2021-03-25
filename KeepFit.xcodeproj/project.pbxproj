@@ -51,9 +51,6 @@
 		1C81D448260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */; };
 		1C81D449260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */; };
 		1C81D44A260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */; };
-		1C8E6C5325FCAF56004C2534 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */; };
-		1C8E6C5425FCAF56004C2534 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */; };
-		1C8E6C5525FCAF56004C2534 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */; };
 		1CBC169A2609DE6E002962EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CBC16992609DE6E002962EF /* GoogleService-Info.plist */; };
 		1CBFFCE02605E067000D2AB1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1C94BBE526049385000927AD /* Realm */; };
 		1CBFFCE12605E067000D2AB1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1C94BBEA26049395000927AD /* RealmSwift */; };
@@ -111,7 +108,6 @@
 		1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccountModel.swift; sourceTree = "<group>"; };
 		1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewController.swift; sourceTree = "<group>"; };
-		1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1CBC16992609DE6E002962EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStreamingViewController.swift; sourceTree = "<group>"; };
 		3E4DEDEA396C7DD64A7BA469 /* Pods-KeepFitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepFitTests.release.xcconfig"; path = "Target Support Files/Pods-KeepFitTests/Pods-KeepFitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -236,7 +232,6 @@
 			children = (
 				1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */,
 				1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */,
-				1C8E6C5225FCAF56004C2534 /* ProfileViewController.swift */,
 				1C55444225FDD8A900DA46BD /* LoginViewController.swift */,
 				0A8388BB25FF09D600276C7C /* WorkoutNowViewController.swift */,
 				1C6186D825FF2B6400CCB74E /* StreamPageTableViewController.swift */,
@@ -553,7 +548,6 @@
 				1C6F66D725FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
 				0A8388BC25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */,
 				1C81D448260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */,
-				1C8E6C5325FCAF56004C2534 /* ProfileViewController.swift in Sources */,
 				1C6F66CC25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */,
 				1C55445D25FDFD6D00DA46BD /* UserProfile.swift in Sources */,
 				1C55447B25FE016C00DA46BD /* RealmModel.swift in Sources */,
@@ -574,7 +568,6 @@
 				0A8388BD25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */,
 				1C6186DA25FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */,
 				1C55445E25FDFD6D00DA46BD /* UserProfile.swift in Sources */,
-				1C8E6C5425FCAF56004C2534 /* ProfileViewController.swift in Sources */,
 				1C3D48B425E38BDB004D7AB1 /* KeepFitTests.swift in Sources */,
 				1C6F66CD25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */,
 				1C81D449260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */,
@@ -597,7 +590,6 @@
 				1C5F2A9C2605F76300E899AC /* UserStreamingViewController.swift in Sources */,
 				1C55447D25FE016C00DA46BD /* RealmModel.swift in Sources */,
 				1C55445F25FDFD6D00DA46BD /* UserProfile.swift in Sources */,
-				1C8E6C5525FCAF56004C2534 /* ProfileViewController.swift in Sources */,
 				1C3D48BF25E38BDB004D7AB1 /* KeepFitUITests.swift in Sources */,
 				1C6F66CE25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */,
 			);
