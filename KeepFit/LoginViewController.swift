@@ -42,8 +42,8 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     func showError(_ message:String) {
-        errorLabel.text = message
-        errorLabel.alpha = 1
+        error.text = message
+        error.alpha = 1
     }
     
     @IBAction func loginTapped(_ sender: UIBarButtonItem) {
@@ -64,11 +64,11 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         }
         else{
             // Create cleaned versions of the text field
-            let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let email_txt = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password_txt = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
             // Signing in the user
-            Auth.auth().signIn(withEmail: email, password: password) { (result, err) in
+            Auth.auth().signIn(withEmail: email_txt, password: password_txt) { (result, err) in
                 if err != nil {
                     // Couldn't sign in
                     self.error.text = err!.localizedDescription
@@ -80,18 +80,24 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
 //
 //                    self.view.window?.rootViewController = homeViewController
 //                    self.view.window?.makeKeyAndVisible()
-                    let currentUser = Auth.auth().currentUser
-                    let currentUID = currentUser?.uid as! String
-                    users.child(currentUID).observeSingleEvent(of: .value, with: { (snapshot) in
-                    // Get user snapshot (dictionary)
-                    let userSnapshot = snapshot.value as? NSDictionary
-                    // get nickname
-                    let nickname = userSnapshot?["nickname"] as? String ?? ""
-                    // set label to nickname
-                        print("Hello \(nickname)")
-                    }) { (error) in print(error.localizedDescription)
-                      // set full name to empty string
+//                    let currentUser = Auth.auth().currentUser
+                    if let user = Auth.auth().currentUser{
+                        let uid = user.uid
+                        let email = user.email
+                        print(email)
+                        
                     }
+                    //  let currentUID = currentUser?.uid as! String
+//                    users.child(currentUID).observeSingleEvent(of: .value, with: { (snapshot) in
+//                    // Get user snapshot (dictionary)
+//                    let userSnapshot = snapshot.value as? NSDictionary
+//                    // get nickname
+//                    let nickname = userSnapshot?["nickname"] as? String ?? ""
+//                    // set label to nickname
+//                        print("Hello \(nickname)")
+//                    }) { (error) in print(error.localizedDescription)
+//                      // set full name to empty string
+//                    }
                 }
             }
         }
