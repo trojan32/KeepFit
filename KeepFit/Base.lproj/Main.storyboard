@@ -377,11 +377,11 @@
             <objects>
                 <viewController id="JgX-Ru-2Qi" customClass="ProfileEditViewController" customModule="KeepFit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8J5-v6-dIF">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4Ea-3K-bSH">
-                                <rect key="frame" x="40" y="84" width="310" height="287.66666666666669"/>
+                                <rect key="frame" x="40" y="40" width="310" height="382"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Your Profile Here:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuS-5A-no5">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="21.666666666666668"/>
@@ -421,8 +421,24 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mly-6n-PFV">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XzD-5d-NqR">
                                         <rect key="frame" x="0.0" y="149.66666666666666" width="310" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tR2-TO-i4j">
+                                                <rect key="frame" x="0.0" y="0.0" width="73" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q0j-sn-DTF">
+                                                <rect key="frame" x="88" y="0.0" width="222" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mly-6n-PFV">
+                                        <rect key="frame" x="0.0" y="203.66666666666666" width="310" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height (cm): " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFf-R9-Hco">
                                                 <rect key="frame" x="0.0" y="0.0" width="99.333333333333329" height="34"/>
@@ -438,7 +454,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="I5C-3C-GXV">
-                                        <rect key="frame" x="0.0" y="203.66666666666669" width="310" height="34"/>
+                                        <rect key="frame" x="0.0" y="257.66666666666669" width="310" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight (kg): " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SM8-rw-qmn">
                                                 <rect key="frame" x="0.0" y="0.0" width="97.333333333333329" height="34"/>
@@ -453,9 +469,18 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yg8-W9-YJc">
+                                        <rect key="frame" x="0.0" y="311.66666666666669" width="310" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQS-Wx-xTT">
-                                        <rect key="frame" x="0.0" y="257.66666666666669" width="310" height="30"/>
+                                        <rect key="frame" x="0.0" y="352" width="310" height="30"/>
                                         <state key="normal" title="Update"/>
+                                        <connections>
+                                            <action selector="updateTapped:" destination="JgX-Ru-2Qi" eventType="touchUpInside" id="pZe-PZ-3rf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -468,6 +493,15 @@
                             <constraint firstItem="LGE-dC-DMC" firstAttribute="trailing" secondItem="4Ea-3K-bSH" secondAttribute="trailing" constant="40" id="rxb-hg-4RS"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Gd1-42-7G7"/>
+                    <connections>
+                        <outlet property="birthday" destination="Q0j-sn-DTF" id="7yG-kA-9YH"/>
+                        <outlet property="error" destination="Yg8-W9-YJc" id="ZCc-7L-5DR"/>
+                        <outlet property="height" destination="Uiw-8Q-iqB" id="peL-1A-cpB"/>
+                        <outlet property="nickname" destination="uAf-bI-DM7" id="Zyc-K5-tdM"/>
+                        <outlet property="password" destination="fdd-5M-OBa" id="XqA-ge-mgO"/>
+                        <outlet property="weight" destination="U3o-AO-5no" id="X4o-uS-bxU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xW2-ZS-VIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -517,6 +551,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02x-w0-hbv">
                                 <rect key="frame" x="20" y="711" width="350" height="30"/>
                                 <state key="normal" title="Change Account Information"/>
+                                <connections>
+                                    <segue destination="JgX-Ru-2Qi" kind="show" id="nEr-Ql-SxX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSV-du-4Ka">
                                 <rect key="frame" x="20" y="661" width="350" height="30"/>
