@@ -13,14 +13,6 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
     
     private var profileImage: String?
     
-//    @IBOutlet var accountTF: UITextField!
-//    @IBOutlet var passwordTF: UITextField!
-//    @IBOutlet var nicknameTF: UITextField!
-//    @IBOutlet var birthdayTF: UITextField!
-//    @IBOutlet var heightTF: UITextField!
-//    @IBOutlet var weightTF: UITextField!
-    
-    @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var nickname: UITextField!
@@ -44,7 +36,6 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         // Hide the error label
         error.alpha = 0
         // Style the elements
-        Utilities.styleTextField(username)
         Utilities.styleTextField(password)
         Utilities.styleTextField(email)
         Utilities.styleTextField(nickname)
@@ -88,8 +79,7 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
     func validateFields() -> String? {
 
         // Check that all fields are filled in
-        if username.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+        if password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || nickname.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             birthday.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || height.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || weight.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             
@@ -124,7 +114,6 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         else
         {
             // Create cleaned versions of the data
-            let username_txt = username.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password_txt = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email_txt = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let nickname_txt = nickname.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -145,7 +134,7 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
                     // User was created successfully, now store the first name and last name
                     let db = Firestore.firestore()
 
-                    db.collection("users").addDocument(data: ["username":username_txt, "email":email_txt, "nickname":nickname_txt, "birthday":birthday_txt, "height":height_txt, "weight":weight_txt, "uid": result!.user.uid ]) { (error) in
+                    db.collection("users").addDocument(data: ["email":email_txt, "nickname":nickname_txt, "birthday":birthday_txt, "height":height_txt, "weight":weight_txt, "uid": result!.user.uid ]) { (error) in
                         
                         if error != nil
                         {
