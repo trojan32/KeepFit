@@ -78,17 +78,17 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
     
     
     @IBAction func retrievePasswordTapped(_ sender: Any) {
-        
+        var err: String? = nil
         if email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            let err = "Please fill the email that you want to retrieve."
+            err = "Please fill the email that you want to retrieve."
         }
         if err != nil
         {
             showError(err!)
         }
-        
-        Auth.auth().sendPasswordReset(withEmail: email) { error in
-            showError(error!.localizedDescription)
+        let email_txt = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        Auth.auth().sendPasswordReset(withEmail: email_txt) { error in
+            self.showError(error?.localizedDescription ?? "check your mail box")
         }
     }
     
