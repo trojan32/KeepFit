@@ -99,10 +99,10 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
     
     @IBAction func createAccountTapped(_ sender: UIBarButtonItem)
     {
-//        personalAccountModel.createNewAccount(account: accountTF.text ?? "", password: passwordTF.text ?? "", nickname: nicknameTF.text ?? "", birthday: birthdayTF.text ?? "", height: heightTF.text ?? "", weight: weightTF.text ?? "", profilePhotoURL: profileImage ?? "")
-        
+
+    
 //        dismiss(animated: true, completion: nil)
-        
+
         // Validate the fields
         let error = validateFields()
         
@@ -133,8 +133,15 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
                 {
                     // User was created successfully, now store the first name and last name
                     let db = Firestore.firestore()
-
-                    db.collection("users").addDocument(data: ["email":email_txt, "nickname":nickname_txt, "birthday":birthday_txt, "height":height_txt, "weight":weight_txt, "uid": result!.user.uid ]) { (error) in
+                    
+                    db.collection("users").document(result!.user.uid).setData([
+                        "email":email_txt,
+                        "nickname":nickname_txt,
+                        "birthday":birthday_txt,
+                        "height":height_txt,
+                        "weight":weight_txt,
+                        "uid": result!.user.uid
+                    ]) { (error) in
                         
                         if error != nil
                         {
