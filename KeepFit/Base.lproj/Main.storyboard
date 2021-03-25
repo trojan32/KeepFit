@@ -203,6 +203,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3X-bu-slF">
                                         <rect key="frame" x="0.0" y="238.66666666666669" width="310" height="30"/>
                                         <state key="normal" title="Forget Your Password?"/>
+                                        <connections>
+                                            <action selector="retrievePasswordTapped:" destination="nFI-1g-gxC" eventType="touchUpInside" id="XRj-UP-cEm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

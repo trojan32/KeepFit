@@ -12,8 +12,6 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
     
     let personalAccountModel = PersonalAccountModel.shared
     
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
@@ -47,13 +45,6 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     @IBAction func loginTapped(_ sender: UIBarButtonItem) {
-//        let loggedIn = personalAccountModel.logIntoAccount(account: accountTF.text ?? "", password: passswordTF.text ?? "")
-//        if loggedIn {
-//            dismiss(animated: true, completion: nil)
-//        } else {
-//            badLogin()
-//        }
-        
         // TODO: Validate Text Fields
         let error = validateFields()
         
@@ -66,7 +57,6 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
             // Create cleaned versions of the text field
             let email_txt = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password_txt = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            
             // Signing in the user
             Auth.auth().signIn(withEmail: email_txt, password: password_txt) { (result, err) in
                 if err != nil {
@@ -75,48 +65,32 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
                     self.error.alpha = 1
                 }
                 else {
-                    
-//                    let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
-//
-//                    self.view.window?.rootViewController = homeViewController
-//                    self.view.window?.makeKeyAndVisible()
-//                    let currentUser = Auth.auth().currentUser
                     if let user = Auth.auth().currentUser{
                         let uid = user.uid
                         let email = user.email
                         print(email)
                     }
-                    self.dismiss(animated: true, completion: nil)                    //  let currentUID = currentUser?.uid as! String
-//                    users.child(currentUID).observeSingleEvent(of: .value, with: { (snapshot) in
-//                    // Get user snapshot (dictionary)
-//                    let userSnapshot = snapshot.value as? NSDictionary
-//                    // get nickname
-//                    let nickname = userSnapshot?["nickname"] as? String ?? ""
-//                    // set label to nickname
-//                        print("Hello \(nickname)")
-//                    }) { (error) in print(error.localizedDescription)
-//                      // set full name to empty string
-//                    }
+                    self.dismiss(animated: true, completion: nil)
                 }
             }
         }
     }
     
-    func badLogin() {
-        // Implement badLogin below
+    
+    @IBAction func retrievePasswordTapped(_ sender: Any) {
         
-        // Implement badLogin above
-        return
+        if email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            let err = "Please fill the email that you want to retrieve."
+        }
+        if err != nil
+        {
+            showError(err!)
+        }
+        
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            showError(error!.localizedDescription)
+        }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
