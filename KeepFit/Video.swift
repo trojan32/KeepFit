@@ -13,7 +13,7 @@ class Video
     var link: String?
     
     init(title: String?, link: String?) {
-        self.title = title;
-        self.link = link;
+        self.title = title
+        self.link = link
     }
 }

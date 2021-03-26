@@ -8,13 +8,11 @@
 import Foundation
 
 class UserSnapshot {
-    internal init(nickname: String, zoomlink: String) {
+    var nickname: String?
+    var zoomlink: String?
+    
+    init(nickname: String?, zoomlink: String?) {
         self.nickname = nickname
         self.zoomlink = zoomlink
     }
-    
-    public var nickname: String;
-    public var zoomlink: String;
-    
-    
 }

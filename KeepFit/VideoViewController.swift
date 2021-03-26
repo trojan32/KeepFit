@@ -82,16 +82,33 @@ class VideoViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let videoURL = URL(string: videos[indexPath.row].link!) else {
-            return
+        if searching
+        {
+            guard let videoURL = URL(string: searchVideos[indexPath.row].link!) else {
+                return
+            }
+            
+            let player = AVPlayer(url: videoURL)
+            let controller = AVPlayerViewController()
+            controller.player = player
+            
+            present(controller, animated: true) {
+                player.play()
+            }
         }
-        
-        let player = AVPlayer(url: videoURL)
-        let controller = AVPlayerViewController()
-        controller.player = player
-        
-        present(controller, animated: true) {
-            player.play()
+        else
+        {
+            guard let videoURL = URL(string: videos[indexPath.row].link!) else {
+                return
+            }
+            
+            let player = AVPlayer(url: videoURL)
+            let controller = AVPlayerViewController()
+            controller.player = player
+            
+            present(controller, animated: true) {
+                player.play()
+            }
         }
     }
     

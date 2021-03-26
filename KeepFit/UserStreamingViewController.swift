@@ -19,7 +19,7 @@ class UserStreamingViewController: UIViewController {
         guard let selectedProfile = StreamPageTableViewController.selectedProfile else {
             return
         }
-        
+
         nickNameTF.text = selectedProfile.nickname
         linkTF.text = selectedProfile.zoomLink
         
