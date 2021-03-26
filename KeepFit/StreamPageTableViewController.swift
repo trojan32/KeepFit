@@ -6,26 +6,31 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class StreamPageTableViewController: UITableViewController, UISearchResultsUpdating {
     
     static public var selectedProfile: UserProfile? = nil
     let userProfileModel = UserProfileModel.shared
     private var typed_text: String = ""
-    private var searchedUserProfiles: Array<UserProfile> = UserProfileModel.shared.searchForZoomRooms(search_text: "")
+    private var searchedUserSnapshot: Array<UserSnapshot> = Array<UserSnapshot>()
+    
+    static let db = Firestore.firestore()
+    static let userRef = db.collection("users")
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        
         userProfileModel.render()
         updateView(text: "")
+        
+        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        
-
         
         // Cite: https://www.hackingwithswift.com/example-code/uikit/how-to-use-uisearchcontroller-to-let-users-enter-search-words
         let search = UISearchController(searchResultsController: nil)
@@ -52,7 +57,7 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return searchedUserProfiles.count
+        return searchedUserSnapshot.count
     }
 
     
@@ -63,7 +68,24 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
     }
     
     func updateView(text: String) {
-        searchedUserProfiles = userProfileModel.searchForZoomRooms(search_text: text)
+        let query = StreamPageTableViewController.userRef.whereField("nickname", isEqualTo: text)
+        
+        
+        query.getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    
+                    
+                    for document in querySnapshot!.documents {
+                        let dataDescription = document.data()
+        //                print("Document data: \(dataDescription)")
+                        
+                        self.searchedUserSnapshot.append(UserSnapshot(nickname: dataDescription["nickname"] as? String ?? "", zoomlink: dataDescription["nickname"] as? String ?? ""))
+                        
+                    }
+                }
+        }
         
         tableView.reloadData()
         
@@ -83,8 +105,8 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
         }
         
         // Configure the cell...
-        let nickname = searchedUserProfiles[indexPath.row].nickname
-        let zoomLink = searchedUserProfiles[indexPath.row].zoomLink
+        let nickname = searchedUserSnapshot[indexPath.row].nickname
+        let zoomLink = searchedUserSnapshot[indexPath.row].zoomlink
 
         label.text = nickname
         subtitle.text = zoomLink
@@ -99,7 +121,7 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
         tableView.deselectRow(at: indexPath, animated: false)
         
         
-        StreamPageTableViewController.selectedProfile = searchedUserProfiles[indexPath.row]
+//        StreamPageTableViewController.selectedProfile = searchedUserSnapshot[indexPath.row]
     }
 
 

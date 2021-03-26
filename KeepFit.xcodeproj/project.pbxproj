@@ -51,6 +51,9 @@
 		1C81D448260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */; };
 		1C81D449260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */; };
 		1C81D44A260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */; };
+		1C96D154260DBBD300188AF8 /* UserSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C96D153260DBBD300188AF8 /* UserSnapshot.swift */; };
+		1C96D155260DBBD300188AF8 /* UserSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C96D153260DBBD300188AF8 /* UserSnapshot.swift */; };
+		1C96D156260DBBD300188AF8 /* UserSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C96D153260DBBD300188AF8 /* UserSnapshot.swift */; };
 		1CBC169A2609DE6E002962EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CBC16992609DE6E002962EF /* GoogleService-Info.plist */; };
 		1CBFFCE02605E067000D2AB1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1C94BBE526049385000927AD /* Realm */; };
 		1CBFFCE12605E067000D2AB1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1C94BBEA26049395000927AD /* RealmSwift */; };
@@ -109,6 +112,7 @@
 		1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccountModel.swift; sourceTree = "<group>"; };
 		1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewController.swift; sourceTree = "<group>"; };
+		1C96D153260DBBD300188AF8 /* UserSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSnapshot.swift; sourceTree = "<group>"; };
 		1CBC16992609DE6E002962EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStreamingViewController.swift; sourceTree = "<group>"; };
 		3E4DEDEA396C7DD64A7BA469 /* Pods-KeepFitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepFitTests.release.xcconfig"; path = "Target Support Files/Pods-KeepFitTests/Pods-KeepFitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 				1C55445C25FDFD6D00DA46BD /* UserProfile.swift */,
 				1C55446325FDFD7500DA46BD /* UserProfileModel.swift */,
 				1C55447A25FE016C00DA46BD /* RealmModel.swift */,
+				1C96D153260DBBD300188AF8 /* UserSnapshot.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -548,6 +553,7 @@
 				1C55446425FDFD7500DA46BD /* UserProfileModel.swift in Sources */,
 				1C6186D925FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */,
 				1C55444325FDD8A900DA46BD /* LoginViewController.swift in Sources */,
+				1C96D154260DBBD300188AF8 /* UserSnapshot.swift in Sources */,
 				1C6F66D725FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
 				50FEE379260C76BE00BAEE3D /* ProfileEditViewController.swift in Sources */,
 				0A8388BC25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */,
@@ -564,6 +570,7 @@
 			files = (
 				1C55444425FDD8A900DA46BD /* LoginViewController.swift in Sources */,
 				1CBFFCE42605E211000D2AB1 /* MyStreamingViewController.swift in Sources */,
+				1C96D155260DBBD300188AF8 /* UserSnapshot.swift in Sources */,
 				1C55446525FDFD7500DA46BD /* UserProfileModel.swift in Sources */,
 				1C5F2A9B2605F76300E899AC /* UserStreamingViewController.swift in Sources */,
 				1C6F66D825FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
@@ -586,6 +593,7 @@
 				1C55446625FDFD7500DA46BD /* UserProfileModel.swift in Sources */,
 				1CBFFCE52605E211000D2AB1 /* MyStreamingViewController.swift in Sources */,
 				1C6F66D925FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
+				1C96D156260DBBD300188AF8 /* UserSnapshot.swift in Sources */,
 				1C6F66C425FC85AA0085F2C2 /* PersonalAccount.swift in Sources */,
 				1C6F668325FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				0A8388BE25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */,
