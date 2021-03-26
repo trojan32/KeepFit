@@ -14,9 +14,6 @@ class WorkoutNowViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-
         self.workoutTableView.delegate = self
         self.workoutTableView.dataSource = self
     }
@@ -42,21 +39,6 @@ class WorkoutNowViewController: UIViewController, UITableViewDelegate, UITableVi
 
         return cell
     }
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 1
-//    }
-////
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        return UITableViewCell()
-//    }
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//            // cell selected code here
-//        }
-    
-    
-
-
-  
 
     /*
     // MARK: - Navigation
