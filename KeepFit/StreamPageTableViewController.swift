@@ -11,7 +11,6 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
     
     static public var selectedProfile: UserProfile? = nil
     let userProfileModel = UserProfileModel.shared
-    
     private var typed_text: String = ""
     private var searchedUserProfiles: Array<UserProfile> = UserProfileModel.shared.searchForZoomRooms(search_text: "")
     
@@ -23,6 +22,11 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        
+
+        
         // Cite: https://www.hackingwithswift.com/example-code/uikit/how-to-use-uisearchcontroller-to-let-users-enter-search-words
         let search = UISearchController(searchResultsController: nil)
         search.searchResultsUpdater = self
@@ -30,7 +34,7 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
         search.searchBar.placeholder = "Type something here to search"
         navigationItem.searchController = search
         
-    
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
