@@ -94,6 +94,14 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
             return "Please make sure your password is at least 8 characters, contains a special character and a number."
         }
         
+        guard let heighttest = Int(height.text!) else {
+            return "Please fill in a number for height."
+        }
+        
+        guard let weighttest = Int(weight.text!) else {
+            return "Please fill in a number for weight."
+        }
+        
         return nil
     }
     
