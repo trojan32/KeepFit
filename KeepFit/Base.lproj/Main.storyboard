@@ -879,7 +879,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0AT-fF-lCR">
-                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
+                                <rect key="frame" x="0.0" y="144" width="390" height="617"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCell" id="rby-Nw-cOb" customClass="VideoTableViewCell" customModule="KeepFit" customModuleProvider="target">
@@ -912,24 +912,35 @@
                                     <outlet property="delegate" destination="VUy-q6-PNP" id="Sak-98-Arb"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cnt-94-RyX">
+                                <rect key="frame" x="0.0" y="88" width="390" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="VUy-q6-PNP" id="jTa-Dm-SoM"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0cd-CR-mo3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0AT-fF-lCR" firstAttribute="leading" secondItem="0cd-CR-mo3" secondAttribute="leading" id="8mR-Cy-kw2"/>
-                            <constraint firstItem="0cd-CR-mo3" firstAttribute="trailing" secondItem="0AT-fF-lCR" secondAttribute="trailing" id="CEj-Ig-Wpd"/>
-                            <constraint firstItem="0cd-CR-mo3" firstAttribute="bottom" secondItem="0AT-fF-lCR" secondAttribute="bottom" id="UjN-Ry-VTT"/>
-                            <constraint firstItem="0AT-fF-lCR" firstAttribute="top" secondItem="0cd-CR-mo3" secondAttribute="top" id="gE8-G9-Yee"/>
+                            <constraint firstItem="0AT-fF-lCR" firstAttribute="leading" secondItem="0cd-CR-mo3" secondAttribute="leading" id="6px-VO-2rO"/>
+                            <constraint firstItem="0AT-fF-lCR" firstAttribute="top" secondItem="Cnt-94-RyX" secondAttribute="bottom" id="NMl-sR-KKX"/>
+                            <constraint firstItem="0AT-fF-lCR" firstAttribute="bottom" secondItem="0cd-CR-mo3" secondAttribute="bottom" id="Rn8-fJ-Hhg"/>
+                            <constraint firstItem="Cnt-94-RyX" firstAttribute="top" secondItem="0cd-CR-mo3" secondAttribute="top" id="YK9-lV-hgq"/>
+                            <constraint firstItem="0AT-fF-lCR" firstAttribute="trailing" secondItem="0cd-CR-mo3" secondAttribute="trailing" id="e6B-1g-e0U"/>
+                            <constraint firstAttribute="trailing" secondItem="Cnt-94-RyX" secondAttribute="trailing" id="ipW-dl-Rqe"/>
+                            <constraint firstItem="Cnt-94-RyX" firstAttribute="leading" secondItem="0cd-CR-mo3" secondAttribute="leading" id="uDS-LZ-bVU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jek-rS-N4k"/>
                     <connections>
+                        <outlet property="searchBar" destination="Cnt-94-RyX" id="j2i-2Y-vZX"/>
                         <outlet property="tableView" destination="0AT-fF-lCR" id="6XW-pL-G3n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xX0-8v-EpH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="900" y="2768"/>
+            <point key="canvasLocation" x="900" y="2767.5355450236966"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

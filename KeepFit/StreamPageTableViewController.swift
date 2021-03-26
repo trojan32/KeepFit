@@ -76,8 +76,6 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
-                    
-                    
                     for document in querySnapshot!.documents {
                         let dataDescription = document.data()
         //                print("Document data: \(dataDescription)")

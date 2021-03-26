@@ -10,17 +10,26 @@ import Foundation
 import Firebase
 import AVKit
 
-class VideoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class VideoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     var videos = [Video]()
     let db = Firestore.firestore()
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var searchVideos = [Video]()
+    var searching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadVideos()
+        // Do any additional setup after loading the view.
+    }
+    
+    func loadVideos()
+    {
         let videosRef = db.collection("videos")
-        
         videosRef.getDocuments { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -30,34 +39,45 @@ class VideoViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     if !actualquery.isEmpty
                     {
                         self.videos.removeAll()
-                        
                         for document in querySnapshot!.documents {
                             let videoObj = document.data() as? [String: AnyObject]
                             let title = videoObj?["title"]
                             let link = videoObj?["link"]
-                            
                             let video = Video(title: title as!String, link: link as! String)
-                            
                             self.videos.append(video)
-                            
-                            self.tableView.reloadData()
                         }
+                        self.tableView.reloadData()
                     }
                 }
             }
         }
-        // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return videos.count
+        if searching
+        {
+            return searchVideos.count
+        }
+        else
+        {
+             return videos.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "videoCell") as! VideoTableViewCell
-        let video: Video
-        video = videos[indexPath.row]
-        cell.titleLabel.text = video.title
+        if searching
+        {
+            let video: Video
+            video = searchVideos[indexPath.row]
+            cell.titleLabel.text = video.title
+        }
+        else
+        {
+            let video: Video
+            video = videos[indexPath.row]
+            cell.titleLabel.text = video.title
+        }
         return cell
     }
     
@@ -73,6 +93,30 @@ class VideoViewController: UIViewController, UITableViewDelegate, UITableViewDat
         present(controller, animated: true) {
             player.play()
         }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchVideos.removeAll()
+        for video:Video in videos
+        {
+            if let t = video.title
+            {
+                if t.lowercased().contains(searchText.lowercased())
+                {
+                    searchVideos.append(video)
+                }
+            }
+        }
+        searching = true
+        tableView.reloadData()
+        
+//        searchVideos = videos.filter($0.title.prefix(searchText.count))
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        searchBar.text = ""
+        tableView.reloadData()
     }
     
 
