@@ -30,12 +30,6 @@ class ProfilePageViewController: UIViewController {
           // No user is signed in.
             performSegue(withIdentifier: "loginSegue", sender: self)
         }
-//        if !personalAccountModel.loggedIn {
-//            performSegue(withIdentifier: "loginSegue", sender: self)
-//        } else {
-//            print("user logged in")
-//            loadAccountInfo()
-//        }
     }
     
     override func viewDidLoad() {
@@ -93,7 +87,6 @@ class ProfilePageViewController: UIViewController {
     
     @IBAction func logOut(_ sender: UIButton)
     {
-//        let _ = personalAccountModel.logOutOfAccount()
       do{
         try Auth.auth().signOut()
       } catch let error {

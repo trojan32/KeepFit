@@ -24,8 +24,6 @@ class ProfileEditViewController: UIViewController {
         super.viewDidLoad()
         hideError()
         loadAccountInfo()
-
-        // Do any additional setup after loading the view.
     }
     
     func loadAccountInfo() {
@@ -96,51 +94,37 @@ class ProfileEditViewController: UIViewController {
                         print("Document successfully updated")
                     }
                 }
-                
                 if password_txt != "" {
                     Auth.auth().currentUser?.updatePassword(to: password_txt) { (error) in
                         
                     }
                 }
-                
                 self.showError("Update Success")
-                
-            
-                
-                
             }
         }
-        
-        
     }
     
     func validateFields() -> String? {
-
         // Check that all fields are filled in
         if nickname.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             birthday.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || height.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || weight.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            
             return "Please fill in all fields except password."
         }
-        
         return nil
     }
     
     func validatePassword() -> Bool? {
         // Check that all fields are filled in
         if password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            
             return true
         }
         
         // Check if the password is secure
         let cleanedPassword = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
         return Utilities.isPasswordValid(cleanedPassword)
     }
     
     func showError(_ message:String) {
-        
         error.text = message
         error.alpha = 1
     }
@@ -150,9 +134,6 @@ class ProfileEditViewController: UIViewController {
         error.alpha = 0
     }
     
-    
-    
-
     /*
     // MARK: - Navigation
 
