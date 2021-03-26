@@ -70,6 +70,7 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
     func updateView(text: String) {
         let query = StreamPageTableViewController.userRef.whereField("nickname", isEqualTo: text)
         
+        self.searchedUserSnapshot.removeAll()
         
         query.getDocuments() { (querySnapshot, err) in
                 if let err = err {
@@ -82,12 +83,10 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
         //                print("Document data: \(dataDescription)")
                         
                         self.searchedUserSnapshot.append(UserSnapshot(nickname: dataDescription["nickname"] as? String ?? "", zoomlink: dataDescription["nickname"] as? String ?? ""))
-                        
                     }
+                    self.tableView.reloadData()
                 }
         }
-        
-        tableView.reloadData()
         
         print("User entered \(text)")
     }

@@ -1,0 +1,89 @@
+//
+//  VideoViewController.swift
+//  KeepFit
+//
+//  Created by Albert on 2021/3/26.
+//
+
+import UIKit
+import Foundation
+import Firebase
+import AVKit
+
+class VideoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var videos = [Video]()
+    let db = Firestore.firestore()
+
+    @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let videosRef = db.collection("videos")
+        
+        videosRef.getDocuments { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                if let actualquery = querySnapshot
+                {
+                    if !actualquery.isEmpty
+                    {
+                        self.videos.removeAll()
+                        
+                        for document in querySnapshot!.documents {
+                            let videoObj = document.data() as? [String: AnyObject]
+                            let title = videoObj?["title"]
+                            let link = videoObj?["link"]
+                            
+                            let video = Video(title: title as!String, link: link as! String)
+                            
+                            self.videos.append(video)
+                            
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            }
+        }
+        // Do any additional setup after loading the view.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return videos.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "videoCell") as! VideoTableViewCell
+        let video: Video
+        video = videos[indexPath.row]
+        cell.titleLabel.text = video.title
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let videoURL = URL(string: videos[indexPath.row].link!) else {
+            return
+        }
+        
+        let player = AVPlayer(url: videoURL)
+        let controller = AVPlayerViewController()
+        controller.player = player
+        
+        present(controller, animated: true) {
+            player.play()
+        }
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

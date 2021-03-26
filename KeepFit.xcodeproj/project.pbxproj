@@ -61,6 +61,9 @@
 		1CBFFCE42605E211000D2AB1 /* MyStreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */; };
 		1CBFFCE52605E211000D2AB1 /* MyStreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */; };
 		503FA62A2609C7DA00CAD1AF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FA6292609C7DA00CAD1AF /* Utilities.swift */; };
+		5073E2C5260DD68400266674 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5073E2C4260DD68400266674 /* VideoViewController.swift */; };
+		5073E2D3260DDD5C00266674 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5073E2D2260DDD5C00266674 /* VideoTableViewCell.swift */; };
+		5073E2D8260DDE6D00266674 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5073E2D7260DDE6D00266674 /* Video.swift */; };
 		50FEE379260C76BE00BAEE3D /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FEE378260C76BE00BAEE3D /* ProfileEditViewController.swift */; };
 		57CFC6E56CF9FA0647782CFE /* Pods_KeepFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AF4A8C3720313782E5C6C0 /* Pods_KeepFit.framework */; };
 		7118F1EF2B7D2BC11EEEC679 /* Pods_KeepFitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4AF81D650C1E0674BA462A /* Pods_KeepFitTests.framework */; };
@@ -117,6 +120,9 @@
 		1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStreamingViewController.swift; sourceTree = "<group>"; };
 		3E4DEDEA396C7DD64A7BA469 /* Pods-KeepFitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepFitTests.release.xcconfig"; path = "Target Support Files/Pods-KeepFitTests/Pods-KeepFitTests.release.xcconfig"; sourceTree = "<group>"; };
 		503FA6292609C7DA00CAD1AF /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		5073E2C4260DD68400266674 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		5073E2D2260DDD5C00266674 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		5073E2D7260DDE6D00266674 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		50FEE378260C76BE00BAEE3D /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		7B4AF81D650C1E0674BA462A /* Pods_KeepFitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeepFitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8687D5FE1358F13817D6BB18 /* Pods-KeepFitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepFitTests.debug.xcconfig"; path = "Target Support Files/Pods-KeepFitTests/Pods-KeepFitTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -230,6 +236,7 @@
 				1C55446325FDFD7500DA46BD /* UserProfileModel.swift */,
 				1C55447A25FE016C00DA46BD /* RealmModel.swift */,
 				1C96D153260DBBD300188AF8 /* UserSnapshot.swift */,
+				5073E2D7260DDE6D00266674 /* Video.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -247,6 +254,8 @@
 				1C5F2A992605F76300E899AC /* UserStreamingViewController.swift */,
 				1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */,
 				50FEE378260C76BE00BAEE3D /* ProfileEditViewController.swift */,
+				5073E2C4260DD68400266674 /* VideoViewController.swift */,
+				5073E2D2260DDD5C00266674 /* VideoTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -548,9 +557,11 @@
 				1C6F668125FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				1C3D489D25E38BDA004D7AB1 /* AppDelegate.swift in Sources */,
 				1C3D489F25E38BDA004D7AB1 /* SceneDelegate.swift in Sources */,
+				5073E2C5260DD68400266674 /* VideoViewController.swift in Sources */,
 				1C5F2A9A2605F76300E899AC /* UserStreamingViewController.swift in Sources */,
 				503FA62A2609C7DA00CAD1AF /* Utilities.swift in Sources */,
 				1C55446425FDFD7500DA46BD /* UserProfileModel.swift in Sources */,
+				5073E2D3260DDD5C00266674 /* VideoTableViewCell.swift in Sources */,
 				1C6186D925FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */,
 				1C55444325FDD8A900DA46BD /* LoginViewController.swift in Sources */,
 				1C96D154260DBBD300188AF8 /* UserSnapshot.swift in Sources */,
@@ -560,6 +571,7 @@
 				1C81D448260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */,
 				1C6F66CC25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */,
 				1C55445D25FDFD6D00DA46BD /* UserProfile.swift in Sources */,
+				5073E2D8260DDE6D00266674 /* Video.swift in Sources */,
 				1C55447B25FE016C00DA46BD /* RealmModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -765,13 +777,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DDF2RRVJ39;
+				DEVELOPMENT_TEAM = 6PA5M9P885;
 				INFOPLIST_FILE = KeepFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KeepFit;
+				PRODUCT_BUNDLE_IDENTIFIER = KeepFit1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -785,13 +797,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DDF2RRVJ39;
+				DEVELOPMENT_TEAM = 6PA5M9P885;
 				INFOPLIST_FILE = KeepFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KeepFit;
+				PRODUCT_BUNDLE_IDENTIFIER = KeepFit1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

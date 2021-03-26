@@ -20,10 +20,14 @@ target 'KeepFit' do
   pod 'Firebase/Analytics'
   # add pods for any other desired Firebase products
   # https://firebase.google.com/docs/ios/setup#available-pods
-  
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   # Optionally, include the Swift extensions if you're using Swift.
   pod 'FirebaseFirestoreSwift'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Database'
+
 
 end
