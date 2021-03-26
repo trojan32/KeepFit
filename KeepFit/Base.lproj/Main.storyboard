@@ -627,7 +627,7 @@
         <!--Workout Together-->
         <scene sceneID="3ot-2Y-3fr">
             <objects>
-                <tableViewController id="LrE-cf-8cN" customClass="workoutTo" sceneMemberID="viewController">
+                <tableViewController id="LrE-cf-8cN" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Workout Together" id="ciW-8h-4Ik">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZNe-UH-yKT">
                             <connections>
