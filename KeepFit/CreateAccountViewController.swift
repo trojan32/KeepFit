@@ -148,7 +148,8 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
                         "birthday":birthday_txt,
                         "height":height_txt,
                         "weight":weight_txt,
-                        "uid": result!.user.uid
+                        "uid": result!.user.uid,
+                        "zoomlink": ""
                     ]) { (error) in
                         
                         if error != nil
