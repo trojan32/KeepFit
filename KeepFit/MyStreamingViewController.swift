@@ -40,8 +40,9 @@ class MyStreamingViewController: UIViewController {
         let currentUID = currentUser?.uid as! String
         let userRef = db.collection("users").document(currentUID)
         
+        
         userRef.updateData([
-            "zoomlink": zoomLinkTF,
+            "zoomlink": zoomLinkTF.text,
         ]) { err in
             if let err = err {
                 print("Error updating document: \(err)")
