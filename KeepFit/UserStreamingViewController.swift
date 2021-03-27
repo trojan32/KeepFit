@@ -16,12 +16,12 @@ class UserStreamingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let selectedProfile = StreamPageTableViewController.selectedProfile else {
+        guard let selectedProfile = StreamPageTableViewController.selectedUser else {
             return
         }
 
         nickNameTF.text = selectedProfile.nickname
-        linkTF.text = selectedProfile.zoomLink
+        linkTF.text = selectedProfile.zoomlink
         
 
         // Do any additional setup after loading the view.

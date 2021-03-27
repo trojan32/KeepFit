@@ -11,7 +11,7 @@ import Firebase
 
 class StreamPageTableViewController: UITableViewController, UISearchResultsUpdating {
     
-    static public var selectedProfile: UserProfile? = nil
+    static public var selectedUser: UserSnapshot? = nil
 //    let userProfileModel = UserProfileModel.shared
     private var typed_text: String = ""
 //    private var searchedUserSnapshot: Array<UserSnapshot> = Array<UserSnapshot>()
@@ -20,7 +20,7 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
     
     let db = Firestore.firestore()
     var users = [UserSnapshot]()
-    var searchUsers = [UserSnapshot]()
+    public static var searchUsers = [UserSnapshot]()
     var searching = false
     
     override func viewDidAppear(_ animated: Bool) {
@@ -56,7 +56,7 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searching
         {
-            return searchUsers.count
+            return StreamPageTableViewController.searchUsers.count
         }
         else
         {
@@ -78,14 +78,14 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
     }
     
     func updateView(text: String) {
-        searchUsers.removeAll()
+        StreamPageTableViewController.searchUsers.removeAll()
         for user:UserSnapshot in users
         {
             if let nickname = user.nickname
             {
                 if nickname.lowercased().contains(text.lowercased())
                 {
-                    searchUsers.append(user)
+                    StreamPageTableViewController.searchUsers.append(user)
                 }
             }
         }
@@ -113,24 +113,29 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
     
     func loadUsers()
     {
-        let usersRef = db.collection("users")
-        usersRef.getDocuments { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                if let actualquery = querySnapshot
-                {
-                    if !actualquery.isEmpty
+        let serialQueue = DispatchQueue(label: "com.test.mySerialQueue")
+        serialQueue.sync {
+            // code
+        
+            let usersRef = db.collection("users")
+            usersRef.getDocuments { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    if let actualquery = querySnapshot
                     {
-                        self.users.removeAll()
-                        for document in querySnapshot!.documents {
-                            let userObj = document.data() as? [String: AnyObject]
-                            let nickname = userObj?["nickname"]
-                            let zoomlink = userObj?["zoomlink"]
-                            let user = UserSnapshot(nickname: nickname as!String, zoomlink: zoomlink as! String)
-                            self.users.append(user)
+                        if !actualquery.isEmpty
+                        {
+                            self.users.removeAll()
+                            for document in querySnapshot!.documents {
+                                let userObj = document.data() as? [String: AnyObject]
+                                let nickname = userObj?["nickname"]
+                                let zoomlink = userObj?["zoomlink"]
+                                let user = UserSnapshot(nickname: nickname as!String, zoomlink: zoomlink as! String)
+                                self.users.append(user)
+                            }
+                            self.tableView.reloadData()
                         }
-                        self.tableView.reloadData()
                     }
                 }
             }
@@ -149,7 +154,7 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
         if searching
         {
             let user: UserSnapshot
-            user = searchUsers[indexPath.row]
+            user = StreamPageTableViewController.searchUsers[indexPath.row]
             label.text = user.nickname
             subtitle.text = user.zoomlink
         }
@@ -175,6 +180,7 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Unselect the row.
         tableView.deselectRow(at: indexPath, animated: false)
-//        StreamPageTableViewController.selectedProfile = searchedUserSnapshot[indexPath.row]
+        print(StreamPageTableViewController.searchUsers)
+        StreamPageTableViewController.selectedUser = StreamPageTableViewController.searchUsers[indexPath.row]
     }
 }

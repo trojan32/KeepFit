@@ -6,11 +6,18 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class MyStreamingViewController: UIViewController {
     
     let profileModel = UserProfileModel.shared
     let personalAccountModel = PersonalAccountModel.shared
+    
+    
+    let db = Firestore.firestore()
+    
+    
     
     @IBOutlet var zoomLinkTF: UITextField!
     
@@ -29,6 +36,21 @@ class MyStreamingViewController: UIViewController {
     
     @IBAction func zoomLinkModified(_ sender: UITextField) {
         personalAccountModel.EditZoomLink(link: sender.text ?? "")
+        let currentUser = Auth.auth().currentUser
+        let currentUID = currentUser?.uid as! String
+        let userRef = db.collection("users").document(currentUID)
+        
+        userRef.updateData([
+            "zoomlink": zoomLinkTF,
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
+
+        
     }
     
 
