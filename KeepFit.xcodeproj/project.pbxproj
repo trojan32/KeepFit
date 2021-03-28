@@ -8,57 +8,48 @@
 
 /* Begin PBXBuildFile section */
 		0A8388BC25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8388BB25FF09D600276C7C /* WorkoutNowViewController.swift */; };
-		0A8388BD25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8388BB25FF09D600276C7C /* WorkoutNowViewController.swift */; };
 		0A8388BE25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8388BB25FF09D600276C7C /* WorkoutNowViewController.swift */; };
+		1C0B705826108121004DD682 /* UserSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C96D153260DBBD300188AF8 /* UserSnapshot.swift */; };
+		1C0B705926108121004DD682 /* KeepFitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D48B325E38BDB004D7AB1 /* KeepFitTests.swift */; };
+		1C0B705A26108121004DD682 /* KeepFitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D48BE25E38BDB004D7AB1 /* KeepFitUITests.swift */; };
+		1C0B706226108143004DD682 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FA6292609C7DA00CAD1AF /* Utilities.swift */; };
+		1C0B706626108178004DD682 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FA6292609C7DA00CAD1AF /* Utilities.swift */; };
 		1C3D489D25E38BDA004D7AB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D489C25E38BDA004D7AB1 /* AppDelegate.swift */; };
 		1C3D489F25E38BDA004D7AB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D489E25E38BDA004D7AB1 /* SceneDelegate.swift */; };
 		1C3D48A425E38BDA004D7AB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D48A225E38BDA004D7AB1 /* Main.storyboard */; };
 		1C3D48A625E38BDB004D7AB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D48A525E38BDB004D7AB1 /* Assets.xcassets */; };
 		1C3D48A925E38BDB004D7AB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D48A725E38BDB004D7AB1 /* LaunchScreen.storyboard */; };
-		1C3D48B425E38BDB004D7AB1 /* KeepFitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D48B325E38BDB004D7AB1 /* KeepFitTests.swift */; };
 		1C3D48BF25E38BDB004D7AB1 /* KeepFitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D48BE25E38BDB004D7AB1 /* KeepFitUITests.swift */; };
 		1C55444325FDD8A900DA46BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55444225FDD8A900DA46BD /* LoginViewController.swift */; };
-		1C55444425FDD8A900DA46BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55444225FDD8A900DA46BD /* LoginViewController.swift */; };
 		1C55444525FDD8A900DA46BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55444225FDD8A900DA46BD /* LoginViewController.swift */; };
 		1C55445D25FDFD6D00DA46BD /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55445C25FDFD6D00DA46BD /* UserProfile.swift */; };
-		1C55445E25FDFD6D00DA46BD /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55445C25FDFD6D00DA46BD /* UserProfile.swift */; };
 		1C55445F25FDFD6D00DA46BD /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55445C25FDFD6D00DA46BD /* UserProfile.swift */; };
 		1C55446425FDFD7500DA46BD /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55446325FDFD7500DA46BD /* UserProfileModel.swift */; };
-		1C55446525FDFD7500DA46BD /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55446325FDFD7500DA46BD /* UserProfileModel.swift */; };
 		1C55446625FDFD7500DA46BD /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55446325FDFD7500DA46BD /* UserProfileModel.swift */; };
 		1C55447B25FE016C00DA46BD /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55447A25FE016C00DA46BD /* RealmModel.swift */; };
 		1C55447D25FE016C00DA46BD /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55447A25FE016C00DA46BD /* RealmModel.swift */; };
 		1C5F2A9A2605F76300E899AC /* UserStreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F2A992605F76300E899AC /* UserStreamingViewController.swift */; };
-		1C5F2A9B2605F76300E899AC /* UserStreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F2A992605F76300E899AC /* UserStreamingViewController.swift */; };
 		1C5F2A9C2605F76300E899AC /* UserStreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F2A992605F76300E899AC /* UserStreamingViewController.swift */; };
 		1C6186D925FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6186D825FF2B6400CCB74E /* StreamPageTableViewController.swift */; };
-		1C6186DA25FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6186D825FF2B6400CCB74E /* StreamPageTableViewController.swift */; };
 		1C6186DB25FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6186D825FF2B6400CCB74E /* StreamPageTableViewController.swift */; };
 		1C6F668125FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */; };
-		1C6F668225FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */; };
 		1C6F668325FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */; };
 		1C6F669525FC7F660085F2C2 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1C6F669425FC7F660085F2C2 /* Realm */; };
 		1C6F669725FC7F660085F2C2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1C6F669625FC7F660085F2C2 /* RealmSwift */; };
 		1C6F66C225FC85AA0085F2C2 /* PersonalAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66C125FC85AA0085F2C2 /* PersonalAccount.swift */; };
-		1C6F66C325FC85AA0085F2C2 /* PersonalAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66C125FC85AA0085F2C2 /* PersonalAccount.swift */; };
 		1C6F66C425FC85AA0085F2C2 /* PersonalAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66C125FC85AA0085F2C2 /* PersonalAccount.swift */; };
 		1C6F66CC25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */; };
-		1C6F66CD25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */; };
 		1C6F66CE25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */; };
 		1C6F66D725FC92860085F2C2 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */; };
-		1C6F66D825FC92860085F2C2 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */; };
 		1C6F66D925FC92860085F2C2 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */; };
 		1C81D448260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */; };
-		1C81D449260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */; };
 		1C81D44A260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C81D447260AFCBA008588E1 /* ExerciseDetailViewController.swift */; };
 		1C96D154260DBBD300188AF8 /* UserSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C96D153260DBBD300188AF8 /* UserSnapshot.swift */; };
-		1C96D155260DBBD300188AF8 /* UserSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C96D153260DBBD300188AF8 /* UserSnapshot.swift */; };
 		1C96D156260DBBD300188AF8 /* UserSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C96D153260DBBD300188AF8 /* UserSnapshot.swift */; };
 		1CBC169A2609DE6E002962EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CBC16992609DE6E002962EF /* GoogleService-Info.plist */; };
 		1CBFFCE02605E067000D2AB1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1C94BBE526049385000927AD /* Realm */; };
 		1CBFFCE12605E067000D2AB1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1C94BBEA26049395000927AD /* RealmSwift */; };
 		1CBFFCE32605E211000D2AB1 /* MyStreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */; };
-		1CBFFCE42605E211000D2AB1 /* MyStreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */; };
 		1CBFFCE52605E211000D2AB1 /* MyStreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */; };
 		503FA62A2609C7DA00CAD1AF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FA6292609C7DA00CAD1AF /* Utilities.swift */; };
 		5073E2C5260DD68400266674 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5073E2C4260DD68400266674 /* VideoViewController.swift */; };
@@ -588,20 +579,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C55444425FDD8A900DA46BD /* LoginViewController.swift in Sources */,
-				1CBFFCE42605E211000D2AB1 /* MyStreamingViewController.swift in Sources */,
-				1C96D155260DBBD300188AF8 /* UserSnapshot.swift in Sources */,
-				1C55446525FDFD7500DA46BD /* UserProfileModel.swift in Sources */,
-				1C5F2A9B2605F76300E899AC /* UserStreamingViewController.swift in Sources */,
-				1C6F66D825FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
-				1C6F66C325FC85AA0085F2C2 /* PersonalAccount.swift in Sources */,
-				1C6F668225FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
-				0A8388BD25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */,
-				1C6186DA25FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */,
-				1C55445E25FDFD6D00DA46BD /* UserProfile.swift in Sources */,
-				1C3D48B425E38BDB004D7AB1 /* KeepFitTests.swift in Sources */,
-				1C6F66CD25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */,
-				1C81D449260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */,
+				1C0B706226108143004DD682 /* Utilities.swift in Sources */,
+				1C0B705826108121004DD682 /* UserSnapshot.swift in Sources */,
+				1C0B705926108121004DD682 /* KeepFitTests.swift in Sources */,
+				1C0B705A26108121004DD682 /* KeepFitUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C0B706626108178004DD682 /* Utilities.swift in Sources */,
 				1C55444525FDD8A900DA46BD /* LoginViewController.swift in Sources */,
 				1C55446625FDFD7500DA46BD /* UserProfileModel.swift in Sources */,
 				1CBFFCE52605E211000D2AB1 /* MyStreamingViewController.swift in Sources */,

@@ -29,5 +29,21 @@ class KeepFitTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testUserSnapshoNilInit() {
+        // Make sure that when User Snapshot is initialized using nil arguments, it won't crash and it will be handled appropriately.
+        
+        let snapshot = UserSnapshot(nickname: nil, zoomlink: nil)
+        XCTAssertNil(snapshot.nickname)
+        XCTAssertNil(snapshot.zoomlink)
+    }
+    
+    func testUserSnapshotEmptyStringInit() {
+        // Make sure that when User Snapshot is initialized using empty string arguments, it won't crash and it will be handled appropriately.
+        
+        let snapshot = UserSnapshot(nickname: "", zoomlink: "")
+        XCTAssertEqual(snapshot.nickname, "")
+        XCTAssertEqual(snapshot.zoomlink, "")
+    }
 
 }
