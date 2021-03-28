@@ -14,6 +14,12 @@
 		1C0B705A26108121004DD682 /* KeepFitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D48BE25E38BDB004D7AB1 /* KeepFitUITests.swift */; };
 		1C0B706226108143004DD682 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FA6292609C7DA00CAD1AF /* Utilities.swift */; };
 		1C0B706626108178004DD682 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FA6292609C7DA00CAD1AF /* Utilities.swift */; };
+		1C0B706A261083DA004DD682 /* PersonalAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66CB25FC88120085F2C2 /* PersonalAccountModel.swift */; };
+		1C0B706B261083DA004DD682 /* PersonalAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F66C125FC85AA0085F2C2 /* PersonalAccount.swift */; };
+		1C0B706F26108421004DD682 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55445C25FDFD6D00DA46BD /* UserProfile.swift */; };
+		1C0B707026108421004DD682 /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55446325FDFD7500DA46BD /* UserProfileModel.swift */; };
+		1C0B707126108421004DD682 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55447A25FE016C00DA46BD /* RealmModel.swift */; };
+		1C0B707226108421004DD682 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5073E2D7260DDE6D00266674 /* Video.swift */; };
 		1C3D489D25E38BDA004D7AB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D489C25E38BDA004D7AB1 /* AppDelegate.swift */; };
 		1C3D489F25E38BDA004D7AB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D489E25E38BDA004D7AB1 /* SceneDelegate.swift */; };
 		1C3D48A425E38BDA004D7AB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D48A225E38BDA004D7AB1 /* Main.storyboard */; };
@@ -340,6 +346,8 @@
 				1C3D48B125E38BDB004D7AB1 /* PBXTargetDependency */,
 			);
 			name = KeepFitTests;
+			packageProductDependencies = (
+			);
 			productName = KeepFitTests;
 			productReference = 1C3D48AF25E38BDB004D7AB1 /* KeepFitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -579,6 +587,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C0B706F26108421004DD682 /* UserProfile.swift in Sources */,
+				1C0B707026108421004DD682 /* UserProfileModel.swift in Sources */,
+				1C0B707126108421004DD682 /* RealmModel.swift in Sources */,
+				1C0B707226108421004DD682 /* Video.swift in Sources */,
+				1C0B706A261083DA004DD682 /* PersonalAccountModel.swift in Sources */,
+				1C0B706B261083DA004DD682 /* PersonalAccount.swift in Sources */,
 				1C0B706226108143004DD682 /* Utilities.swift in Sources */,
 				1C0B705826108121004DD682 /* UserSnapshot.swift in Sources */,
 				1C0B705926108121004DD682 /* KeepFitTests.swift in Sources */,

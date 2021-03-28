@@ -10,12 +10,11 @@
 
 import Foundation
 
-import Realm
-import RealmSwift
 
-class PersonalAccount: Object {
-    convenience init(account: String = "", password: String = "", nickname: String = "", birthday: String = "", height: String = "", weight: String = "", profilePhotoURL: String = "") {
-        self.init()
+
+class PersonalAccount{
+    init(account: String = "", password: String = "", nickname: String = "", birthday: String = "", height: String = "", weight: String = "", profilePhotoURL: String = "") {
+        
         self.account = account
         self.password = password
         self.nickname = nickname

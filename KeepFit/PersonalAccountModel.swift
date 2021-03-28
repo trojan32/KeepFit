@@ -10,7 +10,7 @@ import Foundation
 import Realm
 import RealmSwift
 
-class PersonalAccountModel: NSObject {
+class PersonalAccountModel {
     public var personalAccount: PersonalAccount = PersonalAccount()
     public var loggedIn: Bool = false
     
@@ -22,38 +22,23 @@ class PersonalAccountModel: NSObject {
     static let shared = PersonalAccountModel()
     
     // Initiate MongoDB Realm
-    let realm = RealmModel.shared.localRealm
+//    let realm = RealmModel.shared.localRealm
     
-    override init() {
+    init() {
         // Debugging code for Realm
         let manager = FileManager.default
         let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first
         let filepath = url!.path
         print("filepath=\(filepath)")
         
-        super.init()
         
         
         
-        render()
-    }
-    
-    func render() {
-        let saved_account = realm.objects(PersonalAccount.self)
         
-        for saved in saved_account {
-            personalAccount = saved
-        }
         
     }
     
-    func save() {
-        try! realm.write {
-            realm.delete(realm.objects(PersonalAccount.self))
-            
-            realm.add(personalAccount)
-        }
-    }
+
     
     func EditZoomLink(link: String) {
         
@@ -87,7 +72,7 @@ class PersonalAccountModel: NSObject {
         personalAccount = PersonalAccount(account: targetProfile._id, password: targetProfile._id, nickname: targetProfile.nickname, birthday: targetProfile.birthday, height: targetProfile.height, weight: targetProfile.weight, profilePhotoURL: targetProfile.profilePhotoURL)
         
         
-        save()
+     
         
         
         return true

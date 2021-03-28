@@ -10,6 +10,8 @@ import XCTest
 
 class KeepFitTests: XCTestCase {
 
+
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -44,6 +46,17 @@ class KeepFitTests: XCTestCase {
         let snapshot = UserSnapshot(nickname: "", zoomlink: "")
         XCTAssertEqual(snapshot.nickname, "")
         XCTAssertEqual(snapshot.zoomlink, "")
+    }
+    
+
+    func testSharedPersonalAccountModel() {
+        // Tests the singleton pattern of the personal account model. Wherever change is made to the model, the change will be reflected in every other model in different references.
+        
+        let model1 = PersonalAccountModel.shared
+        let model2 = PersonalAccountModel.shared
+        model1.loggedIn = true
+        XCTAssertEqual(model1.loggedIn, PersonalAccountModel.shared.loggedIn)
+        XCTAssertEqual(model1.loggedIn, model2.loggedIn)
     }
 
 }

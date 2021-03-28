@@ -19,7 +19,7 @@ class RealmModel {
         () -> Realm in
         var config = Realm.Configuration()
         config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("localRealm.realm")
-        config.objectTypes = [PersonalAccount.self]
+        config.objectTypes = []
         let land = try! Realm(configuration: config)
         return land
 }()
