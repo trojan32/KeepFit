@@ -11,7 +11,7 @@ import Firebase
 
 class CreateAccountViewController:  UIViewController, UITextViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    private var profileImage: String?
+    static public var profileImage: String? = "Default"
     
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -71,7 +71,7 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
             
         }
         
-        profileImage = imageName
+        CreateAccountViewController.profileImage = imageName
         
         dismiss(animated: true)
     }

@@ -71,7 +71,7 @@ class ProfilePageViewController: UIViewController {
     }
     
     func loadProfileImage() {
-        let imageName = personalAccountModel.personalAccount.profilePhotoURL
+        let imageName = CreateAccountViewController.profileImage!
         
         if imageName != "Default" {
             let manager = FileManager.default
