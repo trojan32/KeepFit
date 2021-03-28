@@ -48,6 +48,10 @@ class KeepFitTests: XCTestCase {
         XCTAssertEqual(snapshot.zoomlink, "")
     }
     
+    func testPersonalAccountModelInit() {
+        // Tests that the PersonalAccountModel can be initialized with no given argument
+        XCTAssertNoThrow(PersonalAccountModel.init())
+    }
 
     func testSharedPersonalAccountModel() {
         // Tests the singleton pattern of the personal account model. Wherever change is made to the model, the change will be reflected in every other model in different references.
@@ -58,5 +62,15 @@ class KeepFitTests: XCTestCase {
         XCTAssertEqual(model1.loggedIn, PersonalAccountModel.shared.loggedIn)
         XCTAssertEqual(model1.loggedIn, model2.loggedIn)
     }
+    
+    func testPersonalAccountModelLogout() {
+        // Tests that the PersonalAccountModel can successfully log out a user
+        let model = PersonalAccountModel.shared
+        model.loggedIn = true
+        model.logOutOfAccount()
+        XCTAssertFalse(model.loggedIn)
+    }
+    
+    
 
 }
