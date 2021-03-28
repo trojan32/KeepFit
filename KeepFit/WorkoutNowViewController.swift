@@ -16,6 +16,8 @@ class WorkoutNowViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        
 
         self.workoutTableView.delegate = self
         self.workoutTableView.dataSource = self

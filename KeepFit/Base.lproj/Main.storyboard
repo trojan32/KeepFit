@@ -234,6 +234,7 @@
                     <connections>
                         <outlet property="email" destination="sFD-Ws-Nb9" id="Opx-61-hl5"/>
                         <outlet property="error" destination="YbD-FP-4eM" id="wcB-5b-cun"/>
+                        <outlet property="logInButton" destination="Kur-6k-hGW" id="2Mb-LJ-v7U"/>
                         <outlet property="password" destination="6LU-Dm-UDi" id="UV3-Lv-6Lp"/>
                     </connections>
                 </viewController>
@@ -595,6 +596,7 @@
                     <connections>
                         <outlet property="birthdayLabel" destination="q7F-of-l0u" id="Kxh-7V-dJS"/>
                         <outlet property="heightLabel" destination="yIf-Ym-dN2" id="i6Q-CS-egX"/>
+                        <outlet property="logOutButton" destination="iSV-du-4Ka" id="P4C-aF-OQS"/>
                         <outlet property="nicknameLabel" destination="1UX-NO-eZz" id="vNz-T7-zOL"/>
                         <outlet property="profileImage" destination="mEN-Nu-61g" id="tst-WX-XBH"/>
                         <outlet property="weightLabel" destination="Q2O-ci-kAj" id="vt2-KF-mCX"/>
@@ -605,11 +607,11 @@
             </objects>
             <point key="canvasLocation" x="228" y="-636"/>
         </scene>
-        <!--Stream-->
+        <!--Community-->
         <scene sceneID="cBs-Pm-Qim">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N5H-WX-moK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stream" image="video.fill" catalog="system" id="Cf1-Vy-Ktv"/>
+                    <tabBarItem key="tabBarItem" title="Community" image="video.fill" catalog="system" id="Cf1-Vy-Ktv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fx7-SP-DPw">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>

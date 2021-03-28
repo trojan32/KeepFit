@@ -5,9 +5,15 @@
 //  Created by Yi Xu on 2/22/21.
 //
 
+
+// Cite: ITP 342 Course Materials
+
 import XCTest
+import Firebase
 
 class KeepFitUITests: XCTestCase {
+    
+    private let app = XCUIApplication()
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -17,23 +23,95 @@ class KeepFitUITests: XCTestCase {
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
+    
+    override func setUp() {
+        super.setUp()
+        XCUIDevice.shared.orientation = .portrait
+        continueAfterFailure = false
+        XCUIApplication().launch()
+        
+        FirebaseApp.configure()
+        
+        
+        logOutIfLoggedIn()
+        
+        
+        
+    }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testTest() {
-        XCTAssertNil(nil)
+    func testCanSwitchToOtherPages()  {
+        XCTAssertNoThrow(switchToPage(page: "Profile"))
+        
     }
+    func testProfilePageUIElementsShowingCorrectly()  {
+        // UI tests must launch the application that they test.
+        switchToPage(page: "Profile")
+        
+        let loginButton = app.buttons["profileSigninButton"]
+//        sleep(3)
+        XCTAssertTrue(loginButton.exists)
+        
+        let accountTF = app.textFields["profileEmailTF"]
+        let passwordTF = app.textFields["profilePasswordTF"]
+        
+        XCTAssertTrue(accountTF.exists)
+        XCTAssertTrue(passwordTF.exists)
+    }
+    
+    func testCanLoginWithRightCredentials() {
+        switchToPage(page: "Profile")
+        let loginButton = app.buttons["profileSigninButton"]
+        let accountTF = app.textFields["profileEmailTF"]
+        let passwordTF = app.textFields["profilePasswordTF"]
+        accountTF.tap()
+        accountTF.typeText("nealight@gmail.com")
+//        sleep(1)
+        passwordTF.tap()
+        passwordTF.typeText("password123@")
+        loginButton.tap()
+        
+        sleep(6)
+        
+        switchToPage(page: "Community")
+        switchToPage(page: "Profile")
+        XCTAssertTrue(app.buttons["profileLogoutButton"].exists)
+        
+        
+    }
+        
+        
+        
+        
 
-//    func testExample() throws {
-//        // UI tests must launch the application that they test.
-//        let app = XCUIApplication()
-//        app.launch()
-//
-//        // Use recording to get started writing UI tests.
-//        // Use XCTAssert and related functions to verify your tests produce the correct results.
-//    }
+        // Use recording to get started writing UI tests.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    
+    func switchToPage(page: String) {
+        let tabBarsQuery = XCUIApplication().tabBars
+        tabBarsQuery.buttons[page].tap()
+    }
+    
+    func logOut() {
+        switchToPage(page: "Profile")
+        let profileLogoutButton = app.buttons["profileLogoutButton"]
+        profileLogoutButton.tap()
+    }
+    
+    func logOutIfLoggedIn() {
+        switchToPage(page: "Profile")
+        let profileLogoutButton = app.buttons["profileLogoutButton"]
+        
+        if profileLogoutButton.exists {
+            profileLogoutButton.tap()
+        }
+        
+        
+    }
 //
 //    func testLaunchPerformance() throws {
 //        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {

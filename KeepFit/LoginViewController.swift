@@ -15,12 +15,18 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
+        
+        logInButton.accessibilityIdentifier = "profileSigninButton"
+        
+        email.accessibilityIdentifier = "profileEmailTF"
+        password.accessibilityIdentifier = "profilePasswordTF"
     }
     
-
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var error: UILabel!
+    @IBOutlet var logInButton: UIBarButtonItem!
+    
+    @IBOutlet var email: UITextField!
+    @IBOutlet var password: UITextField!
+    @IBOutlet var error: UILabel!
 
     func setUpElements() {
         // Hide the error label
