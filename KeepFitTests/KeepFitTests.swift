@@ -71,6 +71,10 @@ class KeepFitTests: XCTestCase {
         XCTAssertFalse(model.loggedIn)
     }
     
+    func testworkoutTableViewController() {
+        let controller = workoutTableViewController()
+        XCTAssertEqual(controller.workoutItems, ["Yoga","Swimming","Running","Cycling","HITT","Zumba","Crossfit","'orange theory'","lifting","ping pong","stretching"])
+    }
     
 
 }

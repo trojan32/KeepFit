@@ -25,6 +25,7 @@
 		1C3D48A625E38BDB004D7AB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D48A525E38BDB004D7AB1 /* Assets.xcassets */; };
 		1C3D48A925E38BDB004D7AB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D48A725E38BDB004D7AB1 /* LaunchScreen.storyboard */; };
 		1C3D48BF25E38BDB004D7AB1 /* KeepFitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D48BE25E38BDB004D7AB1 /* KeepFitUITests.swift */; };
+		1C41441626117E4300EFBD1A /* workoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5B19C2605588700CF8EAD /* workoutTableViewController.swift */; };
 		1C55444325FDD8A900DA46BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55444225FDD8A900DA46BD /* LoginViewController.swift */; };
 		1C55444525FDD8A900DA46BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55444225FDD8A900DA46BD /* LoginViewController.swift */; };
 		1C55445D25FDFD6D00DA46BD /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C55445C25FDFD6D00DA46BD /* UserProfile.swift */; };
@@ -602,6 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C41441626117E4300EFBD1A /* workoutTableViewController.swift in Sources */,
 				1C0B706F26108421004DD682 /* UserProfile.swift in Sources */,
 				1C0B707026108421004DD682 /* UserProfileModel.swift in Sources */,
 				1C0B707126108421004DD682 /* RealmModel.swift in Sources */,
