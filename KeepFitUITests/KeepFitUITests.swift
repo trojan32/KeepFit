@@ -164,7 +164,7 @@ class KeepFitUITests: XCTestCase {
         let createButton = app.buttons["profileCCreateButton"]
         createButton.tap()
         
-        logIn(accountText: "testCU@gmail.com", "test1234*")
+        logIn(accountText: "testCU@gmail.com", passwordText: "test1234*")
         XCTAssertTrue(app.buttons["profileLogoutButton"].exists)
         
         let user = Auth.auth().currentUser
@@ -215,7 +215,9 @@ class KeepFitUITests: XCTestCase {
     }
     
     func logIn(accountText: String, passwordText: String) {
-        switchToPage(page: "Profile")
+        if app.buttons["profileSigninButton"].exists {
+            switchToPage(page: "Profile")
+        }
         let loginButton = app.buttons["profileSigninButton"]
         let accountTF = app.textFields["profileEmailTF"]
         let passwordTF = app.textFields["profilePasswordTF"]
