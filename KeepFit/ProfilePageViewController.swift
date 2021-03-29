@@ -19,6 +19,7 @@ class ProfilePageViewController: UIViewController {
     @IBOutlet var heightLabel: UILabel!
     @IBOutlet var logOutButton: UIButton!
     @IBOutlet var weightLabel: UILabel!
+    @IBOutlet var changeAccountInfo: UIButton!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -36,6 +37,7 @@ class ProfilePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         logOutButton.accessibilityIdentifier = "profileLogoutButton"
+        changeAccountInfo.accessibilityIdentifier = "profileChangeAccountInfoButton"
         
     }
     

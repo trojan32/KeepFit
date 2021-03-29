@@ -596,6 +596,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="person.circle.fill" catalog="system" id="3Sp-E1-RmY"/>
                     <connections>
                         <outlet property="birthdayLabel" destination="q7F-of-l0u" id="Kxh-7V-dJS"/>
+                        <outlet property="changeAccountInfo" destination="02x-w0-hbv" id="tgb-V3-jML"/>
                         <outlet property="heightLabel" destination="yIf-Ym-dN2" id="i6Q-CS-egX"/>
                         <outlet property="logOutButton" destination="iSV-du-4Ka" id="P4C-aF-OQS"/>
                         <outlet property="nicknameLabel" destination="1UX-NO-eZz" id="vNz-T7-zOL"/>
@@ -1043,7 +1044,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="duV-ZP-ESX"/>
+        <segue reference="Ef9-Vn-Gol"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="person" catalog="system" width="128" height="117"/>

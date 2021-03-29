@@ -80,6 +80,7 @@
 		57CFC6E56CF9FA0647782CFE /* Pods_KeepFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AF4A8C3720313782E5C6C0 /* Pods_KeepFit.framework */; };
 		7118F1EF2B7D2BC11EEEC679 /* Pods_KeepFitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4AF81D650C1E0674BA462A /* Pods_KeepFitTests.framework */; };
 		E187F99B66FD1EAB7CE016A8 /* Pods_KeepFit_KeepFitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89235D30AF3C3E66BE41161 /* Pods_KeepFit_KeepFitUITests.framework */; };
+		E2EA011426117EFC0032569F /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FEE378260C76BE00BAEE3D /* ProfileEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -603,6 +604,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2EA011426117EFC0032569F /* ProfileEditViewController.swift in Sources */,
 				1C41441626117E4300EFBD1A /* workoutTableViewController.swift in Sources */,
 				1C0B706F26108421004DD682 /* UserProfile.swift in Sources */,
 				1C0B707026108421004DD682 /* UserProfileModel.swift in Sources */,

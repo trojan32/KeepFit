@@ -68,18 +68,7 @@ class KeepFitUITests: XCTestCase {
         
         logOutIfLoggedIn()
         
-        switchToPage(page: "Profile")
-        let loginButton = app.buttons["profileSigninButton"]
-        let accountTF = app.textFields["profileEmailTF"]
-        let passwordTF = app.textFields["profilePasswordTF"]
-        accountTF.tap()
-        accountTF.typeText("nealight@gmail.com")
-//        sleep(1)
-        passwordTF.tap()
-        passwordTF.typeText("password123@")
-        loginButton.tap()
-        
-        sleep(6)
+        logIn(accountText: "nealight@gmail.com", passwordText: "password123@")
         
         switchToPage(page: "Community")
         switchToPage(page: "Profile")
@@ -87,6 +76,11 @@ class KeepFitUITests: XCTestCase {
         
         
     }
+    
+//    func testAccountInfoUpdate() {
+//        logIn(accountText: "test7@gmail.com", passwordText: "test1234**")
+//
+//    }
         
         
         
@@ -98,7 +92,7 @@ class KeepFitUITests: XCTestCase {
     
     func switchToPage(page: String) {
         let tabBarsQuery = XCUIApplication().tabBars
-        tabBarsQuery.buttons[page].tap()
+        tabBarsQuery.buttons[page].firstMatch.tap()
     }
     
     func logOut() {
@@ -109,7 +103,6 @@ class KeepFitUITests: XCTestCase {
     
     func logOutIfLoggedIn() {
         switchToPage(page: "Profile")
-        let profileLogoutButton = app.buttons["profileLogoutButton"]
         let loginButton = app.buttons["profileSigninButton"]
         if !loginButton.exists {
             print("Logging out")
@@ -121,14 +114,25 @@ class KeepFitUITests: XCTestCase {
         } else {
             app.buttons["profileCancelButton"].tap()
         }
-        
-            
-            
-            
-
-        
-        
     }
+    
+    func logIn(accountText: String, passwordText: String) {
+        switchToPage(page: "Profile")
+        let loginButton = app.buttons["profileSigninButton"]
+        let accountTF = app.textFields["profileEmailTF"]
+        let passwordTF = app.textFields["profilePasswordTF"]
+        accountTF.tap()
+        accountTF.typeText(accountText)
+//        sleep(1)
+        passwordTF.tap()
+        passwordTF.typeText(passwordText)
+        loginButton.tap()
+        
+        sleep(6)
+    }
+    
+    
+    
 //
 //    func testLaunchPerformance() throws {
 //        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
