@@ -181,7 +181,7 @@ class KeepFitUITests: XCTestCase {
         let passwordTF = app.textFields["profilePasswordTF"]
         accountTF.tap()
         accountTF.typeText(accountText)
-//        sleep(1)
+        sleep(1)
         passwordTF.tap()
         passwordTF.typeText(passwordText)
         loginButton.tap()
