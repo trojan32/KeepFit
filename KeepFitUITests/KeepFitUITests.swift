@@ -259,6 +259,78 @@ class KeepFitUITests: XCTestCase {
         
     }
     
+    func testCreateUserInvalidHeight() {
+            logOutIfLoggedIn()
+            switchToPage(page: "Profile")
+            let createAccountButton = app.buttons["profileCreateAccountButton"]
+            createAccountButton.tap()
+            
+            let emailTF = app.textFields["profileCEmailTF"]
+            let passwordTF = app.textFields["profileCPasswordTF"]
+            let nicknameTF = app.textFields["profileCNicknameTF"]
+            let birthdayTF = app.textFields["profileCBirthdayTF"]
+            let heightTF = app.textFields["profileCHeightTF"]
+            let weightTF = app.textFields["profileCWeightTF"]
+            
+            createAccountTypeFields(textField: emailTF, text: "testCU@gmail.com")
+            createAccountTypeFields(textField: passwordTF, text: "test1234")
+            createAccountTypeFields(textField: nicknameTF, text: "testCU")
+            createAccountTypeFields(textField: birthdayTF, text: "22220222")
+            createAccountTypeFields(textField: heightTF, text: "string")
+            createAccountTypeFields(textField: weightTF, text: "15")
+            
+            let createButton = app.buttons["profileCCreateButton"]
+            createButton.tap()
+            
+            sleep(6)
+            
+            let errorMessage = app.staticTexts["profileCErrorLabel"].label
+            XCTAssertEqual(errorMessage, "Please fill in a number for height.")
+            
+        }
+        
+        
+        func testCreateUserInvalidWeight() {
+            logOutIfLoggedIn()
+            switchToPage(page: "Profile")
+            let createAccountButton = app.buttons["profileCreateAccountButton"]
+            createAccountButton.tap()
+            
+            let emailTF = app.textFields["profileCEmailTF"]
+            let passwordTF = app.textFields["profileCPasswordTF"]
+            let nicknameTF = app.textFields["profileCNicknameTF"]
+            let birthdayTF = app.textFields["profileCBirthdayTF"]
+            let heightTF = app.textFields["profileCHeightTF"]
+            let weightTF = app.textFields["profileCWeightTF"]
+            
+            createAccountTypeFields(textField: emailTF, text: "testCU@gmail.com")
+            createAccountTypeFields(textField: passwordTF, text: "test1234")
+            createAccountTypeFields(textField: nicknameTF, text: "testCU")
+            createAccountTypeFields(textField: birthdayTF, text: "22220222")
+            createAccountTypeFields(textField: heightTF, text: "14")
+            createAccountTypeFields(textField: weightTF, text: "string")
+            
+            let createButton = app.buttons["profileCCreateButton"]
+            createButton.tap()
+            
+            sleep(6)
+            
+            let errorMessage = app.staticTexts["profileCErrorLabel"].label
+            XCTAssertEqual(errorMessage, "Please fill in a number for weight.")
+            
+        }
+    
+    func testPlayVideo()
+    {
+//        logOutIfLoggedIn()
+        switchToPage(page: "Item")
+        app/*@START_MENU_TOKEN@*/.buttons["Video"].staticTexts["Video"]/*[[".buttons[\"Video\"].staticTexts[\"Video\"]",".staticTexts[\"Video\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.tap()
+        
+        let tablesQuery = app.tables
+        XCTAssertNoThrow(tablesQuery/*@START_MENU_TOKEN@*/.cells.staticTexts["Dashanghuahuo"]/*[[".cells.staticTexts[\"Dashanghuahuo\"]",".staticTexts[\"Dashanghuahuo\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.tap())
+        sleep(10)
+    }
+    
         
         
         
