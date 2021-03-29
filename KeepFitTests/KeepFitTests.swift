@@ -7,10 +7,20 @@
 
 import XCTest
 @testable import KeepFit
+import Firebase
 
 class KeepFitTests: XCTestCase {
 
-
+    override func setUp() {
+        if FirebaseApp.app() == nil {
+            FirebaseApp.configure()
+        }
+        do{
+          try Auth.auth().signOut()
+        } catch let error {
+          print(error)
+        }
+    }
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -76,5 +86,69 @@ class KeepFitTests: XCTestCase {
         XCTAssertEqual(controller.workoutItems, ["Yoga","Swimming","Running","Cycling","HITT","Zumba","Crossfit","'orange theory'","lifting","ping pong","stretching"])
     }
     
+    func testExcerciseDetailConvertTimeToDisplay() {
+        let controller = ExerciseDetailViewController()
+        XCTAssertEqual(controller.convertToTimerDisplay(minute: 12, second: 20), "12:20")
+        XCTAssertEqual(controller.convertToTimerDisplay(minute: 1, second: 10), "1:10")
+    }
+    
+    func testStreamPageVCSearchEmptyResultsNoThrow() {
+
+        let controller = StreamPageTableViewController()
+        controller.updateView(text: "")
+        XCTAssertNoThrow(StreamPageTableViewController.searchUsers)
+    }
+    
+    func testLogin() {
+        Auth.auth().signIn(withEmail: "nealight@gmail.com", password: "password123@")
+        let _ = Auth.auth().currentUser
+        sleep(5)
+        XCTAssertNotNil(Auth.auth().currentUser)
+    }
+    
+    func testLoginWithWrongPassword() {
+        Auth.auth().signIn(withEmail: "nealight@gmail.com", password: "password123")
+        XCTAssertNil(Auth.auth().currentUser)
+    }
+    
+    func testLogout() {
+        Auth.auth().signIn(withEmail: "nealight@gmail.com", password: "password123@")
+        sleep(5)
+        do{
+          try Auth.auth().signOut()
+        } catch let error {
+          print(error)
+        }
+        sleep(5)
+        XCTAssertNil(Auth.auth().currentUser)
+    }
+    
+    func testSwitchAccount() {
+        Auth.auth().signIn(withEmail: "nealight@gmail.com", password: "password123@")
+        
+        do{
+          try Auth.auth().signOut()
+        } catch let error {
+          print(error)
+        }
+        
+        
+        Auth.auth().signIn(withEmail: "nealight@gmail.com", password: "password123@")
+        
+        do{
+          try Auth.auth().signOut()
+        } catch let error {
+          print(error)
+        }
+        
+        Auth.auth().signIn(withEmail: "nealight@gmail.com", password: "password123@")
+        sleep(5)
+        
+        XCTAssertNotNil(Auth.auth().currentUser)
+    }
+    
+    
+    
+
 
 }
