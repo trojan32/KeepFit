@@ -363,6 +363,9 @@ class KeepFitUITests: XCTestCase {
         app.staticTexts["profileCHeadlineLabel"].tap()
     }
     
+    func deleteUser() {
+       
+    }
     
     
     
