@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A8388BC25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8388BB25FF09D600276C7C /* WorkoutNowViewController.swift */; };
-		0A8388BE25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8388BB25FF09D600276C7C /* WorkoutNowViewController.swift */; };
 		1C0B705826108121004DD682 /* UserSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C96D153260DBBD300188AF8 /* UserSnapshot.swift */; };
 		1C0B705926108121004DD682 /* KeepFitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D48B325E38BDB004D7AB1 /* KeepFitTests.swift */; };
 		1C0B706226108143004DD682 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FA6292609C7DA00CAD1AF /* Utilities.swift */; };
@@ -21,7 +19,6 @@
 		1C0B707226108421004DD682 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5073E2D7260DDE6D00266674 /* Video.swift */; };
 		1C3D489D25E38BDA004D7AB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D489C25E38BDA004D7AB1 /* AppDelegate.swift */; };
 		1C3D489F25E38BDA004D7AB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D489E25E38BDA004D7AB1 /* SceneDelegate.swift */; };
-		1C3D48A425E38BDA004D7AB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D48A225E38BDA004D7AB1 /* Main.storyboard */; };
 		1C3D48A625E38BDB004D7AB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D48A525E38BDB004D7AB1 /* Assets.xcassets */; };
 		1C3D48A925E38BDB004D7AB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D48A725E38BDB004D7AB1 /* LaunchScreen.storyboard */; };
 		1C3D48BF25E38BDB004D7AB1 /* KeepFitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D48BE25E38BDB004D7AB1 /* KeepFitUITests.swift */; };
@@ -76,6 +73,8 @@
 		5073E2D8260DDE6D00266674 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5073E2D7260DDE6D00266674 /* Video.swift */; };
 		5073E345260E6FE200266674 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5073E344260E6FE200266674 /* CommunityViewController.swift */; };
 		5073E34A260E7EBC00266674 /* CommunityViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5073E349260E7EBC00266674 /* CommunityViewCell.swift */; };
+		50B5591A261243D6006030D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D48A225E38BDA004D7AB1 /* Main.storyboard */; };
+		50B5592226124596006030D0 /* WorkoutNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B5592126124596006030D0 /* WorkoutNowViewController.swift */; };
 		50FEE379260C76BE00BAEE3D /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FEE378260C76BE00BAEE3D /* ProfileEditViewController.swift */; };
 		57CFC6E56CF9FA0647782CFE /* Pods_KeepFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AF4A8C3720313782E5C6C0 /* Pods_KeepFit.framework */; };
 		7118F1EF2B7D2BC11EEEC679 /* Pods_KeepFitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4AF81D650C1E0674BA462A /* Pods_KeepFitTests.framework */; };
@@ -101,7 +100,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A8388BB25FF09D600276C7C /* WorkoutNowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutNowViewController.swift; sourceTree = "<group>"; };
+		0A8388BB25FF09D600276C7C /* WorkoutNowViewController_tmp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutNowViewController_tmp.swift; sourceTree = "<group>"; };
 		0AB5B19C2605588700CF8EAD /* workoutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutTableViewController.swift; sourceTree = "<group>"; };
 		0ECAE81EA34C32332D209C3F /* Pods-KeepFit-KeepFitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepFit-KeepFitUITests.release.xcconfig"; path = "Target Support Files/Pods-KeepFit-KeepFitUITests/Pods-KeepFit-KeepFitUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1C3D489925E38BDA004D7AB1 /* KeepFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeepFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +138,7 @@
 		5073E2D7260DDE6D00266674 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		5073E344260E6FE200266674 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		5073E349260E7EBC00266674 /* CommunityViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewCell.swift; sourceTree = "<group>"; };
+		50B5592126124596006030D0 /* WorkoutNowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutNowViewController.swift; sourceTree = "<group>"; };
 		50FEE378260C76BE00BAEE3D /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		7B4AF81D650C1E0674BA462A /* Pods_KeepFitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeepFitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8687D5FE1358F13817D6BB18 /* Pods-KeepFitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepFitTests.debug.xcconfig"; path = "Target Support Files/Pods-KeepFitTests/Pods-KeepFitTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -264,7 +264,7 @@
 				1C6F668025FB5B8C0085F2C2 /* CreateAccountViewController.swift */,
 				1C6F66D625FC92860085F2C2 /* ProfilePageViewController.swift */,
 				1C55444225FDD8A900DA46BD /* LoginViewController.swift */,
-				0A8388BB25FF09D600276C7C /* WorkoutNowViewController.swift */,
+				0A8388BB25FF09D600276C7C /* WorkoutNowViewController_tmp.swift */,
 				1C6186D825FF2B6400CCB74E /* StreamPageTableViewController.swift */,
 				0AB5B19C2605588700CF8EAD /* workoutTableViewController.swift */,
 				1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */,
@@ -275,6 +275,7 @@
 				5073E2D2260DDD5C00266674 /* VideoTableViewCell.swift */,
 				5073E344260E6FE200266674 /* CommunityViewController.swift */,
 				5073E349260E7EBC00266674 /* CommunityViewCell.swift */,
+				50B5592126124596006030D0 /* WorkoutNowViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -445,7 +446,7 @@
 				1C3D48A925E38BDB004D7AB1 /* LaunchScreen.storyboard in Resources */,
 				1CBC169A2609DE6E002962EF /* GoogleService-Info.plist in Resources */,
 				1C3D48A625E38BDB004D7AB1 /* Assets.xcassets in Resources */,
-				1C3D48A425E38BDA004D7AB1 /* Main.storyboard in Resources */,
+				50B5591A261243D6006030D0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +581,7 @@
 				1C3D489F25E38BDA004D7AB1 /* SceneDelegate.swift in Sources */,
 				5073E2C5260DD68400266674 /* VideoViewController.swift in Sources */,
 				1C5F2A9A2605F76300E899AC /* UserStreamingViewController.swift in Sources */,
+				50B5592226124596006030D0 /* WorkoutNowViewController.swift in Sources */,
 				503FA62A2609C7DA00CAD1AF /* Utilities.swift in Sources */,
 				1C55446425FDFD7500DA46BD /* UserProfileModel.swift in Sources */,
 				5073E2D3260DDD5C00266674 /* VideoTableViewCell.swift in Sources */,
@@ -589,7 +591,6 @@
 				1C6F66D725FC92860085F2C2 /* ProfilePageViewController.swift in Sources */,
 				50FEE379260C76BE00BAEE3D /* ProfileEditViewController.swift in Sources */,
 				1C90AB832610C33D005311CF /* AccessibilityIdentifiers.swift in Sources */,
-				0A8388BC25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */,
 				1C81D448260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */,
 				1C6F66CC25FC88120085F2C2 /* PersonalAccountModel.swift in Sources */,
 				1C55445D25FDFD6D00DA46BD /* UserProfile.swift in Sources */,
@@ -642,7 +643,6 @@
 				1C96D156260DBBD300188AF8 /* UserSnapshot.swift in Sources */,
 				1C6F66C425FC85AA0085F2C2 /* PersonalAccount.swift in Sources */,
 				1C6F668325FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
-				0A8388BE25FF09D600276C7C /* WorkoutNowViewController.swift in Sources */,
 				1C6186DB25FF2B6400CCB74E /* StreamPageTableViewController.swift in Sources */,
 				1C81D44A260AFCBA008588E1 /* ExerciseDetailViewController.swift in Sources */,
 				1C5F2A9C2605F76300E899AC /* UserStreamingViewController.swift in Sources */,
