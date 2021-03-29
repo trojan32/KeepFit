@@ -10,6 +10,7 @@
 
 import XCTest
 import Firebase
+import FirebaseAuth
 
 class KeepFitUITests: XCTestCase {
     
@@ -139,6 +140,45 @@ class KeepFitUITests: XCTestCase {
         logIn(accountText: "testpw@gmail.com", passwordText: "test1234*")
         XCTAssertTrue(app.buttons["profileLogoutButton"].exists)
     }
+    
+    func testCreateUser() {
+        logOutIfLoggedIn()
+        switchToPage(page: "Profile")
+        let createAccountButton = app.buttons["profileCreateAccountButton"]
+        createAccountButton.tap()
+        
+        let emailTF = app.textFields["profileCEmailTF"]
+        let passwordTF = app.textFields["profileCPasswordTF"]
+        let nicknameTF = app.textFields["profileCNicknameTF"]
+        let birthdayTF = app.textFields["profileCBirthdayTF"]
+        let heightTF = app.textFields["profileCHeightTF"]
+        let weightTF = app.textFields["profileCWeightTF"]
+        
+        createAccountTypeFields(textField: emailTF, text: "testCU@gmail.com")
+        createAccountTypeFields(textField: passwordTF, text: "test1234*")
+        createAccountTypeFields(textField: nicknameTF, text: "testCU")
+        createAccountTypeFields(textField: birthdayTF, text: "22220222")
+        createAccountTypeFields(textField: heightTF, text: "14")
+        createAccountTypeFields(textField: weightTF, text: "15")
+        
+        let createButton = app.buttons["profileCCreateButton"]
+        createButton.tap()
+        
+        logIn(accountText: "testCU@gmail.com", "test1234*")
+        XCTAssertTrue(app.buttons["profileLogoutButton"].exists)
+        
+        let user = Auth.auth().currentUser
+
+        user?.delete { error in
+          if let error = error {
+            print("error")
+          } else {
+            // Account deleted.
+          }
+        }
+        
+    }
+    
         
         
         
@@ -228,6 +268,12 @@ class KeepFitUITests: XCTestCase {
         app.swipeDown()
         
         
+    }
+    
+    func createAccountTypeFields(textField: XCUIElement, text: String) {
+        textField.tap()
+        textField.typeText(text)
+        app.staticTexts["profileCHeadlineLabel"].tap()
     }
     
     

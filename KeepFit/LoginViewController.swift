@@ -21,10 +21,12 @@ class LoginViewController: UIViewController, UINavigationControllerDelegate {
         email.accessibilityIdentifier = "profileEmailTF"
         password.accessibilityIdentifier = "profilePasswordTF"
         cancelButton.accessibilityIdentifier = "profileCancelButton"
+        createAccount.accessibilityIdentifier = "profileCreateAccountButton"
     }
     
     @IBOutlet var logInButton: UIBarButtonItem!
     
+    @IBOutlet weak var createAccount: UIButton!
     @IBOutlet var cancelButton: UIBarButtonItem!
     @IBOutlet var email: UITextField!
     @IBOutlet var password: UITextField!

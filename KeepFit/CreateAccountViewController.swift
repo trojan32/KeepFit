@@ -13,6 +13,8 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
     
     static public var profileImage: String? = "Default"
     
+    @IBOutlet weak var create: UIBarButtonItem!
+    @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var nickname: UITextField!
@@ -27,9 +29,19 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         setUpElements()
         // Do any additional setup after loading the view.
+        
+        weight.accessibilityIdentifier = "profileCWeightTF"
+        height.accessibilityIdentifier = "profileCHeightTF"
+        birthday.accessibilityIdentifier = "profileCBirthdayTF"
+        nickname.accessibilityIdentifier = "profileCNicknameTF"
+        email.accessibilityIdentifier = "profileCEmailTF"
+        password.accessibilityIdentifier = "profileCPasswordTF"
+        headlineLabel.accessibilityIdentifier = "profileCHeadlineLabel"
+        create.accessibilityIdentifier = "profileCCreateButton"
     }
     
     func setUpElements() {
@@ -170,6 +182,11 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         
         error.text = message
         error.alpha = 1
+    }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
 //    func transitionToHome() {

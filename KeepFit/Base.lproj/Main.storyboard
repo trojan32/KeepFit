@@ -233,6 +233,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cancelButton" destination="pY1-9r-oLr" id="052-O2-gVQ"/>
+                        <outlet property="createAccount" destination="0xH-me-ayr" id="khg-2n-gXS"/>
                         <outlet property="email" destination="sFD-Ws-Nb9" id="Opx-61-hl5"/>
                         <outlet property="error" destination="YbD-FP-4eM" id="wcB-5b-cun"/>
                         <outlet property="logInButton" destination="Kur-6k-hGW" id="2Mb-LJ-v7U"/>
@@ -344,8 +345,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="birthday" destination="cpj-4c-eZd" id="jhl-E5-3hi"/>
+                        <outlet property="create" destination="rjQ-Uz-9he" id="a54-wK-sGa"/>
                         <outlet property="email" destination="MDk-T0-qZX" id="ZTB-1a-Tcv"/>
                         <outlet property="error" destination="KyQ-hQ-BKd" id="09a-Li-acJ"/>
+                        <outlet property="headlineLabel" destination="bhx-pI-vxq" id="Iw8-FQ-krJ"/>
                         <outlet property="height" destination="RP8-YI-Gk1" id="haY-yK-3XZ"/>
                         <outlet property="nickname" destination="vux-eM-vij" id="gPw-fo-9gn"/>
                         <outlet property="password" destination="HPS-JI-CHU" id="1XO-Xf-dVh"/>
@@ -1046,7 +1049,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ef9-Vn-Gol"/>
+        <segue reference="duV-ZP-ESX"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="person" catalog="system" width="128" height="117"/>
