@@ -87,6 +87,27 @@ class KeepFitUITests: XCTestCase {
         
         
     }
+    
+    func testCannotLoginWithWrongCredentials() {
+        
+        logOutIfLoggedIn()
+        
+        switchToPage(page: "Profile")
+        let loginButton = app.buttons["profileSigninButton"]
+        let accountTF = app.textFields["profileEmailTF"]
+        let passwordTF = app.textFields["profilePasswordTF"]
+        accountTF.tap()
+        accountTF.typeText("wrong@gmail.com")
+
+        passwordTF.tap()
+        passwordTF.typeText("wrongpassword")
+        loginButton.tap()
+
+        
+        XCTAssertTrue(app.buttons["profileSigninButton"].exists)
+        
+        
+    }
         
         
         
