@@ -18,67 +18,36 @@
             endingLineNumber = "146"
             landmarkName = "createAccountTapped(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "53953DD4-BB9A-4C0A-B5BC-DB3079A1CB08"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KeepFit/WorkoutNowViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "WorkoutNowViewController"
-            landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "53953DD4-BB9A-4C0A-B5BC-DB3079A1CB08 - 1db160c8598cdab6"
+                  uuid = "619B56BA-B4FC-456F-84D8-6FF9CAD0F827 - f3c1df137235ced"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "KeepFit.WorkoutNowViewController.workoutItems.getter : Swift.Array&lt;Swift.String&gt;"
+                  symbolName = "KeepFit.CreateAccountViewController.createAccountTapped(__C.UIBarButtonItem) -&gt; ()"
                   moduleName = "KeepFit"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/albert/Desktop/MY%20UNIVERSITY/2021%20Spring/CSCI-310/iOS%20Development/KeepFit/KeepFit/WorkoutNowViewController.swift"
+                  urlString = "file:///Users/albert/Desktop/MY%20UNIVERSITY/2021%20Spring/CSCI-310/iOS%20Development/KeepFit/KeepFit/CreateAccountViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "56">
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "4775">
                </Location>
                <Location
-                  uuid = "53953DD4-BB9A-4C0A-B5BC-DB3079A1CB08 - 99bb7e8ef47f663c"
+                  uuid = "619B56BA-B4FC-456F-84D8-6FF9CAD0F827 - 75d358ab53626c97"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "KeepFit.WorkoutNowViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; KeepFit.WorkoutNowViewController"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in KeepFit.CreateAccountViewController.createAccountTapped(__C.UIBarButtonItem) -&gt; ()"
                   moduleName = "KeepFit"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/albert/Desktop/MY%20UNIVERSITY/2021%20Spring/CSCI-310/iOS%20Development/KeepFit/KeepFit/WorkoutNowViewController.swift"
+                  urlString = "file:///Users/albert/Desktop/MY%20UNIVERSITY/2021%20Spring/CSCI-310/iOS%20Development/KeepFit/KeepFit/CreateAccountViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "212">
-               </Location>
-               <Location
-                  uuid = "53953DD4-BB9A-4C0A-B5BC-DB3079A1CB08 - 32015d84d2c6100"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "KeepFit.WorkoutNowViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;KeepFit.WorkoutNowViewController&gt;"
-                  moduleName = "KeepFit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/albert/Desktop/MY%20UNIVERSITY/2021%20Spring/CSCI-310/iOS%20Development/KeepFit/KeepFit/WorkoutNowViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "184">
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "542">
                </Location>
             </Locations>
          </BreakpointContent>
