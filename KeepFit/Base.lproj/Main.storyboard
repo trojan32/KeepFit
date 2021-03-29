@@ -232,6 +232,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="pY1-9r-oLr" id="052-O2-gVQ"/>
                         <outlet property="email" destination="sFD-Ws-Nb9" id="Opx-61-hl5"/>
                         <outlet property="error" destination="YbD-FP-4eM" id="wcB-5b-cun"/>
                         <outlet property="logInButton" destination="Kur-6k-hGW" id="2Mb-LJ-v7U"/>

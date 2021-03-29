@@ -30,10 +30,9 @@ class KeepFitUITests: XCTestCase {
         continueAfterFailure = false
         XCUIApplication().launch()
         
-        FirebaseApp.configure()
-        
-        
-        logOutIfLoggedIn()
+        if FirebaseApp.app() == nil {
+            FirebaseApp.configure()
+        }
         
         
         
@@ -49,6 +48,9 @@ class KeepFitUITests: XCTestCase {
     }
     func testProfilePageUIElementsShowingCorrectly()  {
         // UI tests must launch the application that they test.
+        
+        logOutIfLoggedIn()
+        
         switchToPage(page: "Profile")
         
         let loginButton = app.buttons["profileSigninButton"]
@@ -63,6 +65,9 @@ class KeepFitUITests: XCTestCase {
     }
     
     func testCanLoginWithRightCredentials() {
+        
+        logOutIfLoggedIn()
+        
         switchToPage(page: "Profile")
         let loginButton = app.buttons["profileSigninButton"]
         let accountTF = app.textFields["profileEmailTF"]
@@ -105,10 +110,22 @@ class KeepFitUITests: XCTestCase {
     func logOutIfLoggedIn() {
         switchToPage(page: "Profile")
         let profileLogoutButton = app.buttons["profileLogoutButton"]
+        let loginButton = app.buttons["profileSigninButton"]
+        if !loginButton.exists {
+            print("Logging out")
         
-        if profileLogoutButton.exists {
-            profileLogoutButton.tap()
+            
+            let profileLogoutButton = self.app.buttons["profileLogoutButton"]
+                profileLogoutButton.tap()
+            
+        } else {
+            app.buttons["profileCancelButton"].tap()
         }
+        
+            
+            
+            
+
         
         
     }
