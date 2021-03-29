@@ -101,20 +101,20 @@ class KeepFitUITests: XCTestCase {
         
     }
     
-    // another problem is that clear textfields functionality hasn't been implemented
+    
     func testChangeAccountInfo() {
         logOutIfLoggedIn()
         logIn(accountText: "test7@gmail.com", passwordText: "test1234*")
-        accountInfoUpdate(nickname: "new", birthday:"0101")
+        accountInfoUpdate(nickname: "test7new", birthday:"20000101")
         
         sleep(6)
         
-        XCTAssertEqual(app.staticTexts["profileNicknameLabel"].label, "test7new")
-        XCTAssertEqual(app.staticTexts["profileBirthdayLabel"].label, "Birthday: 199901010101")
+        XCTAssertEqual(app.staticTexts["profileNiknameLabel"].label, "test7new")
+        XCTAssertEqual(app.staticTexts["profileBirthdayLabel"].label, "Birthday: 20000101")
         XCTAssertEqual(app.staticTexts["profileWeightLabel"].label, "Weight: 52 kg")
         XCTAssertEqual(app.staticTexts["profileHeightLabel"].label, "Height: 178 cm")
         
-//        accountInfoUpdate(nickname: "test7", birthday: "19990101")
+        accountInfoUpdate(nickname: "test7", birthday: "19990101")
     }
     
     func testPasswordUpdateSuccess() {
@@ -163,8 +163,15 @@ class KeepFitUITests: XCTestCase {
         createAccountTypeFields(textField: heightTF, text: "14")
         createAccountTypeFields(textField: weightTF, text: "15")
         
-        let createButton = app.buttons["profileCCreateButton"]
+        sleep(6)
         
+        
+        XCTAssertEqual(emailTF.value as! String, "testCU@gmail.com")
+        XCTAssertEqual(passwordTF.value as! String, "test1234*")
+        XCTAssertEqual(nicknameTF.value as! String, "testCU")
+        XCTAssertEqual(birthdayTF.value as! String, "22220222")
+        XCTAssertEqual(heightTF.value as! String, "14")
+        XCTAssertEqual(weightTF.value as! String, "15")
         
         
         
@@ -273,7 +280,7 @@ class KeepFitUITests: XCTestCase {
             let weightTF = app.textFields["profileCWeightTF"]
             
             createAccountTypeFields(textField: emailTF, text: "testCU@gmail.com")
-            createAccountTypeFields(textField: passwordTF, text: "test1234")
+            createAccountTypeFields(textField: passwordTF, text: "test1234*")
             createAccountTypeFields(textField: nicknameTF, text: "testCU")
             createAccountTypeFields(textField: birthdayTF, text: "22220222")
             createAccountTypeFields(textField: heightTF, text: "string")
@@ -304,7 +311,7 @@ class KeepFitUITests: XCTestCase {
             let weightTF = app.textFields["profileCWeightTF"]
             
             createAccountTypeFields(textField: emailTF, text: "testCU@gmail.com")
-            createAccountTypeFields(textField: passwordTF, text: "test1234")
+            createAccountTypeFields(textField: passwordTF, text: "test1234*")
             createAccountTypeFields(textField: nicknameTF, text: "testCU")
             createAccountTypeFields(textField: birthdayTF, text: "22220222")
             createAccountTypeFields(textField: heightTF, text: "14")
@@ -390,10 +397,10 @@ class KeepFitUITests: XCTestCase {
         let nicknameTF = app.textFields["profileNicknameTF"]
         let birthdayTF = app.textFields["profileBirthdayTF"]
         
-        nicknameTF.tap()
+        nicknameTF.doubleTap()
         nicknameTF.typeText(nickname)
         
-        birthdayTF.tap()
+        birthdayTF.doubleTap()
         birthdayTF.typeText(birthday)
         
         app.staticTexts["profileEditProfileLabel"].tap()
