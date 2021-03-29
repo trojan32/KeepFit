@@ -39,6 +39,12 @@ class ProfilePageViewController: UIViewController {
         logOutButton.accessibilityIdentifier = "profileLogoutButton"
         changeAccountInfo.accessibilityIdentifier = "profileChangeAccountInfoButton"
         
+        nicknameLabel.accessibilityIdentifier = "profileNicknameLabel"
+        birthdayLabel.accessibilityIdentifier = "profileBirthdayLabel"
+        heightLabel.accessibilityIdentifier = "profileHeightLabel"
+        weightLabel.accessibilityIdentifier = "profileWeightLabel"
+        
+        
     }
     
     func loadAccountInfo() {

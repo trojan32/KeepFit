@@ -18,12 +18,24 @@ class ProfileEditViewController: UIViewController {
     @IBOutlet weak var height: UITextField!
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var error: UILabel!
-    
+    @IBOutlet var updateButton: UIButton!
+    @IBOutlet weak var editProfile: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hideError()
         loadAccountInfo()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        password.accessibilityIdentifier = "profilePasswordTF"
+        nickname.accessibilityIdentifier = "profileNicknameTF"
+        birthday.accessibilityIdentifier = "profileBirthdayTF"
+        height.accessibilityIdentifier = "profileHeightTF"
+        weight.accessibilityIdentifier = "profileWeightTF"
+        updateButton.accessibilityIdentifier = "profileUpdateButton"
+        editProfile.accessibilityIdentifier = "profileEditProfileLabel"
+        
     }
     
     func loadAccountInfo() {
@@ -133,6 +145,13 @@ class ProfileEditViewController: UIViewController {
         error.text = "Error"
         error.alpha = 0
     }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    
     
     /*
     // MARK: - Navigation

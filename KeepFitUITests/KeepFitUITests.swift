@@ -15,6 +15,7 @@ class KeepFitUITests: XCTestCase {
     
     private let app = XCUIApplication()
 
+
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -29,6 +30,7 @@ class KeepFitUITests: XCTestCase {
         XCUIDevice.shared.orientation = .portrait
         continueAfterFailure = false
         XCUIApplication().launch()
+        
         
         if FirebaseApp.app() == nil {
             FirebaseApp.configure()
@@ -97,6 +99,46 @@ class KeepFitUITests: XCTestCase {
         
         
     }
+    
+    // notice this test function has not been completed yet. XCTAssertEqual would return false and it still need to be debugged (somehow app.staticTexts[...] doesn't update and it still fixes with the previous value)
+    // another problem is that clear textfields functionality hasn't been implemented
+    func testChangeAccountInfo() {
+        logOutIfLoggedIn()
+        logIn(accountText: "test7@gmail.com", passwordText: "test1234**")
+        accountInfoUpdate(nickname: "new", birthday:"0101")
+        
+        XCTAssertEqual(app.staticTexts["profileNicknameLabel"].label, "test7new")
+        XCTAssertEqual(app.staticTexts["profileBirthdayLabel"].label, "Birthday: 199901010101")
+        XCTAssertEqual(app.staticTexts["profileWeightLabel"].label, "Weight: 52 kg")
+        XCTAssertEqual(app.staticTexts["profileHeightLabel"].label, "Height: 178 cm")
+        
+//        accountInfoUpdate(nickname: "test7", birthday: "19990101")
+    }
+    
+    func testPasswordUpdateSuccess() {
+        logOutIfLoggedIn()
+        logIn(accountText: "testpw@gmail.com", passwordText: "test1234*")
+        passwordUpdate(password: "test1234**")
+        
+        logOut()
+        logIn(accountText: "testpw@gmail.com", passwordText: "test1234**")
+        XCTAssertTrue(app.buttons["profileLogoutButton"].exists)
+        passwordUpdate(password: "test1234*")
+        
+        
+    }
+    
+    func testPasswordUpdateFailed() {
+        logOutIfLoggedIn()
+        logIn(accountText: "testpw@gmail.com", passwordText: "test1234*")
+        passwordUpdate(password: "test1234")
+        passwordUpdate(password: "testtest")
+        passwordUpdate(password: "tt1234*")
+        
+        logOut()
+        logIn(accountText: "testpw@gmail.com", passwordText: "test1234*")
+        XCTAssertTrue(app.buttons["profileLogoutButton"].exists)
+    }
         
         
         
@@ -147,7 +189,51 @@ class KeepFitUITests: XCTestCase {
         sleep(6)
     }
     
+    func accountInfoUpdate(nickname: String, birthday: String) {
+        let changeAccountInfoButton = app.buttons["profileChangeAccountInfoButton"]
+        changeAccountInfoButton.tap()
+        let nicknameTF = app.textFields["profileNicknameTF"]
+        let birthdayTF = app.textFields["profileBirthdayTF"]
+        
+        nicknameTF.tap()
+        nicknameTF.typeText(nickname)
+        
+        birthdayTF.tap()
+        birthdayTF.typeText(birthday)
+        
+        app.staticTexts["profileEditProfileLabel"].tap()
+        
+        let updateButton = app.buttons["profileUpdateButton"]
+        updateButton.tap()
+        
+        app.swipeDown()
+        
+        switchToPage(page: "Community")
+        switchToPage(page: "Profile")
+    }
     
+    func passwordUpdate(password: String) {
+        let changeAccountInfoButton = app.buttons["profileChangeAccountInfoButton"]
+        changeAccountInfoButton.tap()
+        let passwordTF = app.textFields["profilePasswordTF"]
+        
+        passwordTF.tap()
+        passwordTF.typeText(password)
+        
+        app.staticTexts["profileEditProfileLabel"].tap()
+        
+        let updateButton = app.buttons["profileUpdateButton"]
+        updateButton.tap()
+        
+        app.swipeDown()
+        
+        
+    }
+    
+    
+    
+  
+
     
 //
 //    func testLaunchPerformance() throws {

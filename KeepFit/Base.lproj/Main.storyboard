@@ -499,10 +499,12 @@
                     <navigationItem key="navigationItem" id="Gd1-42-7G7"/>
                     <connections>
                         <outlet property="birthday" destination="Q0j-sn-DTF" id="7yG-kA-9YH"/>
+                        <outlet property="editProfile" destination="nuS-5A-no5" id="4BH-rH-3hZ"/>
                         <outlet property="error" destination="Yg8-W9-YJc" id="ZCc-7L-5DR"/>
                         <outlet property="height" destination="Uiw-8Q-iqB" id="peL-1A-cpB"/>
                         <outlet property="nickname" destination="uAf-bI-DM7" id="Zyc-K5-tdM"/>
                         <outlet property="password" destination="fdd-5M-OBa" id="XqA-ge-mgO"/>
+                        <outlet property="updateButton" destination="kQS-Wx-xTT" id="Gbb-GB-oJb"/>
                         <outlet property="weight" destination="U3o-AO-5no" id="X4o-uS-bxU"/>
                     </connections>
                 </viewController>
