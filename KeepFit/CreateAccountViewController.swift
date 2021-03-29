@@ -42,6 +42,7 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         password.accessibilityIdentifier = "profileCPasswordTF"
         headlineLabel.accessibilityIdentifier = "profileCHeadlineLabel"
         create.accessibilityIdentifier = "profileCCreateButton"
+        error.accessibilityIdentifier = "profileCErrorLabel"
     }
     
     func setUpElements() {

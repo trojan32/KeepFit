@@ -101,12 +101,13 @@ class KeepFitUITests: XCTestCase {
         
     }
     
-    // notice this test function has not been completed yet. XCTAssertEqual would return false and it still need to be debugged (somehow app.staticTexts[...] doesn't update and it still fixes with the previous value)
     // another problem is that clear textfields functionality hasn't been implemented
     func testChangeAccountInfo() {
         logOutIfLoggedIn()
-        logIn(accountText: "test7@gmail.com", passwordText: "test1234**")
+        logIn(accountText: "test7@gmail.com", passwordText: "test1234*")
         accountInfoUpdate(nickname: "new", birthday:"0101")
+        
+        sleep(6)
         
         XCTAssertEqual(app.staticTexts["profileNicknameLabel"].label, "test7new")
         XCTAssertEqual(app.staticTexts["profileBirthdayLabel"].label, "Birthday: 199901010101")
@@ -141,7 +142,8 @@ class KeepFitUITests: XCTestCase {
         XCTAssertTrue(app.buttons["profileLogoutButton"].exists)
     }
     
-    func testCreateUser() {
+    // error with deleting user
+    func testCreateUserSuccess() {
         logOutIfLoggedIn()
         switchToPage(page: "Profile")
         let createAccountButton = app.buttons["profileCreateAccountButton"]
@@ -167,15 +169,97 @@ class KeepFitUITests: XCTestCase {
         logIn(accountText: "testCU@gmail.com", passwordText: "test1234*")
         XCTAssertTrue(app.buttons["profileLogoutButton"].exists)
         
-        let user = Auth.auth().currentUser
-
-        user?.delete { error in
-          if let error = error {
-            print("error")
-          } else {
-            // Account deleted.
-          }
-        }
+        deleteUser()
+        
+        
+    }
+    
+    func testCreateUserEmptyFields() {
+        logOutIfLoggedIn()
+        switchToPage(page: "Profile")
+        let createAccountButton = app.buttons["profileCreateAccountButton"]
+        createAccountButton.tap()
+        
+        let emailTF = app.textFields["profileCEmailTF"]
+        let passwordTF = app.textFields["profileCPasswordTF"]
+        let nicknameTF = app.textFields["profileCNicknameTF"]
+        let birthdayTF = app.textFields["profileCBirthdayTF"]
+        let heightTF = app.textFields["profileCHeightTF"]
+        
+        createAccountTypeFields(textField: emailTF, text: "testCU@gmail.com")
+        createAccountTypeFields(textField: passwordTF, text: "test1234*")
+        createAccountTypeFields(textField: nicknameTF, text: "testCU")
+        createAccountTypeFields(textField: birthdayTF, text: "22220222")
+        createAccountTypeFields(textField: heightTF, text: "15")
+        
+        let createButton = app.buttons["profileCCreateButton"]
+        createButton.tap()
+        
+        sleep(6)
+        
+        let errorMessage = app.staticTexts["profileCErrorLabel"].label
+        XCTAssertEqual(errorMessage, "Please fill in all fields.")
+        
+    }
+    
+    // clear text fields functionality required
+    func testCreateUserInvalidPassword() {
+        logOutIfLoggedIn()
+        switchToPage(page: "Profile")
+        let createAccountButton = app.buttons["profileCreateAccountButton"]
+        createAccountButton.tap()
+        
+        let emailTF = app.textFields["profileCEmailTF"]
+        let passwordTF = app.textFields["profileCPasswordTF"]
+        let nicknameTF = app.textFields["profileCNicknameTF"]
+        let birthdayTF = app.textFields["profileCBirthdayTF"]
+        let heightTF = app.textFields["profileCHeightTF"]
+        let weightTF = app.textFields["profileCWeightTF"]
+        
+        createAccountTypeFields(textField: emailTF, text: "testCU@gmail.com")
+        createAccountTypeFields(textField: passwordTF, text: "test1234")
+        createAccountTypeFields(textField: nicknameTF, text: "testCU")
+        createAccountTypeFields(textField: birthdayTF, text: "22220222")
+        createAccountTypeFields(textField: heightTF, text: "14")
+        createAccountTypeFields(textField: weightTF, text: "15")
+        
+        let createButton = app.buttons["profileCCreateButton"]
+        createButton.tap()
+        
+        sleep(6)
+        
+        let errorMessage = app.staticTexts["profileCErrorLabel"].label
+        XCTAssertEqual(errorMessage, "Please make sure your password is at least 8 characters, contains a special character and a number.")
+        
+    }
+    
+    func testCreateUserInvalidEmail() {
+        logOutIfLoggedIn()
+        switchToPage(page: "Profile")
+        let createAccountButton = app.buttons["profileCreateAccountButton"]
+        createAccountButton.tap()
+        
+        let emailTF = app.textFields["profileCEmailTF"]
+        let passwordTF = app.textFields["profileCPasswordTF"]
+        let nicknameTF = app.textFields["profileCNicknameTF"]
+        let birthdayTF = app.textFields["profileCBirthdayTF"]
+        let heightTF = app.textFields["profileCHeightTF"]
+        let weightTF = app.textFields["profileCWeightTF"]
+        
+        createAccountTypeFields(textField: emailTF, text: "testCU")
+        createAccountTypeFields(textField: passwordTF, text: "test1234*")
+        createAccountTypeFields(textField: nicknameTF, text: "testCU")
+        createAccountTypeFields(textField: birthdayTF, text: "22220222")
+        createAccountTypeFields(textField: heightTF, text: "14")
+        createAccountTypeFields(textField: weightTF, text: "15")
+        
+        let createButton = app.buttons["profileCCreateButton"]
+        createButton.tap()
+        
+        sleep(6)
+        
+        let errorMessage = app.staticTexts["profileCErrorLabel"].label
+        XCTAssertEqual(errorMessage, "Error creating user")
         
     }
     
@@ -215,10 +299,11 @@ class KeepFitUITests: XCTestCase {
     }
     
     func logIn(accountText: String, passwordText: String) {
-        if app.buttons["profileSigninButton"].exists {
+        sleep(6)
+        let loginButton = app.buttons["profileSigninButton"]
+        if !loginButton.exists {
             switchToPage(page: "Profile")
         }
-        let loginButton = app.buttons["profileSigninButton"]
         let accountTF = app.textFields["profileEmailTF"]
         let passwordTF = app.textFields["profilePasswordTF"]
         accountTF.tap()
@@ -277,6 +362,8 @@ class KeepFitUITests: XCTestCase {
         textField.typeText(text)
         app.staticTexts["profileCHeadlineLabel"].tap()
     }
+    
+    
     
     
     
