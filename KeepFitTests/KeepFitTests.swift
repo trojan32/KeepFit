@@ -88,8 +88,8 @@ class KeepFitTests: XCTestCase {
     
     func testExcerciseDetailConvertTimeToDisplay() {
         let controller = ExerciseDetailViewController()
-        XCTAssertEqual(controller.convertToTimerDisplay(minute: 12, second: 20), "12:20")
-        XCTAssertEqual(controller.convertToTimerDisplay(minute: 1, second: 10), "1:10")
+        XCTAssertEqual(controller.convertToTimerDisplay(hour: 0, minute: 12, second: 20), "0:12:20")
+        XCTAssertEqual(controller.convertToTimerDisplay(hour: 1, minute: 1, second: 10), "1:1:10")
     }
     
     func testStreamPageVCSearchEmptyResultsNoThrow() {
@@ -145,6 +145,19 @@ class KeepFitTests: XCTestCase {
         sleep(5)
         
         XCTAssertNotNil(Auth.auth().currentUser)
+    }
+    
+    func testprofilePageViewController() {
+        Auth.auth().signIn(withEmail: "nealight@gmail.com", password: "password123@")
+        let _ = Auth.auth().currentUser
+        sleep(5)
+        
+        let controller = ProfilePageViewController()
+        
+        XCTAssertNotEqual(controller.nicknameLabel.text, "")
+        XCTAssertNotEqual(controller.birthdayLabel.text,"")
+        XCTAssertNotEqual(controller.heightLabel.text, "")
+        XCTAssertNotEqual(controller.weightLabel.text, "")
     }
     
     
