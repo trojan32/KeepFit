@@ -4,7 +4,6 @@
 //
 //  Created by Yi Xu on 3/24/21.
 //
-
 import UIKit
 
 class ExerciseDetailViewController: UIViewController {
@@ -18,13 +17,19 @@ class ExerciseDetailViewController: UIViewController {
     var minute = 0
     var second = 0
     
+    var secondspassed = 0.0
+//    var METvalue = 0?
+    var calperhour = 0.0
+    var caloriecount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         timerDisplay.text = convertToTimerDisplay(hour:0, minute: 0, second: 0)
+        
+        //calperhour = MET * weight
 
         // Do any additional setup after loading the view.
-
     }
     
     func convertToTimerDisplay(hour: Int, minute: Int, second: Int) -> String {
@@ -32,7 +37,13 @@ class ExerciseDetailViewController: UIViewController {
     }
     
     
+    //https://www.businessinsider.com/how-to-calculate-calories-burned-exercise-met-value-2017-8#:~:text=Here's%20your%20equation%3A%20MET%20value,divide%20that%20number%20by%20four.
+    //MET value multiplied by weight in kilograms tells you calories burned per hour (MET*weight in kg=calories/hour)
+    
+    
     @objc func timerAction(){
+        secondspassed += 1.0
+        caloriecount = Int(calperhour * (secondspassed / 60.0 / 60.0))
         if(second == 59)
         {
             second = 0
@@ -77,7 +88,6 @@ class ExerciseDetailViewController: UIViewController {
 
     /*
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
