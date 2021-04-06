@@ -23,17 +23,12 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var error: UILabel!
     
-    
-    //    let personalAccountModel = PersonalAccountModel.shared
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         setUpElements()
-        // Do any additional setup after loading the view.
-        
         weight.accessibilityIdentifier = "profileCWeightTF"
         height.accessibilityIdentifier = "profileCHeightTF"
         birthday.accessibilityIdentifier = "profileCBirthdayTF"
@@ -81,7 +76,6 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         
         if let jpedData = image.jpegData(compressionQuality: 0.99) {
             try? jpedData.write(to: imagePath)
-            
         }
         
         CreateAccountViewController.profileImage = imageName
@@ -120,13 +114,8 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
     
     @IBAction func createAccountTapped(_ sender: UIBarButtonItem)
     {
-
-    
-//        dismiss(animated: true, completion: nil)
-
         // Validate the fields
         let error = validateFields()
-        
         if error != nil
         {
             // There's something wrong with the fields, show error message
@@ -152,7 +141,7 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
                 }
                 else
                 {
-                    // User was created successfully, now store the first name and last name
+                    // User was created successfully, now store the info
                     let db = Firestore.firestore()
                     
                     db.collection("users").document(result!.user.uid).setData([
@@ -171,8 +160,7 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
                             self.showError("Error saving user data")
                         }
                     }
-                    // Transition to the home screen
-//                    self.transitionToHome()
+                    
                     self.dismiss(animated: true, completion: nil)
                 }
             }
@@ -190,16 +178,33 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         view.endEditing(true)
     }
     
-//    func transitionToHome() {
-//
-//        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
-//
-//        view.window?.rootViewController = homeViewController
-//        view.window?.makeKeyAndVisible()
-//
-//    }
-    
-    
+    func uploadProfileImage(_ image:UIImage, completion: @escaping ((_ url:String?)->()))
+    {
+        let randomID = UUID.init().uuidString
+        let uploadRef = Storage.storage().reference(withPath: "UserProfileImages/\(randomID).jpg")
+        guard let imageData = image.jpegData(compressionQuality: 0.75) else{ return }
+        let uploadMetadata = StorageMetadata.init()
+        uploadMetadata.contentType = "image/jpeg"
+        
+        uploadRef.putData(imageData, metadata: uploadMetadata) { downloadMetadata, error in
+            if let error = error {
+                print("ERROR: \(error.localizedDescription)")
+                completion(nil)
+            }
+            guard let downloadMetadata = downloadMetadata else {
+              // Uh-oh, an error occurred!
+              return
+            }
+            print("Put is complete and I got this back: \(String(describing: downloadMetadata))")
+            uploadRef.downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                  // Uh-oh, an error occurred!
+                  return
+                }
+                completion(downloadURL.absoluteString)
+            }
+        }
+    }
     
     /*
     // MARK: - Navigation
