@@ -31,9 +31,6 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-//        view.addGestureRecognizer(tap)
-        
         setUpElements()
         weight.accessibilityIdentifier = "profileCWeightTF"
         height.accessibilityIdentifier = "profileCHeightTF"
@@ -74,37 +71,6 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         Utilities.styleTextField(height)
         Utilities.styleTextField(weight)
     }
-    
-//    @IBAction func addImagePressed(_ sender: UIButton) {
-//        // Cite: My ITP iOS dev class project code and  https://www.hackingwithswift.com/read/10/4/importing-photos-with-uiimagepickercontroller
-//        let picker = UIImagePickerController()
-//        picker.allowsEditing = true
-//        picker.delegate = self
-//        picker.modalPresentationStyle = .fullScreen
-//        present(picker, animated: true)
-//    }
-    
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        // Cite: https://www.hackingwithswift.com/read/10/4/importing-photos-with-uiimagepickercontroller
-//        guard let image = info[.editedImage] as? UIImage else {
-//            return
-//        }
-//
-//        let imageName = UUID().uuidString
-//        let manager = FileManager.default
-//        let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first
-//
-//
-//        let imagePath = url!.appendingPathComponent(imageName)
-//
-//        if let jpedData = image.jpegData(compressionQuality: 0.99) {
-//            try? jpedData.write(to: imagePath)
-//        }
-//
-//        CreateAccountViewController.profileImage = imageName
-//
-//        dismiss(animated: true)
-//    }
     
     func validateFields() -> String? {
 
@@ -253,17 +219,6 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
             }
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension CreateAccountViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
