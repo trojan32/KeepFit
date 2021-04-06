@@ -45,7 +45,7 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         create.accessibilityIdentifier = "profileCCreateButton"
         error.accessibilityIdentifier = "profileCErrorLabel"
         
-        let imageTap = UIGestureRecognizer(target: self, action: #selector(openImagePicker))
+        let imageTap = UITapGestureRecognizer(target: self, action: #selector(openImagePicker))
         profileImageView.isUserInteractionEnabled = true
         profileImageView.addGestureRecognizer(imageTap)
         profileImageView.layer.cornerRadius = profileImageView.bounds.height / 2
