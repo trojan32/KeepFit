@@ -23,7 +23,7 @@ class WorkoutNowViewController: UIViewController, UITableViewDelegate, UITableVi
         self.workoutTableView.dataSource = self
     }
     
-    let workoutItems = ["Yoga","Swimming","Running","Cycling","HITT","Zumba","Crossfit","Orange Theory'","Lifting","Ping Pong","Stretching"]
+    let workoutItems = ["Yoga","Swimming","Running","Cycling","HITT","Zumba","Crossfit","Orange Theory","Lifting","Ping Pong","Stretching"]
 
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,11 +39,15 @@ class WorkoutNowViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "workoutCell", for: indexPath)
 
         cell.textLabel?.text = workoutItems[indexPath.row]
-//        let imageName = UIImage(named: transportItems[indexPath.row])
-//        cell.imageView?.image = imageName
-
+        let imageName = UIImage(named: workoutItems[indexPath.row])
+        cell.imageView?.image = imageName
+//        cell.imageView = cell.imageView?.image?.resizableImage(withCapInsets: 1x1)
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 600
         return cell
     }
+  
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return 1
 //    }
