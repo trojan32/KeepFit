@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
-class CreateAccountViewController:  UIViewController, UITextViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreateAccountViewController:  UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
     static public var profileImage: String? = "Default"
     
@@ -22,12 +22,18 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
     @IBOutlet weak var height: UITextField!
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var error: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var tapToChangeProfileButton: UIButton!
+    
+    var imagePicker:UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
+        
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+//        view.addGestureRecognizer(tap)
+        
         setUpElements()
         weight.accessibilityIdentifier = "profileCWeightTF"
         height.accessibilityIdentifier = "profileCHeightTF"
@@ -38,6 +44,23 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         headlineLabel.accessibilityIdentifier = "profileCHeadlineLabel"
         create.accessibilityIdentifier = "profileCCreateButton"
         error.accessibilityIdentifier = "profileCErrorLabel"
+        
+        let imageTap = UIGestureRecognizer(target: self, action: #selector(openImagePicker))
+        profileImageView.isUserInteractionEnabled = true
+        profileImageView.addGestureRecognizer(imageTap)
+        profileImageView.layer.cornerRadius = profileImageView.bounds.height / 2
+        profileImageView.clipsToBounds = true
+        tapToChangeProfileButton.addTarget(self, action: #selector(openImagePicker), for: .touchUpInside)
+
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+    }
+    
+    @objc func openImagePicker(_ sender: Any)
+    {
+        self.present(imagePicker, animated: true, completion: nil)
     }
     
     func setUpElements() {
@@ -52,36 +75,36 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         Utilities.styleTextField(weight)
     }
     
-    @IBAction func addImagePressed(_ sender: UIButton) {
-        // Cite: My ITP iOS dev class project code and  https://www.hackingwithswift.com/read/10/4/importing-photos-with-uiimagepickercontroller
-        let picker = UIImagePickerController()
-        picker.allowsEditing = true
-        picker.delegate = self
-        picker.modalPresentationStyle = .fullScreen
-        present(picker, animated: true)
-    }
+//    @IBAction func addImagePressed(_ sender: UIButton) {
+//        // Cite: My ITP iOS dev class project code and  https://www.hackingwithswift.com/read/10/4/importing-photos-with-uiimagepickercontroller
+//        let picker = UIImagePickerController()
+//        picker.allowsEditing = true
+//        picker.delegate = self
+//        picker.modalPresentationStyle = .fullScreen
+//        present(picker, animated: true)
+//    }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        // Cite: https://www.hackingwithswift.com/read/10/4/importing-photos-with-uiimagepickercontroller
-        guard let image = info[.editedImage] as? UIImage else {
-            return
-        }
-        
-        let imageName = UUID().uuidString
-        let manager = FileManager.default
-        let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first
-               
-               
-        let imagePath = url!.appendingPathComponent(imageName)
-        
-        if let jpedData = image.jpegData(compressionQuality: 0.99) {
-            try? jpedData.write(to: imagePath)
-        }
-        
-        CreateAccountViewController.profileImage = imageName
-        
-        dismiss(animated: true)
-    }
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        // Cite: https://www.hackingwithswift.com/read/10/4/importing-photos-with-uiimagepickercontroller
+//        guard let image = info[.editedImage] as? UIImage else {
+//            return
+//        }
+//
+//        let imageName = UUID().uuidString
+//        let manager = FileManager.default
+//        let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first
+//
+//
+//        let imagePath = url!.appendingPathComponent(imageName)
+//
+//        if let jpedData = image.jpegData(compressionQuality: 0.99) {
+//            try? jpedData.write(to: imagePath)
+//        }
+//
+//        CreateAccountViewController.profileImage = imageName
+//
+//        dismiss(animated: true)
+//    }
     
     func validateFields() -> String? {
 
@@ -130,6 +153,7 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
             let birthday_txt = birthday.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let height_txt = height.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let weight_txt = weight.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard let image = profileImageView.image else { return }
             
             // Create the user
             Auth.auth().createUser(withEmail: email_txt, password: password_txt) { (result, err) in
@@ -142,8 +166,8 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
                 else
                 {
                     // User was created successfully, now store the info
+                    print("User Created!")
                     let db = Firestore.firestore()
-                    
                     db.collection("users").document(result!.user.uid).setData([
                         "email":email_txt,
                         "nickname":nickname_txt,
@@ -153,7 +177,6 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
                         "uid": result!.user.uid,
                         "zoomlink": ""
                     ]) { (error) in
-                        
                         if error != nil
                         {
                             // Show error message
@@ -161,6 +184,31 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
                         }
                     }
                     
+                    // Upload the profile image to Firebase Storage
+                    self.uploadProfileImage(image) { url in
+                        if url != nil {
+                            let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                            changeRequest?.photoURL = url
+                            changeRequest?.commitChanges(completion: { (error) in
+                                if error == nil {
+                                    print("User photoURL changed!")
+                                    db.collection("users").document(result!.user.uid).updateData([
+                                        "profileImage":url!.absoluteString
+                                    ]) { (error) in
+                                        if error != nil
+                                        {
+                                            // Show error message
+                                            self.showError("Error saving user data")
+                                        }
+                                    }
+                                } else {
+                                    print("ERROR: \(error!.localizedDescription)")
+                                }
+                            })
+                        } else {
+                            print("Unable to upload profile image.")
+                        }
+                    }
                     self.dismiss(animated: true, completion: nil)
                 }
             }
@@ -178,7 +226,7 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         view.endEditing(true)
     }
     
-    func uploadProfileImage(_ image:UIImage, completion: @escaping ((_ url:String?)->()))
+    func uploadProfileImage(_ image:UIImage, completion: @escaping ((_ url:URL?)->()))
     {
         let randomID = UUID.init().uuidString
         let uploadRef = Storage.storage().reference(withPath: "UserProfileImages/\(randomID).jpg")
@@ -201,7 +249,7 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
                   // Uh-oh, an error occurred!
                   return
                 }
-                completion(downloadURL.absoluteString)
+                completion(downloadURL)
             }
         }
     }
@@ -216,4 +264,19 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
     }
     */
 
+}
+
+extension CreateAccountViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.profileImageView.image = pickedImage
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
 }

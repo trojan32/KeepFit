@@ -7,54 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "619B56BA-B4FC-456F-84D8-6FF9CAD0F827"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KeepFit/CreateAccountViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "createAccountTapped(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "619B56BA-B4FC-456F-84D8-6FF9CAD0F827 - f3c1df137235d42"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "KeepFit.CreateAccountViewController.createAccountTapped(__C.UIBarButtonItem) -&gt; ()"
-                  moduleName = "KeepFit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/albert/Desktop/MY%20UNIVERSITY/2021%20Spring/CSCI-310/iOS%20Development/KeepFit/KeepFit/CreateAccountViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "4775">
-               </Location>
-               <Location
-                  uuid = "619B56BA-B4FC-456F-84D8-6FF9CAD0F827 - 75d358ab5362723c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in KeepFit.CreateAccountViewController.createAccountTapped(__C.UIBarButtonItem) -&gt; ()"
-                  moduleName = "KeepFit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/albert/Desktop/MY%20UNIVERSITY/2021%20Spring/CSCI-310/iOS%20Development/KeepFit/KeepFit/CreateAccountViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137"
-                  offsetFromSymbolStart = "542">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D0621E69-B8D4-42E7-BE09-009941DF8995"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
