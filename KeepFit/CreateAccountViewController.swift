@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseStorage
 
 class CreateAccountViewController:  UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
