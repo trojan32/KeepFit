@@ -131,7 +131,8 @@ class StreamPageTableViewController: UITableViewController, UISearchResultsUpdat
                                 let userObj = document.data() as? [String: AnyObject]
                                 let nickname = userObj?["nickname"]
                                 let zoomlink = userObj?["zoomlink"]
-                                let user = UserSnapshot(nickname: nickname as!String, zoomlink: zoomlink as! String)
+                                let profileURL = userObj?["profileImage"] as? String ?? ""
+                                let user = UserSnapshot(nickname: nickname as!String, zoomlink: zoomlink as! String, profileURL: profileURL)
                                 self.users.append(user)
                             }
                             self.tableView.reloadData()

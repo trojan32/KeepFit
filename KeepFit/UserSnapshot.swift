@@ -10,9 +10,11 @@ import Foundation
 class UserSnapshot {
     var nickname: String?
     var zoomlink: String?
+    var profileURL: String?
     
-    init(nickname: String?, zoomlink: String?) {
+    init(nickname: String?, zoomlink: String?, profileURL: String?) {
         self.nickname = nickname
         self.zoomlink = zoomlink
+        self.profileURL = profileURL
     }
 }

@@ -13,6 +13,7 @@ class UserStreamingViewController: UIViewController {
     @IBOutlet var profilePhoto: UIImageView!
     @IBOutlet var nickNameTF: UILabel!
     @IBOutlet var linkTF: UILabel!
+    var imageURL: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +23,28 @@ class UserStreamingViewController: UIViewController {
 
         nickNameTF.text = selectedProfile.nickname
         linkTF.text = selectedProfile.zoomlink
+        imageURL = selectedProfile.profileURL ?? ""
+        
+        loadProfileImage()
         
 
         // Do any additional setup after loading the view.
+    }
+    
+    func loadProfileImage() {
+        
+        
+        if imageURL != "" {
+            
+            
+            
+            let imagePath = URL(string: imageURL)!
+            
+            print(imagePath)
+            do {
+                profilePhoto.image = UIImage(data: try Data(contentsOf: imagePath))
+            } catch {}
+        }
     }
     
     

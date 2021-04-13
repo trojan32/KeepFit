@@ -22,6 +22,7 @@ class ProfilePageViewController: UIViewController {
     @IBOutlet var logOutButton: UIButton!
     @IBOutlet var weightLabel: UILabel!
     @IBOutlet var changeAccountInfo: UIButton!
+    var imageURL: String = ""
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -69,11 +70,16 @@ class ProfilePageViewController: UIViewController {
                 let birthday = dataDescription?["birthday"] as? String ?? ""
                 let height = dataDescription?["height"] as? String ?? ""
                 let weight = dataDescription?["weight"] as? String ?? ""
-                self.loadProfileImage()
+                
+                let profileImage = dataDescription?["profileImage"] as? String ?? ""
+                
                 self.nicknameLabel.text = nickname
                 self.birthdayLabel.text = "Birthday: \(birthday)"
                 self.heightLabel.text = "Height: \(height) cm"
                 self.weightLabel.text = "Weight: \(weight) kg"
+                self.imageURL = profileImage
+                
+                self.loadProfileImage()
             }
             else
             {
@@ -84,12 +90,15 @@ class ProfilePageViewController: UIViewController {
     }
     
     func loadProfileImage() {
-        let imageName = CreateAccountViewController.profileImage!
         
-        if imageName != "Default" {
-            let manager = FileManager.default
-            let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first
-            let imagePath = url!.appendingPathComponent(imageName)
+        
+        if imageURL != "" {
+            
+            
+            
+            
+            let imagePath = URL(string: imageURL)!
+            
             print(imagePath)
             do {
                 profileImage.image = UIImage(data: try Data(contentsOf: imagePath))
