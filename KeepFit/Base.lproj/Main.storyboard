@@ -138,6 +138,7 @@
                     <connections>
                         <outlet property="startStopButton" destination="U4n-IY-X7e" id="9B0-rR-yR9"/>
                         <outlet property="zoomLinkTF" destination="ojU-sl-Nig" id="c1b-JE-SF3"/>
+                        <outlet property="zoomlinkTF" destination="ojU-sl-Nig" id="xjM-3s-0KS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4DV-bc-Bzf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -870,6 +871,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Streamig Status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2W-D3-sDE">
+                                <rect key="frame" x="20" y="678.66666666666663" width="350" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="smy-pL-NCM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -877,11 +884,14 @@
                             <constraint firstItem="1tA-4m-sa5" firstAttribute="width" secondItem="1tA-4m-sa5" secondAttribute="height" multiplier="1:1" constant="1" id="1RX-lc-Sh9"/>
                             <constraint firstItem="smy-pL-NCM" firstAttribute="trailing" secondItem="1tA-4m-sa5" secondAttribute="trailing" constant="120" id="1gA-MU-iNM"/>
                             <constraint firstItem="1tA-4m-sa5" firstAttribute="leading" secondItem="smy-pL-NCM" secondAttribute="leading" constant="120" id="BJa-LC-SjX"/>
+                            <constraint firstItem="smy-pL-NCM" firstAttribute="trailing" secondItem="P2W-D3-sDE" secondAttribute="trailing" constant="20" id="DV5-xQ-Xhe"/>
                             <constraint firstItem="ldQ-gQ-h8b" firstAttribute="leading" secondItem="smy-pL-NCM" secondAttribute="leading" constant="20" id="EDI-aR-iey"/>
+                            <constraint firstItem="fI6-T9-h4b" firstAttribute="top" secondItem="P2W-D3-sDE" secondAttribute="bottom" constant="20" id="S00-og-yoC"/>
                             <constraint firstItem="ldQ-gQ-h8b" firstAttribute="top" secondItem="1tA-4m-sa5" secondAttribute="bottom" constant="20" id="YgY-XP-zaL"/>
                             <constraint firstItem="1tA-4m-sa5" firstAttribute="top" secondItem="smy-pL-NCM" secondAttribute="top" constant="20" id="Z5J-Ah-3M2"/>
                             <constraint firstItem="smy-pL-NCM" firstAttribute="trailing" secondItem="fI6-T9-h4b" secondAttribute="trailing" constant="20" id="dpO-A2-8LJ"/>
                             <constraint firstItem="smy-pL-NCM" firstAttribute="trailing" secondItem="ldQ-gQ-h8b" secondAttribute="trailing" constant="20" id="dyn-EO-TT9"/>
+                            <constraint firstItem="P2W-D3-sDE" firstAttribute="leading" secondItem="smy-pL-NCM" secondAttribute="leading" constant="20" id="iqJ-Cw-5gv"/>
                             <constraint firstAttribute="bottom" secondItem="fI6-T9-h4b" secondAttribute="bottom" constant="50" id="mx0-cl-1KZ"/>
                             <constraint firstItem="fI6-T9-h4b" firstAttribute="leading" secondItem="smy-pL-NCM" secondAttribute="leading" constant="20" id="oc9-AU-1sf"/>
                         </constraints>
@@ -891,6 +901,7 @@
                         <outlet property="linkTF" destination="fI6-T9-h4b" id="4k4-AW-nxl"/>
                         <outlet property="nickNameTF" destination="ldQ-gQ-h8b" id="8BK-jY-luK"/>
                         <outlet property="profilePhoto" destination="1tA-4m-sa5" id="jxf-d0-jE0"/>
+                        <outlet property="streamingStatusTF" destination="P2W-D3-sDE" id="rQo-wQ-ZYp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jEs-wb-7Ny" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

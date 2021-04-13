@@ -15,6 +15,7 @@ class MyStreamingViewController: UIViewController {
     let personalAccountModel = PersonalAccountModel.shared
     
     @IBOutlet var startStopButton: UIBarButtonItem!
+    @IBOutlet var zoomlinkTF: UITextField!
     var streamStarted = false;
     
     let db = Firestore.firestore()
@@ -40,13 +41,13 @@ class MyStreamingViewController: UIViewController {
 //                print("Document data: \(dataDescription)")
                 let status = dataDescription?["stream_started"] as? String ?? ""
                 
-                
-                
                 if (status == "true") {
                     self.streamStarted = true
                 } else {
                     self.streamStarted = false
                 }
+                
+                self.zoomLinkTF.text = dataDescription?["zoomlink"] as? String ?? ""
                 
             }
             else
@@ -72,6 +73,7 @@ class MyStreamingViewController: UIViewController {
         zoomLinkTF.text = personalAccountModel.myAccountProfile?.zoomLink
         
         loadExistingInfo()
+        
         
         
 
