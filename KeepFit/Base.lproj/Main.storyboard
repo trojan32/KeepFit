@@ -645,6 +645,13 @@
                                     <segue destination="xe7-KX-RWr" kind="presentation" modalPresentationStyle="fullScreen" id="Ef9-Vn-Gol"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfW-OQ-84X">
+                                <rect key="frame" x="20" y="611" width="350" height="30"/>
+                                <state key="normal" title="Delete Account"/>
+                                <connections>
+                                    <action selector="deleteAccount:" destination="TJR-1v-cdN" eventType="touchUpInside" id="uSV-tj-p6j"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="y8h-NA-rdb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -655,12 +662,15 @@
                             <constraint firstItem="q7F-of-l0u" firstAttribute="leading" secondItem="y8h-NA-rdb" secondAttribute="leading" constant="20" id="6K1-dP-iv4"/>
                             <constraint firstItem="y8h-NA-rdb" firstAttribute="trailing" secondItem="iSV-du-4Ka" secondAttribute="trailing" constant="20" id="6QY-fL-l1L"/>
                             <constraint firstItem="y8h-NA-rdb" firstAttribute="trailing" secondItem="Q2O-ci-kAj" secondAttribute="trailing" constant="20" id="DMw-8c-XUi"/>
+                            <constraint firstItem="KfW-OQ-84X" firstAttribute="leading" secondItem="y8h-NA-rdb" secondAttribute="leading" constant="20" id="GMu-aa-6Yo"/>
+                            <constraint firstItem="iSV-du-4Ka" firstAttribute="top" secondItem="KfW-OQ-84X" secondAttribute="bottom" constant="20" id="H7B-j8-b9j"/>
                             <constraint firstItem="1UX-NO-eZz" firstAttribute="leading" secondItem="y8h-NA-rdb" secondAttribute="leading" constant="20" id="Oqc-5E-Cnt"/>
                             <constraint firstItem="Q2O-ci-kAj" firstAttribute="leading" secondItem="yIf-Ym-dN2" secondAttribute="trailing" constant="10" id="QX8-wv-Dgw"/>
                             <constraint firstItem="02x-w0-hbv" firstAttribute="leading" secondItem="y8h-NA-rdb" secondAttribute="leading" constant="20" id="VDm-IV-Ygb"/>
                             <constraint firstItem="y8h-NA-rdb" firstAttribute="trailing" secondItem="02x-w0-hbv" secondAttribute="trailing" constant="20" id="WkF-oU-g9C"/>
                             <constraint firstItem="Q2O-ci-kAj" firstAttribute="width" secondItem="yIf-Ym-dN2" secondAttribute="width" id="YLv-wV-5P4"/>
                             <constraint firstItem="y8h-NA-rdb" firstAttribute="trailing" secondItem="mEN-Nu-61g" secondAttribute="trailing" constant="120" id="YZW-2p-pAK"/>
+                            <constraint firstItem="y8h-NA-rdb" firstAttribute="trailing" secondItem="KfW-OQ-84X" secondAttribute="trailing" constant="20" id="a0a-Ab-7z7"/>
                             <constraint firstItem="yIf-Ym-dN2" firstAttribute="top" secondItem="q7F-of-l0u" secondAttribute="bottom" constant="20" id="cEA-Cr-8sB"/>
                             <constraint firstItem="1UX-NO-eZz" firstAttribute="top" secondItem="mEN-Nu-61g" secondAttribute="bottom" constant="20" id="czm-fD-tRc"/>
                             <constraint firstItem="02x-w0-hbv" firstAttribute="top" secondItem="iSV-du-4Ka" secondAttribute="bottom" constant="20" id="f9l-F0-oEv"/>
@@ -1123,7 +1133,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="duV-ZP-ESX"/>
+        <segue reference="Ef9-Vn-Gol"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="person" catalog="system" width="128" height="117"/>

@@ -12,6 +12,8 @@ import Firebase
 class ProfilePageViewController: UIViewController {
     
     let personalAccountModel = PersonalAccountModel.shared
+    
+    let db = Firestore.firestore()
 
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var nicknameLabel: UILabel!
@@ -103,5 +105,47 @@ class ProfilePageViewController: UIViewController {
       } catch let error {
         print(error)
       }
+    }
+    
+    
+    @IBAction func deleteAccountTapped(_ sender: Any) {
+
+       
+        let user = Auth.auth().currentUser
+        
+        // delete the user data in database
+        db.collection("users").document(user?.uid ?? "").delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        }
+        
+        // delete the user from authentication system
+        user?.delete { error in
+          if let error = error {
+            // An error happened.
+            print(error)
+            
+            let user = Auth.auth().currentUser
+            var credential : AuthCredential
+            user?.reauthenticate(with: credential) { error,arg  in
+                if error != nil {
+                // An error happened.
+              } else {
+                // User re-authenticated.
+              }
+            }
+            
+          } else {
+            // Account deleted.
+          }
+        }
+        
+        // switch to login page
+        self.dismiss(animated: true, completion: nil)
+        
+        
     }
 }
