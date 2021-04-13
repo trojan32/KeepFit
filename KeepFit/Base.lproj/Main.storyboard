@@ -655,6 +655,28 @@
                                 <state key="normal" title="Delete Account"/>
                                 <connections>
                                     <action selector="deleteAccount:" destination="TJR-1v-cdN" eventType="touchUpInside" id="uSV-tj-p6j"/>
+                                    <action selector="deleteAccountTapped:" destination="TJR-1v-cdN" eventType="touchUpInside" id="rgg-qM-BQE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter your password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWZ-1L-RMH">
+                                <rect key="frame" x="111" y="520" width="169" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bnF-tA-qzm">
+                                <rect key="frame" x="79" y="553" width="169" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WR8-CX-gkh">
+                                <rect key="frame" x="261" y="555" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="passwordEnter:" destination="TJR-1v-cdN" eventType="touchUpInside" id="a5N-XW-LQA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -694,6 +716,9 @@
                         <outlet property="heightLabel" destination="yIf-Ym-dN2" id="i6Q-CS-egX"/>
                         <outlet property="logOutButton" destination="iSV-du-4Ka" id="P4C-aF-OQS"/>
                         <outlet property="nicknameLabel" destination="1UX-NO-eZz" id="vNz-T7-zOL"/>
+                        <outlet property="passwordButton" destination="WR8-CX-gkh" id="m4b-Qm-zsM"/>
+                        <outlet property="passwordLabel" destination="PWZ-1L-RMH" id="gRU-z2-mGb"/>
+                        <outlet property="passwordTF" destination="bnF-tA-qzm" id="rnn-9v-E3s"/>
                         <outlet property="profileImage" destination="mEN-Nu-61g" id="tst-WX-XBH"/>
                         <outlet property="weightLabel" destination="Q2O-ci-kAj" id="vt2-KF-mCX"/>
                         <segue destination="4SX-l5-RPj" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="H8u-Y4-HGq"/>
@@ -701,7 +726,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYq-WN-T0j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="228" y="-636"/>
+            <point key="canvasLocation" x="227.69230769230768" y="-636.25592417061614"/>
         </scene>
         <!--Community-->
         <scene sceneID="cBs-Pm-Qim">

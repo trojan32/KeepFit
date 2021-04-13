@@ -13,8 +13,14 @@ class ProfilePageViewController: UIViewController {
     
     let personalAccountModel = PersonalAccountModel.shared
     
+    var password_txt: String = ""
+    
     let db = Firestore.firestore()
+//    var credential : AuthCredential
 
+    @IBOutlet var passwordButton: UIButton!
+    @IBOutlet var passwordTF: UITextField!
+    @IBOutlet var passwordLabel: UILabel!
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var nicknameLabel: UILabel!
     @IBOutlet var birthdayLabel: UILabel!
@@ -35,6 +41,9 @@ class ProfilePageViewController: UIViewController {
           // No user is signed in.
             performSegue(withIdentifier: "loginSegue", sender: self)
         }
+        // hide the password label and textfield
+        passwordLabel.alpha = 0
+        passwordTF.alpha = 0
     }
     
     override func viewDidLoad() {
@@ -117,11 +126,29 @@ class ProfilePageViewController: UIViewController {
     }
     
     
-    @IBAction func deleteAccountTapped(_ sender: Any) {
+    @IBAction func deleteAccountTapped(_ sender: UIButton!) {
 
-       
-        let user = Auth.auth().currentUser
         
+        let user = Auth.auth().currentUser
+        var credential : AuthCredential
+
+        passwordLabel.alpha = 1
+        passwordTF.alpha = 1
+
+        credential = EmailAuthProvider.credential(withEmail: user?.email ?? "", password: password_txt)
+
+        user?.reauthenticate(with: credential) { error,arg  in
+            if error != nil {
+            // An error happened.""
+                print(error ?? "Error occurred")
+                return
+
+            } else {
+            // User re-authenticated.
+            }
+        }
+
+
         // delete the user data in database
         db.collection("users").document(user?.uid ?? "").delete() { err in
             if let err = err {
@@ -130,31 +157,25 @@ class ProfilePageViewController: UIViewController {
                 print("Document successfully removed!")
             }
         }
-        
+
         // delete the user from authentication system
         user?.delete { error in
           if let error = error {
             // An error happened.
             print(error)
-            
-            let user = Auth.auth().currentUser
-            var credential : AuthCredential
-            user?.reauthenticate(with: credential) { error,arg  in
-                if error != nil {
-                // An error happened.
-              } else {
-                // User re-authenticated.
-              }
-            }
-            
           } else {
             // Account deleted.
           }
         }
-        
+
         // switch to login page
         self.dismiss(animated: true, completion: nil)
-        
-        
     }
+    
+    
+    
+    @IBAction func passwordEnter(_ sender: UIButton!) {
+        password_txt = passwordTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
 }
