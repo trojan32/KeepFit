@@ -41,9 +41,7 @@ class ProfilePageViewController: UIViewController {
           // No user is signed in.
             performSegue(withIdentifier: "loginSegue", sender: self)
         }
-        // hide the password label and textfield
-        passwordLabel.alpha = 0
-        passwordTF.alpha = 0
+        
     }
     
     override func viewDidLoad() {
@@ -126,9 +124,9 @@ class ProfilePageViewController: UIViewController {
     }
     
     
-    @IBAction func deleteAccountTapped(_ sender: UIButton!) {
-
+    @IBAction func deleteAccountPressed(_ sender: UIButton) {
         
+
         let user = Auth.auth().currentUser
         var credential : AuthCredential
 

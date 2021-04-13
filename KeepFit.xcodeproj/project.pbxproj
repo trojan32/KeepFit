@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C05216A2625828F00D032C3 /* DeleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0521692625828F00D032C3 /* DeleteAccountViewController.swift */; };
 		1C0B705826108121004DD682 /* UserSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C96D153260DBBD300188AF8 /* UserSnapshot.swift */; };
 		1C0B705926108121004DD682 /* KeepFitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D48B325E38BDB004D7AB1 /* KeepFitTests.swift */; };
 		1C0B706226108143004DD682 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FA6292609C7DA00CAD1AF /* Utilities.swift */; };
@@ -103,6 +104,7 @@
 		0A8388BB25FF09D600276C7C /* WorkoutNowViewController_tmp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutNowViewController_tmp.swift; sourceTree = "<group>"; };
 		0AB5B19C2605588700CF8EAD /* workoutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutTableViewController.swift; sourceTree = "<group>"; };
 		0ECAE81EA34C32332D209C3F /* Pods-KeepFit-KeepFitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepFit-KeepFitUITests.release.xcconfig"; path = "Target Support Files/Pods-KeepFit-KeepFitUITests/Pods-KeepFit-KeepFitUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1C0521692625828F00D032C3 /* DeleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewController.swift; sourceTree = "<group>"; };
 		1C3D489925E38BDA004D7AB1 /* KeepFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeepFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C3D489C25E38BDA004D7AB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C3D489E25E38BDA004D7AB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				5073E344260E6FE200266674 /* CommunityViewController.swift */,
 				5073E349260E7EBC00266674 /* CommunityViewCell.swift */,
 				50B5592126124596006030D0 /* WorkoutNowViewController.swift */,
+				1C0521692625828F00D032C3 /* DeleteAccountViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				1C6F668125FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
 				1C3D489D25E38BDA004D7AB1 /* AppDelegate.swift in Sources */,
 				1C3D489F25E38BDA004D7AB1 /* SceneDelegate.swift in Sources */,
+				1C05216A2625828F00D032C3 /* DeleteAccountViewController.swift in Sources */,
 				5073E2C5260DD68400266674 /* VideoViewController.swift in Sources */,
 				1C5F2A9A2605F76300E899AC /* UserStreamingViewController.swift in Sources */,
 				50B5592226124596006030D0 /* WorkoutNowViewController.swift in Sources */,

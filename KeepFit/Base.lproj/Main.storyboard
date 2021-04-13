@@ -595,6 +595,56 @@
             </objects>
             <point key="canvasLocation" x="217" y="-1301"/>
         </scene>
+        <!--Delete Account View Controller-->
+        <scene sceneID="wRY-U2-fVD">
+            <objects>
+                <viewController id="dKL-VR-fFh" customClass="DeleteAccountViewController" customModule="KeepFit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CMa-uz-OUv">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your password:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlW-pn-6av">
+                                <rect key="frame" x="20" y="20" width="350" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h2W-hV-VyW">
+                                <rect key="frame" x="20" y="61" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKA-Ky-Mgc">
+                                <rect key="frame" x="20" y="666" width="350" height="30"/>
+                                <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="confirmPressed:" destination="dKL-VR-fFh" eventType="touchUpInside" id="Jd2-O1-KGn"/>
+                                    <segue destination="xe7-KX-RWr" kind="presentation" modalPresentationStyle="fullScreen" id="PW6-GA-eap"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sJD-Ly-WK4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sJD-Ly-WK4" firstAttribute="trailing" secondItem="SKA-Ky-Mgc" secondAttribute="trailing" constant="20" id="85F-4g-lxf"/>
+                            <constraint firstItem="h2W-hV-VyW" firstAttribute="leading" secondItem="sJD-Ly-WK4" secondAttribute="leading" constant="20" id="8yu-Ze-cBq"/>
+                            <constraint firstItem="SKA-Ky-Mgc" firstAttribute="leading" secondItem="sJD-Ly-WK4" secondAttribute="leading" constant="20" id="AXM-WY-6JH"/>
+                            <constraint firstItem="h2W-hV-VyW" firstAttribute="top" secondItem="NlW-pn-6av" secondAttribute="bottom" constant="20" id="Ehg-6t-h1l"/>
+                            <constraint firstItem="NlW-pn-6av" firstAttribute="leading" secondItem="sJD-Ly-WK4" secondAttribute="leading" constant="20" id="FD9-gc-Okn"/>
+                            <constraint firstItem="sJD-Ly-WK4" firstAttribute="trailing" secondItem="NlW-pn-6av" secondAttribute="trailing" constant="20" id="Ga3-9x-OcA"/>
+                            <constraint firstItem="sJD-Ly-WK4" firstAttribute="trailing" secondItem="h2W-hV-VyW" secondAttribute="trailing" constant="20" id="M5x-Bb-pk7"/>
+                            <constraint firstItem="sJD-Ly-WK4" firstAttribute="bottom" secondItem="SKA-Ky-Mgc" secondAttribute="bottom" constant="60" id="UjT-rd-2gX"/>
+                            <constraint firstItem="NlW-pn-6av" firstAttribute="top" secondItem="sJD-Ly-WK4" secondAttribute="top" constant="20" id="pM7-mb-x1Q"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTF" destination="h2W-hV-VyW" id="kHW-em-JAk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rj4-O7-49N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-429.23076923076923" y="-623.45971563981038"/>
+        </scene>
         <!--Profile-->
         <scene sceneID="foj-oV-ihs">
             <objects>
@@ -655,29 +705,7 @@
                                 <rect key="frame" x="20" y="611" width="350" height="30"/>
                                 <state key="normal" title="Delete Account"/>
                                 <connections>
-                                    <action selector="deleteAccount:" destination="TJR-1v-cdN" eventType="touchUpInside" id="uSV-tj-p6j"/>
-                                    <action selector="deleteAccountTapped:" destination="TJR-1v-cdN" eventType="touchUpInside" id="rgg-qM-BQE"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter your password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWZ-1L-RMH">
-                                <rect key="frame" x="111" y="520" width="169" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bnF-tA-qzm">
-                                <rect key="frame" x="79" y="553" width="169" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WR8-CX-gkh">
-                                <rect key="frame" x="261" y="555" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Confirm"/>
-                                <connections>
-                                    <action selector="passwordEnter:" destination="TJR-1v-cdN" eventType="touchUpInside" id="a5N-XW-LQA"/>
+                                    <segue destination="dKL-VR-fFh" kind="presentation" id="RFP-Xd-RE2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -717,9 +745,6 @@
                         <outlet property="heightLabel" destination="yIf-Ym-dN2" id="i6Q-CS-egX"/>
                         <outlet property="logOutButton" destination="iSV-du-4Ka" id="P4C-aF-OQS"/>
                         <outlet property="nicknameLabel" destination="1UX-NO-eZz" id="vNz-T7-zOL"/>
-                        <outlet property="passwordButton" destination="WR8-CX-gkh" id="m4b-Qm-zsM"/>
-                        <outlet property="passwordLabel" destination="PWZ-1L-RMH" id="gRU-z2-mGb"/>
-                        <outlet property="passwordTF" destination="bnF-tA-qzm" id="rnn-9v-E3s"/>
                         <outlet property="profileImage" destination="mEN-Nu-61g" id="tst-WX-XBH"/>
                         <outlet property="weightLabel" destination="Q2O-ci-kAj" id="vt2-KF-mCX"/>
                         <segue destination="4SX-l5-RPj" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="H8u-Y4-HGq"/>
@@ -1174,7 +1199,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ef9-Vn-Gol"/>
+        <segue reference="PW6-GA-eap"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="person" catalog="system" width="128" height="117"/>
