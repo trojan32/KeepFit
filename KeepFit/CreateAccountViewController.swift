@@ -142,7 +142,8 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
                         "height":height_txt,
                         "weight":weight_txt,
                         "uid": result!.user.uid,
-                        "zoomlink": ""
+                        "zoomlink": "",
+                        "stream_started" : "false"
                     ]) { (error) in
                         if error != nil
                         {

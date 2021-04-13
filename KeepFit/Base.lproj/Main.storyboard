@@ -129,9 +129,14 @@
                                 <action selector="cancelButtonPressed:" destination="dq8-51-xvn" id="IgA-nK-OUR"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Start" id="U4n-IY-X7e"/>
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="U4n-IY-X7e">
+                            <connections>
+                                <action selector="startStopPressed:" destination="dq8-51-xvn" id="FkT-0u-iNP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="startStopButton" destination="U4n-IY-X7e" id="9B0-rR-yR9"/>
                         <outlet property="zoomLinkTF" destination="ojU-sl-Nig" id="c1b-JE-SF3"/>
                     </connections>
                 </viewController>
@@ -1123,7 +1128,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="duV-ZP-ESX"/>
+        <segue reference="Ef9-Vn-Gol"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="person" catalog="system" width="128" height="117"/>
