@@ -132,25 +132,25 @@ class ProfilePageViewController: UIViewController {
         }
         
         // delete the user from authentication system
-        user?.delete { error in
-          if let error = error {
-            // An error happened.
-            print(error)
-            
-            let user = Auth.auth().currentUser
-            var credential : AuthCredential
-            user?.reauthenticate(with: credential) { error,arg  in
-                if error != nil {
-                // An error happened.
-              } else {
-                // User re-authenticated.
-              }
-            }
-            
-          } else {
-            // Account deleted.
-          }
-        }
+//        user?.delete { error in
+//          if let error = error {
+//            // An error happened.
+//            print(error)
+//
+//            let user = Auth.auth().currentUser
+//            var credential : AuthCredential
+//            user?.reauthenticate(with: credential) { error,arg  in
+//                if error != nil {
+//                // An error happened.
+//              } else {
+//                // User re-authenticated.
+//              }
+//            }
+//
+//          } else {
+//            // Account deleted.
+//          }
+//        }
         
         // switch to login page
         self.dismiss(animated: true, completion: nil)
