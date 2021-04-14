@@ -26,6 +26,8 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var tapToChangeProfileButton: UIButton!
     
+    let datePickerView:UIDatePicker = UIDatePicker()
+    
     var imagePicker:UIImagePickerController!
     
     override func viewDidLoad() {
@@ -43,6 +45,10 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         create.accessibilityIdentifier = "profileCCreateButton"
         error.accessibilityIdentifier = "profileCErrorLabel"
         
+        datePickerView.datePickerMode = UIDatePicker.Mode.date
+        birthday.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(CreateAccountViewController.datePickerValueChanged), for: UIControl.Event.valueChanged)
+        
         let imageTap = UITapGestureRecognizer(target: self, action: #selector(openImagePicker))
         profileImageView.isUserInteractionEnabled = true
         profileImageView.addGestureRecognizer(imageTap)
@@ -54,6 +60,18 @@ class CreateAccountViewController:  UIViewController, UITextViewDelegate, UIText
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
+    }
+    
+    @objc func datePickerValueChanged(sender:UIDatePicker) {
+
+        let dateFormatter = DateFormatter()
+
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+
+        dateFormatter.timeStyle = DateFormatter.Style.none
+
+        birthday.text = dateFormatter.string(from: sender.date)
+
     }
     
     @objc func openImagePicker(_ sender: Any)
