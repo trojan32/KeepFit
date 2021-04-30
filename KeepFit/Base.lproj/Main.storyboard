@@ -943,7 +943,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HhH-JU-iUQ">
-                                <rect key="frame" x="50" y="581" width="290" height="130"/>
+                                <rect key="frame" x="50" y="531" width="290" height="180"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8NV-5q-FD0">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
@@ -961,6 +961,13 @@
                                         <state key="normal" title="Video"/>
                                         <connections>
                                             <segue destination="VUy-q6-PNP" kind="show" id="0iQ-DV-pJe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79Q-x4-5ZC">
+                                        <rect key="frame" x="0.0" y="150" width="290" height="30"/>
+                                        <state key="normal" title="UploadVideos"/>
+                                        <connections>
+                                            <segue destination="b4q-CK-qq4" kind="show" id="0hV-CO-UBm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1108,6 +1115,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xX0-8v-EpH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1891" y="2768"/>
+        </scene>
+        <!--Upload Video View Controller-->
+        <scene sceneID="0w2-be-CLJ">
+            <objects>
+                <viewController id="b4q-CK-qq4" customClass="UploadVideoViewController" customModule="KeepFit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tgT-fq-2tc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bOF-Dv-LA6">
+                                <rect key="frame" x="119" y="207" width="152" height="154"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Video Title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYo-er-I6k">
+                                        <rect key="frame" x="0.0" y="0.0" width="152" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5O-gp-Brr">
+                                        <rect key="frame" x="0.0" y="44" width="152" height="30"/>
+                                        <state key="normal" title="Pick A Video"/>
+                                        <connections>
+                                            <action selector="PickAVideo:" destination="b4q-CK-qq4" eventType="touchUpInside" id="8sV-1m-xlI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="He9-4N-EyZ">
+                                        <rect key="frame" x="0.0" y="84" width="152" height="30"/>
+                                        <state key="normal" title="Play The Picked Video"/>
+                                        <connections>
+                                            <action selector="PlayThePickedVideo:" destination="b4q-CK-qq4" eventType="touchUpInside" id="CDf-rQ-e7M"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2A-uZ-HjK">
+                                        <rect key="frame" x="0.0" y="124" width="152" height="30"/>
+                                        <state key="normal" title="Upload The Video"/>
+                                        <connections>
+                                            <action selector="UploadTheVideo:" destination="b4q-CK-qq4" eventType="touchUpInside" id="1xh-JN-A7u"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1k3-oJ-AIX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1k3-oJ-AIX" firstAttribute="bottom" secondItem="bOF-Dv-LA6" secondAttribute="bottom" constant="400" id="1Pn-hU-Nok"/>
+                            <constraint firstItem="bOF-Dv-LA6" firstAttribute="centerX" secondItem="tgT-fq-2tc" secondAttribute="centerX" id="FiM-OX-mUf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="UaM-hl-rjc"/>
+                    <connections>
+                        <outlet property="videoTitle" destination="zYo-er-I6k" id="Sc5-yZ-cvx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wfT-D1-fcS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2656" y="2785"/>
         </scene>
         <!--Community View Controller-->
         <scene sceneID="D3p-6X-MWP">
