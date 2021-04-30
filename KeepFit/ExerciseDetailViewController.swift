@@ -1,3 +1,4 @@
+
 //
 //  ExerciseDetailViewController.swift
 //  KeepFit
@@ -5,8 +6,12 @@
 //  Created by Yi Xu on 3/24/21.
 //
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class ExerciseDetailViewController: UIViewController {
+    
+    let db = Firestore.firestore()
 
     @IBOutlet var timerDisplay: UILabel!
     @IBOutlet var startStopButton: UIButton!
@@ -18,17 +23,32 @@ class ExerciseDetailViewController: UIViewController {
     var second = 0
     
     var secondspassed = 0.0
-//    var METvalue = 0?
+    var METvalue = 4.0
     var calperhour = 0.0
     var caloriecount = 0
+    
+    var weight = 50
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         timerDisplay.text = convertToTimerDisplay(hour:0, minute: 0, second: 0)
         
-        // calperhour = MET * weight
-
+        
+        if Auth.auth().currentUser != nil {
+          // User is signed in.
+            print("user logged in")
+            loadAccountInfo()
+        }
+//        else {
+//          // No user is signed in.
+//            performSegue(withIdentifier: "loginSegue", sender: self)
+//        }
+        
+        calperhour = METvalue * Double(weight)
+        
+        print(weight)
+        
         // Do any additional setup after loading the view.
     }
     
@@ -40,6 +60,31 @@ class ExerciseDetailViewController: UIViewController {
     //https://www.businessinsider.com/how-to-calculate-calories-burned-exercise-met-value-2017-8#:~:text=Here's%20your%20equation%3A%20MET%20value,divide%20that%20number%20by%20four.
     //MET value multiplied by weight in kilograms tells you calories burned per hour (MET*weight in kg=calories/hour)
     
+    @IBAction func startTimer(_ sender: Any) {
+        startButton.isEnabled = false
+        pauseButton.isEnabled = true
+        if(!started) {
+            
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+            started = true
+            }
+        else
+        {
+            print("end timer")
+            timer.invalidate()
+            started = false
+        }
+            
+    }
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var pauseButton: UIButton!
+    @IBAction func pauseTime(_ sender: Any) {
+        
+        startButton.isEnabled = true
+        pauseButton.isEnabled = false
+        timer.invalidate()
+        started = false
+    }
     
     @objc func timerAction(){
         secondspassed += 1.0
@@ -68,7 +113,7 @@ class ExerciseDetailViewController: UIViewController {
     {
         if(!started)
         {
-            print("start timer")
+            print("started Time")
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
             started = true
         }
@@ -82,6 +127,35 @@ class ExerciseDetailViewController: UIViewController {
     }
     
     
+    
+    
+    func loadAccountInfo() {
+            // Cite: https://github.com/nealight/Apply
+            print("loading account info")
+            
+            let db = Firestore.firestore()
+            let currentUser = Auth.auth().currentUser
+            let currentUID = currentUser?.uid as! String
+            let userRef = db.collection("users").document(currentUID)
+
+            userRef.getDocument
+            {
+                (document, error) in
+                if let document = document, document.exists
+                {
+                    let dataDescription = document.data()
+    //                print("Document data: \(dataDescription)")
+                    let weightstring = dataDescription?["weight"] as? String ?? ""
+                    
+                    self.weight = Int(weightstring) ?? 50
+                }
+                else
+                {
+                    print("Document does not exist")
+                }
+            }
+            return
+        }
     
     
     
