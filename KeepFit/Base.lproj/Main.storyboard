@@ -62,11 +62,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJt-e3-gvC">
-                                <rect key="frame" x="20" y="637" width="350" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <rect key="frame" x="20" y="627" width="350" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="startTimer:" destination="BBU-nk-WKA" eventType="touchUpInside" id="USj-y6-WmM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9v-Mf-bMH">
+                                <rect key="frame" x="166" y="580" width="58" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="pauseTime:" destination="BBU-nk-WKA" eventType="touchUpInside" id="mjW-Y8-jA3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -76,13 +84,17 @@
                             <constraint firstItem="pX7-hU-pY9" firstAttribute="trailing" secondItem="yJt-e3-gvC" secondAttribute="trailing" constant="20" id="1DJ-NZ-KQk"/>
                             <constraint firstItem="IYN-1P-nhr" firstAttribute="top" secondItem="pX7-hU-pY9" secondAttribute="top" constant="20" id="53C-pA-LKt"/>
                             <constraint firstItem="pX7-hU-pY9" firstAttribute="bottom" secondItem="yJt-e3-gvC" secondAttribute="bottom" constant="80" id="Bfc-UB-Zfd"/>
+                            <constraint firstItem="O9v-Mf-bMH" firstAttribute="centerX" secondItem="yJt-e3-gvC" secondAttribute="centerX" id="Ckv-81-YJB"/>
                             <constraint firstItem="yJt-e3-gvC" firstAttribute="leading" secondItem="pX7-hU-pY9" secondAttribute="leading" constant="20" id="PJC-hy-fYb"/>
                             <constraint firstItem="pX7-hU-pY9" firstAttribute="trailing" secondItem="IYN-1P-nhr" secondAttribute="trailing" constant="20" id="os4-rk-zVk"/>
                             <constraint firstItem="IYN-1P-nhr" firstAttribute="leading" secondItem="pX7-hU-pY9" secondAttribute="leading" constant="20" id="osX-GU-ZXx"/>
+                            <constraint firstItem="yJt-e3-gvC" firstAttribute="top" secondItem="O9v-Mf-bMH" secondAttribute="bottom" constant="8" id="smk-Np-m8a"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FKf-vH-NQf"/>
                     <connections>
+                        <outlet property="pauseButton" destination="O9v-Mf-bMH" id="BdB-K7-PIM"/>
+                        <outlet property="startButton" destination="yJt-e3-gvC" id="hlP-4H-104"/>
                         <outlet property="startStopButton" destination="yJt-e3-gvC" id="6Ah-Sa-fOV"/>
                         <outlet property="timerDisplay" destination="IYN-1P-nhr" id="JBC-UI-GlX"/>
                     </connections>

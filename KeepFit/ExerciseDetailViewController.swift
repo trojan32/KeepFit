@@ -41,7 +41,10 @@ class ExerciseDetailViewController: UIViewController {
     //MET value multiplied by weight in kilograms tells you calories burned per hour (MET*weight in kg=calories/hour)
     
     @IBAction func startTimer(_ sender: Any) {
+        startButton.isEnabled = false
+        pauseButton.isEnabled = true
         if(!started) {
+            
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
             started = true
             }
@@ -52,6 +55,15 @@ class ExerciseDetailViewController: UIViewController {
             started = false
         }
             
+    }
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var pauseButton: UIButton!
+    @IBAction func pauseTime(_ sender: Any) {
+        
+        startButton.isEnabled = true
+        pauseButton.isEnabled = false
+        timer.invalidate()
+        started = false
     }
     
     @objc func timerAction(){
