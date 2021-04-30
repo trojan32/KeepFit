@@ -817,6 +817,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Workout Together" id="ciW-8h-4Ik">
+                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="st0-1M-nAd"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZNe-UH-yKT">
                             <connections>
                                 <segue destination="K0I-D5-Vfr" kind="presentation" modalPresentationStyle="fullScreen" id="GKX-qc-OMh"/>
@@ -1017,11 +1018,11 @@
             </objects>
             <point key="canvasLocation" x="2647.6923076923076" y="96.682464454976298"/>
         </scene>
-        <!--Item-->
+        <!--Other-->
         <scene sceneID="rbe-Hu-HxT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MpQ-Ge-LAj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="wI8-Mj-OBD"/>
+                    <tabBarItem key="tabBarItem" title="Other" image="lasso" catalog="system" id="wI8-Mj-OBD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gxm-xg-XWq">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -1199,9 +1200,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PW6-GA-eap"/>
+        <segue reference="duV-ZP-ESX"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="lasso" catalog="system" width="128" height="118"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="sportscourt.fill" catalog="system" width="128" height="84"/>

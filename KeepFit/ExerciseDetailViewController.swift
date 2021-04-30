@@ -27,7 +27,7 @@ class ExerciseDetailViewController: UIViewController {
         
         timerDisplay.text = convertToTimerDisplay(hour:0, minute: 0, second: 0)
         
-        //calperhour = MET * weight
+        // calperhour = MET * weight
 
         // Do any additional setup after loading the view.
     }
