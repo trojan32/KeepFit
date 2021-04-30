@@ -23,7 +23,7 @@ class WorkoutNowViewController: UIViewController, UITableViewDelegate, UITableVi
         self.workoutTableView.dataSource = self
     }
     
-    let workoutItems = ["Yoga","Swimming","Running","Cycling","HITT","Zumba","Crossfit","Orange Theory","Lifting","Ping Pong","Stretching"]
+    let workoutItems = ["Yoga","Swimming","Running","Cycling","HITT","Zumba","Crossfit","Orange Theory","Lifting","Ping Pong","Stretching", "Sit Up"]
 
     
     func numberOfSections(in tableView: UITableView) -> Int {

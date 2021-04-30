@@ -40,6 +40,19 @@ class ExerciseDetailViewController: UIViewController {
     //https://www.businessinsider.com/how-to-calculate-calories-burned-exercise-met-value-2017-8#:~:text=Here's%20your%20equation%3A%20MET%20value,divide%20that%20number%20by%20four.
     //MET value multiplied by weight in kilograms tells you calories burned per hour (MET*weight in kg=calories/hour)
     
+    @IBAction func startTimer(_ sender: Any) {
+        if(!started) {
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+            started = true
+            }
+        else
+        {
+            print("end timer")
+            timer.invalidate()
+            started = false
+        }
+            
+    }
     
     @objc func timerAction(){
         secondspassed += 1.0
@@ -68,7 +81,7 @@ class ExerciseDetailViewController: UIViewController {
     {
         if(!started)
         {
-            print("start timer")
+            print("started Time")
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
             started = true
         }
