@@ -64,7 +64,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJt-e3-gvC">
                                 <rect key="frame" x="20" y="627" width="350" height="49"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <state key="normal" title="Start"/>
+                                <state key="normal" title="Start Workout"/>
                                 <connections>
                                     <action selector="startTimer:" destination="BBU-nk-WKA" eventType="touchUpInside" id="USj-y6-WmM"/>
                                 </connections>
