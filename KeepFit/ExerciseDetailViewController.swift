@@ -15,13 +15,21 @@ class ExerciseDetailViewController: UIViewController {
 
     @IBOutlet var timerDisplay: UILabel!
     @IBOutlet var startStopButton: UIButton!
+    @IBOutlet weak var calorieLabel: UILabel!
+    //-----------------------
+    @IBOutlet weak var setrep: UILabel!
+
     var started = false;
-    
+    var reset = false;
     var timer = Timer()
+    var trainer = Timer()
     var hour = 0
     var minute = 0
     var second = 0
-    
+    var milli = 0
+    var reps = 10
+    var set = 3
+    var repsPassed = 0
     var secondspassed = 0.0
     var METvalue = 4.0
     var calperhour = 0.0
@@ -32,9 +40,9 @@ class ExerciseDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timerDisplay.text = convertToTimerDisplay(hour:0, minute: 0, second: 0)
-        
-        
+        timerDisplay.text = convertToTimerDisplay(hour:0, minute: 0, second: 0, milli: 0)
+        setrep.text = convertDefaultSet(set:3, rep:10)
+        calorieLabel.text = convertToCalorieDisplay(calorie: 0)
         if Auth.auth().currentUser != nil {
           // User is signed in.
             print("user logged in")
@@ -52,10 +60,18 @@ class ExerciseDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func convertToTimerDisplay(hour: Int, minute: Int, second: Int) -> String {
-        return "\(hour):\(minute):\(second)"
+    func convertToTimerDisplay(hour: Int, minute: Int, second: Int, milli: Int) -> String {
+        return "\(hour):\(minute):\(second):\(milli)"
     }
-    
+    func defaultTimer() -> String {
+        return "\(0):\(0):\(0)"
+    }
+    func convertDefaultSet(set: Int, rep: Int) -> String {
+        return "\(set)x\(rep)"
+    }
+    func convertToCalorieDisplay(calorie: Int) -> String {
+        return "\(caloriecount) Cals"
+    }
     
     //https://www.businessinsider.com/how-to-calculate-calories-burned-exercise-met-value-2017-8#:~:text=Here's%20your%20equation%3A%20MET%20value,divide%20that%20number%20by%20four.
     //MET value multiplied by weight in kilograms tells you calories burned per hour (MET*weight in kg=calories/hour)
@@ -63,9 +79,11 @@ class ExerciseDetailViewController: UIViewController {
     @IBAction func startTimer(_ sender: Any) {
         startButton.isEnabled = false
         pauseButton.isEnabled = true
+//        setrep.isHidden = true
         if(!started) {
             
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+            trainer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(setrepAction), userInfo: nil, repeats: true)
             started = true
             }
         else
@@ -82,32 +100,69 @@ class ExerciseDetailViewController: UIViewController {
         
         startButton.isEnabled = true
         pauseButton.isEnabled = false
+        setrep.isHidden = false
         timer.invalidate()
+        trainer.invalidate()
         started = false
     }
     
     @objc func timerAction(){
-        secondspassed += 1.0
-        caloriecount = Int(calperhour * (secondspassed / 60.0 / 60.0))
-        if(second == 59)
+        if(milli == 9)
         {
-            second = 0
-            if(minute == 59)
+            milli = 0
+            secondspassed += 1
+            caloriecount = Int(calperhour * (secondspassed / 60.0 / 60.0))
+            if(second == 59)
             {
-                hour += 1
-                minute = 0
+                
+                second = 0
+                if(minute == 59)
+                {
+                    hour += 1
+                    minute = 0
+                }
+                else
+                {
+                    minute += 1
+                }
             }
             else
             {
-                minute += 1
+                second += 1
+            }
+            
+        }
+        else
+        {
+            milli += 1
+        }
+        timerDisplay.text = convertToTimerDisplay(hour: hour, minute: minute, second: second, milli: milli)
+        calorieLabel.text = convertToCalorieDisplay(calorie: caloriecount)
+
+    }
+    
+    @objc func setrepAction(){
+        repsPassed -= 1
+        if(reps == 1)
+        {
+            reps = 10
+            if(set == 0)
+            {
+                timer.invalidate()
+                trainer.invalidate()
+            }
+            else
+            {
+                set -= 1
             }
         }
         else
         {
-            second += 1
+            reps -= 1
         }
-        timerDisplay.text = convertToTimerDisplay(hour: hour, minute: minute, second: second)
+        setrep.text = convertDefaultSet(set: set, rep: reps)
     }
+    
     
     @IBAction func timerButtonTapped(_ sender: UIButton)
     {
@@ -115,6 +170,7 @@ class ExerciseDetailViewController: UIViewController {
         {
             print("started Time")
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+            
             started = true
         }
         else
@@ -126,8 +182,15 @@ class ExerciseDetailViewController: UIViewController {
         
     }
     
-    
-    
+
+//    @IBOutlet weak var resetButton: UIButton!
+//
+//    @IBAction func resetTime(_ sender: Any) {
+//
+//        resetButton.isEnabled = false
+//        timer.invalidate()
+//        started = false
+//    }
     
     func loadAccountInfo() {
             // Cite: https://github.com/nealight/Apply

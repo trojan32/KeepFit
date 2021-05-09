@@ -55,12 +55,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hour:Minute:Second" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYN-1P-nhr">
-                                <rect key="frame" x="20" y="76" width="350" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJt-e3-gvC">
                                 <rect key="frame" x="20" y="627" width="350" height="49"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
@@ -77,23 +71,55 @@
                                     <action selector="pauseTime:" destination="BBU-nk-WKA" eventType="touchUpInside" id="mjW-Y8-jA3"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Set x Rep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLd-ZP-0AE">
+                                <rect key="frame" x="101" y="185" width="189" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="XhZ-Ca-ZpE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hour:Minute:Second:Milli" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYN-1P-nhr">
+                                <rect key="frame" x="20" y="70" width="350" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calorie Burned" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWi-X4-mqO">
+                                <rect key="frame" x="102" y="297" width="186" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="NdV-VB-kcu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pX7-hU-pY9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pX7-hU-pY9" firstAttribute="trailing" secondItem="yJt-e3-gvC" secondAttribute="trailing" constant="20" id="1DJ-NZ-KQk"/>
-                            <constraint firstItem="IYN-1P-nhr" firstAttribute="top" secondItem="pX7-hU-pY9" secondAttribute="top" constant="20" id="53C-pA-LKt"/>
-                            <constraint firstItem="pX7-hU-pY9" firstAttribute="bottom" secondItem="yJt-e3-gvC" secondAttribute="bottom" constant="80" id="Bfc-UB-Zfd"/>
-                            <constraint firstItem="O9v-Mf-bMH" firstAttribute="centerX" secondItem="yJt-e3-gvC" secondAttribute="centerX" id="Ckv-81-YJB"/>
-                            <constraint firstItem="yJt-e3-gvC" firstAttribute="leading" secondItem="pX7-hU-pY9" secondAttribute="leading" constant="20" id="PJC-hy-fYb"/>
-                            <constraint firstItem="pX7-hU-pY9" firstAttribute="trailing" secondItem="IYN-1P-nhr" secondAttribute="trailing" constant="20" id="os4-rk-zVk"/>
-                            <constraint firstItem="IYN-1P-nhr" firstAttribute="leading" secondItem="pX7-hU-pY9" secondAttribute="leading" constant="20" id="osX-GU-ZXx"/>
-                            <constraint firstItem="yJt-e3-gvC" firstAttribute="top" secondItem="O9v-Mf-bMH" secondAttribute="bottom" constant="8" id="smk-Np-m8a"/>
+                            <constraint firstItem="ZWi-X4-mqO" firstAttribute="centerX" secondItem="eLd-ZP-0AE" secondAttribute="centerX" id="3Vh-xf-rVg"/>
+                            <constraint firstItem="IYN-1P-nhr" firstAttribute="centerX" secondItem="eLd-ZP-0AE" secondAttribute="centerX" id="6JB-lM-jp2"/>
+                            <constraint firstItem="yJt-e3-gvC" firstAttribute="top" secondItem="O9v-Mf-bMH" secondAttribute="bottom" constant="8" id="8Mk-oy-q9O"/>
+                            <constraint firstItem="IYN-1P-nhr" firstAttribute="leading" secondItem="pX7-hU-pY9" secondAttribute="leading" constant="20" id="BPe-28-m4q"/>
+                            <constraint firstItem="eLd-ZP-0AE" firstAttribute="top" secondItem="IYN-1P-nhr" secondAttribute="bottom" constant="67" id="CXP-b1-hHc"/>
+                            <constraint firstItem="IYN-1P-nhr" firstAttribute="top" secondItem="pX7-hU-pY9" secondAttribute="top" constant="14" id="DOi-ZE-cnJ"/>
+                            <constraint firstItem="ZWi-X4-mqO" firstAttribute="top" secondItem="eLd-ZP-0AE" secondAttribute="bottom" constant="68" id="E8E-Yj-eeA"/>
+                            <constraint firstItem="IYN-1P-nhr" firstAttribute="leading" secondItem="yJt-e3-gvC" secondAttribute="leading" id="UL8-42-Z30"/>
+                            <constraint firstItem="O9v-Mf-bMH" firstAttribute="centerX" secondItem="yJt-e3-gvC" secondAttribute="centerX" id="csn-w9-VOf"/>
+                            <constraint firstItem="ZWi-X4-mqO" firstAttribute="leading" secondItem="pX7-hU-pY9" secondAttribute="leading" constant="102" id="hCM-ve-ckY"/>
+                            <constraint firstItem="IYN-1P-nhr" firstAttribute="centerX" secondItem="h7a-1K-jUp" secondAttribute="centerX" id="hbf-St-mqd"/>
+                            <constraint firstItem="eLd-ZP-0AE" firstAttribute="leading" secondItem="pX7-hU-pY9" secondAttribute="leading" constant="101" id="iaQ-Gl-d18"/>
+                            <constraint firstItem="pX7-hU-pY9" firstAttribute="bottom" secondItem="yJt-e3-gvC" secondAttribute="bottom" constant="80" id="l95-sV-If3"/>
+                            <constraint firstItem="IYN-1P-nhr" firstAttribute="trailing" secondItem="yJt-e3-gvC" secondAttribute="trailing" id="quI-64-hcl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FKf-vH-NQf"/>
                     <connections>
+                        <outlet property="calorieLabel" destination="ZWi-X4-mqO" id="sS4-aM-8Pt"/>
                         <outlet property="pauseButton" destination="O9v-Mf-bMH" id="BdB-K7-PIM"/>
+                        <outlet property="setrep" destination="eLd-ZP-0AE" id="HnK-zW-Vuf"/>
                         <outlet property="startButton" destination="yJt-e3-gvC" id="hlP-4H-104"/>
                         <outlet property="startStopButton" destination="yJt-e3-gvC" id="6Ah-Sa-fOV"/>
                         <outlet property="timerDisplay" destination="IYN-1P-nhr" id="JBC-UI-GlX"/>
