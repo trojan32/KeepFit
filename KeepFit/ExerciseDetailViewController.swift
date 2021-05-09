@@ -35,7 +35,7 @@ class ExerciseDetailViewController: UIViewController {
     var calperhour = 0.0
     var caloriecount = 0
     
-    var weight = 50
+    var weight = 200
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +64,7 @@ class ExerciseDetailViewController: UIViewController {
         return "\(hour):\(minute):\(second):\(milli)"
     }
     func defaultTimer() -> String {
-        return "\(0):\(0):\(0)"
+        return "\(0):\(0):\(0):\(0)"
     }
     func convertDefaultSet(set: Int, rep: Int) -> String {
         return "\(set)x\(rep)"
@@ -96,6 +96,7 @@ class ExerciseDetailViewController: UIViewController {
     }
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     @IBAction func pauseTime(_ sender: Any) {
         
         startButton.isEnabled = true
@@ -103,7 +104,19 @@ class ExerciseDetailViewController: UIViewController {
         setrep.isHidden = false
         timer.invalidate()
         trainer.invalidate()
+        startButton.setTitle("Resume Workout", for: .normal)
         started = false
+    }
+    @IBAction func resetTime(_ sender: Any) {
+        timer.invalidate()
+        trainer.invalidate()
+        timerDisplay.text = defaultTimer()
+        setrep.text = convertDefaultSet(set: set, rep: reps)
+        calorieLabel.text = convertToCalorieDisplay(calorie: 0)
+        startButton.setTitle("Start Workout", for: .normal)
+        startButton.isEnabled = true
+        started = false
+        
     }
     
     @objc func timerAction(){
@@ -150,6 +163,7 @@ class ExerciseDetailViewController: UIViewController {
             {
                 timer.invalidate()
                 trainer.invalidate()
+                setrep.isHidden = true
             }
             else
             {
