@@ -47,7 +47,8 @@ class MyUploadedVideosViewController: UIViewController, UITableViewDelegate, UIT
                                 let videoObj = document.data() as? [String: AnyObject]
                                 let title = videoObj?["title"]
                                 let link = videoObj?["link"]
-                                let video = Video(title: title as!String, link: link as! String)
+                                let id = videoObj?["id"]
+                                let video = Video(title: title as! String, link: link as! String, id: id as! String)
                                 self.videos.append(video)
                             }
                             self.tableView.reloadData()
@@ -56,6 +57,55 @@ class MyUploadedVideosViewController: UIViewController, UITableViewDelegate, UIT
                 }
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = deleteAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
+    
+    func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+            
+            let db = Firestore.firestore()
+            db.collection("videos").document(self.videos[indexPath.row].id!).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                }
+            }
+            
+            let user = Auth.auth().currentUser
+            if let user = user {
+                let currentUID = user.uid as! String
+                let userRef = db.collection("users").document(currentUID)
+                let uploadedVideosRef = userRef.collection("UploadedVideos")
+                uploadedVideosRef.document(self.videos[indexPath.row].id!).delete() { err in
+                    if let err = err {
+                        print("Error removing document: \(err)")
+                    } else {
+                        print("Document successfully removed!")
+                    }
+                }
+            }
+            
+            if self.searching
+            {
+                self.searchVideos.remove(at: indexPath.row)
+            }
+            else
+            {
+                self.videos.remove(at: indexPath.row)
+            }
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+
+            completion(true)
+        }
+        action.image = #imageLiteral(resourceName: "Trash")
+        action.backgroundColor = .red
+        
+        return action
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

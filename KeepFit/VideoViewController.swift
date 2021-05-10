@@ -43,7 +43,8 @@ class VideoViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             let videoObj = document.data() as? [String: AnyObject]
                             let title = videoObj?["title"]
                             let link = videoObj?["link"]
-                            let video = Video(title: title as!String, link: link as! String)
+                            let id = videoObj?["id"]
+                            let video = Video(title: title as! String, link: link as! String, id: id as! String)
                             self.videos.append(video)
                         }
                         self.tableView.reloadData()

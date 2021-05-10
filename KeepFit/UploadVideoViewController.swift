@@ -76,30 +76,43 @@ class UploadVideoViewController: UIViewController, UIImagePickerControllerDelega
                     } else {
                         if let downloadUrl = url {
                             let db = Firestore.firestore()
-                            db.collection("videos").addDocument(data: [
+                            let videosRef = db.collection("videos")
+                            let newVideoRef = videosRef.document()
+                            let newVideo = [
                                 "link" : downloadUrl.absoluteString,
-                                "title": self.videoTitle.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-                            ]) { (error) in
-                                if error != nil
-                                {
-                                    print(error!.localizedDescription)
-                                }
-                            }
+                                "title": self.videoTitle.text!.trimmingCharacters(in: .whitespacesAndNewlines),
+                                "id" : newVideoRef.documentID
+                            ]
+                            newVideoRef.setData(newVideo)
+                            
+//                            db.collection("videos").addDocument(data: [
+//                                "link" : downloadUrl.absoluteString,
+//                                "title": self.videoTitle.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+//                            ]) { (error) in
+//                                if error != nil
+//                                {
+//                                    print(error!.localizedDescription)
+//                                }
+//                            }
                             
                             let user = Auth.auth().currentUser
                             if let user = user {
                                 let currentUID = user.uid as! String
                                 let userRef = db.collection("users").document(currentUID)
                                 let uploadedVideosRef = userRef.collection("UploadedVideos")
-                                uploadedVideosRef.addDocument(data: [
-                                    "link" : downloadUrl.absoluteString,
-                                    "title": self.videoTitle.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-                                ]) { (error) in
-                                    if error != nil
-                                    {
-                                        print(error!.localizedDescription)
-                                    }
-                                }
+                                
+                                uploadedVideosRef.document(newVideoRef.documentID).setData(newVideo)
+                                
+//                                uploadedVideosRef.addDocument(data: [
+//                                    "link" : downloadUrl.absoluteString,
+//                                    "title": self.videoTitle.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+//                                ]) { (error) in
+//                                    if error != nil
+//                                    {
+//                                        print(error!.localizedDescription)
+//                                    }
+//                                }
+                                
                             }
                         }
                     }
