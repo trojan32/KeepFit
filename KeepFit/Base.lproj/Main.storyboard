@@ -1188,29 +1188,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bOF-Dv-LA6">
-                                <rect key="frame" x="119" y="207" width="152" height="154"/>
+                                <rect key="frame" x="119" y="176.66666666666663" width="152" height="184.33333333333337"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Video Title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYo-er-I6k">
                                         <rect key="frame" x="0.0" y="0.0" width="152" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTx-KK-Y8F">
+                                        <rect key="frame" x="0.0" y="44" width="152" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5O-gp-Brr">
-                                        <rect key="frame" x="0.0" y="44" width="152" height="30"/>
+                                        <rect key="frame" x="0.0" y="74.333333333333343" width="152" height="30"/>
                                         <state key="normal" title="Pick A Video"/>
                                         <connections>
                                             <action selector="PickAVideo:" destination="b4q-CK-qq4" eventType="touchUpInside" id="8sV-1m-xlI"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="He9-4N-EyZ">
-                                        <rect key="frame" x="0.0" y="84" width="152" height="30"/>
+                                        <rect key="frame" x="0.0" y="114.33333333333334" width="152" height="30"/>
                                         <state key="normal" title="Play The Picked Video"/>
                                         <connections>
                                             <action selector="PlayThePickedVideo:" destination="b4q-CK-qq4" eventType="touchUpInside" id="CDf-rQ-e7M"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2A-uZ-HjK">
-                                        <rect key="frame" x="0.0" y="124" width="152" height="30"/>
+                                        <rect key="frame" x="0.0" y="154.33333333333334" width="152" height="30"/>
                                         <state key="normal" title="Upload The Video"/>
                                         <connections>
                                             <action selector="UploadTheVideo:" destination="b4q-CK-qq4" eventType="touchUpInside" id="1xh-JN-A7u"/>
@@ -1224,10 +1230,13 @@
                         <constraints>
                             <constraint firstItem="1k3-oJ-AIX" firstAttribute="bottom" secondItem="bOF-Dv-LA6" secondAttribute="bottom" constant="400" id="1Pn-hU-Nok"/>
                             <constraint firstItem="bOF-Dv-LA6" firstAttribute="centerX" secondItem="tgT-fq-2tc" secondAttribute="centerX" id="FiM-OX-mUf"/>
+                            <constraint firstItem="1k3-oJ-AIX" firstAttribute="trailing" secondItem="bOF-Dv-LA6" secondAttribute="trailing" constant="119" id="xyl-LS-mk1"/>
+                            <constraint firstItem="bOF-Dv-LA6" firstAttribute="leading" secondItem="1k3-oJ-AIX" secondAttribute="leading" constant="119" id="yUB-2C-UC0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UaM-hl-rjc"/>
                     <connections>
+                        <outlet property="errorLabel" destination="dTx-KK-Y8F" id="Mtl-0m-yuV"/>
                         <outlet property="videoTitle" destination="zYo-er-I6k" id="Sc5-yZ-cvx"/>
                     </connections>
                 </viewController>
