@@ -76,7 +76,6 @@ class UploadVideoViewController: UIViewController, UIImagePickerControllerDelega
         // No Error
         let randomID = UUID.init().uuidString
         let storageRef = Storage.storage().reference(withPath: "Videos/\(randomID).mp4")
-
         storageRef.putFile(from: videoURL as URL, metadata: nil) { (metaData, error) in
              // IMPORTANT: this is where I got the error from
             if error != nil {
@@ -111,7 +110,6 @@ class UploadVideoViewController: UIViewController, UIImagePickerControllerDelega
                 }
             }
         }
-        
         showSuccessMessage()
     }
     
@@ -132,11 +130,9 @@ class UploadVideoViewController: UIViewController, UIImagePickerControllerDelega
         errorLabel.text = message
         errorLabel.alpha = 1
     }
-    
     func hideError() {
         errorLabel.alpha = 0
     }
-    
     func showSuccessMessage(){
         errorLabel.text = "The video is uploaded successfully!"
         errorLabel.alpha = 1
