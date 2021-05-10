@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xe7-KX-RWr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xe7-KX-RWr">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="workoutCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="workoutCell" id="pgQ-mN-36C">
-                                        <rect key="frame" x="0.0" y="24.333333969116211" width="358" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="28" width="358" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pgQ-mN-36C" id="Alr-pn-k8w">
                                             <rect key="frame" x="0.0" y="0.0" width="358" height="43.666667938232422"/>
@@ -825,7 +825,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="streamRoom" textLabel="mik-mz-YYM" detailTextLabel="IwU-r9-q0o" style="IBUITableViewCellStyleSubtitle" id="U0D-Dt-T6m" customClass="Cell">
-                                <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="55.666667938232422"/>
+                                <rect key="frame" x="0.0" y="28" width="390" height="55.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U0D-Dt-T6m" id="rW6-H2-GRM">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="55.666667938232422"/>
@@ -984,7 +984,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HhH-JU-iUQ">
-                                <rect key="frame" x="50" y="531" width="290" height="180"/>
+                                <rect key="frame" x="50" y="481" width="290" height="230"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8NV-5q-FD0">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
@@ -1009,6 +1009,13 @@
                                         <state key="normal" title="UploadVideos"/>
                                         <connections>
                                             <segue destination="b4q-CK-qq4" kind="show" id="0hV-CO-UBm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vl4-Px-bbH">
+                                        <rect key="frame" x="0.0" y="200" width="290" height="30"/>
+                                        <state key="normal" title="My Uploaded Videos"/>
+                                        <connections>
+                                            <segue destination="pqD-Yv-bPm" kind="show" id="3wj-R6-Xz1"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1094,11 +1101,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0AT-fF-lCR">
-                                <rect key="frame" x="0.0" y="139" width="390" height="622"/>
+                                <rect key="frame" x="0.0" y="144" width="390" height="617"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCell" id="rby-Nw-cOb" customClass="VideoTableViewCell" customModule="KeepFit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="28" width="390" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rby-Nw-cOb" id="MtJ-bG-mjV">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
@@ -1128,7 +1135,7 @@
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cnt-94-RyX">
-                                <rect key="frame" x="0.0" y="88" width="390" height="51"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="VUy-q6-PNP" id="jTa-Dm-SoM"/>
@@ -1213,6 +1220,81 @@
             </objects>
             <point key="canvasLocation" x="2656" y="2785"/>
         </scene>
+        <!--My Uploaded Videos View Controller-->
+        <scene sceneID="SrE-I9-kjP">
+            <objects>
+                <viewController id="pqD-Yv-bPm" customClass="MyUploadedVideosViewController" customModule="KeepFit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sC0-Zw-5km">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pt0-GW-Zex">
+                                <rect key="frame" x="0.0" y="88" width="390" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="pqD-Yv-bPm" id="gtm-Ug-9Ql"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AD7-s4-zd5">
+                                <rect key="frame" x="0.0" y="144" width="390" height="617"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="videoCell" id="fup-m2-11U" customClass="VideoTableViewCell" customModule="KeepFit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fup-m2-11U" id="MzT-dk-fiB">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ME-p5-51r">
+                                                    <rect key="frame" x="30" y="11.333333333333336" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6ME-p5-51r" firstAttribute="centerY" secondItem="MzT-dk-fiB" secondAttribute="centerY" id="WQ1-Gz-0Za"/>
+                                                <constraint firstItem="6ME-p5-51r" firstAttribute="leading" secondItem="MzT-dk-fiB" secondAttribute="leadingMargin" constant="10" id="wvT-TM-SH7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="6ME-p5-51r" id="dTu-Jx-gyt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pqD-Yv-bPm" id="MVy-3l-zde"/>
+                                    <outlet property="delegate" destination="pqD-Yv-bPm" id="u2l-0f-fkw"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xMQ-sB-p3e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xMQ-sB-p3e" firstAttribute="trailing" secondItem="AD7-s4-zd5" secondAttribute="trailing" id="EZ7-o7-ERx"/>
+                            <constraint firstItem="xMQ-sB-p3e" firstAttribute="bottom" secondItem="AD7-s4-zd5" secondAttribute="bottom" id="e41-R8-bxa"/>
+                            <constraint firstItem="AD7-s4-zd5" firstAttribute="top" secondItem="pt0-GW-Zex" secondAttribute="bottom" id="njx-57-ela"/>
+                            <constraint firstItem="pt0-GW-Zex" firstAttribute="top" secondItem="xMQ-sB-p3e" secondAttribute="top" id="qgK-w6-COa"/>
+                            <constraint firstItem="pt0-GW-Zex" firstAttribute="leading" secondItem="sC0-Zw-5km" secondAttribute="leading" id="vUg-ti-8tQ"/>
+                            <constraint firstItem="xMQ-sB-p3e" firstAttribute="trailing" secondItem="pt0-GW-Zex" secondAttribute="trailing" id="xfA-2Z-uf9"/>
+                            <constraint firstItem="AD7-s4-zd5" firstAttribute="leading" secondItem="xMQ-sB-p3e" secondAttribute="leading" id="z2H-zP-AHX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="enO-NU-zYA"/>
+                    <connections>
+                        <outlet property="searchBar" destination="pt0-GW-Zex" id="qB9-Kc-mSu"/>
+                        <outlet property="tableView" destination="AD7-s4-zd5" id="4t7-mb-bUr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rc4-Am-sPW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3405" y="2778"/>
+        </scene>
         <!--Community View Controller-->
         <scene sceneID="D3p-6X-MWP">
             <objects>
@@ -1222,18 +1304,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bkL-KH-UND">
-                                <rect key="frame" x="0.0" y="88" width="390" height="51"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="fn0-xt-Y4m" id="RA3-VA-BuX"/>
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ijj-lr-q3X">
-                                <rect key="frame" x="0.0" y="139" width="390" height="622"/>
+                                <rect key="frame" x="0.0" y="144" width="390" height="617"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" id="Sf8-rp-QaI" customClass="CommunityViewCell" customModule="KeepFit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="28" width="390" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sf8-rp-QaI" id="4xc-aT-3lw">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>

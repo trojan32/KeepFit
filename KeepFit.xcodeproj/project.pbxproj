@@ -70,6 +70,7 @@
 		1CBFFCE52605E211000D2AB1 /* MyStreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFFCE22605E211000D2AB1 /* MyStreamingViewController.swift */; };
 		5026E8E8263C06910034AB27 /* UploadVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026E8E7263C06910034AB27 /* UploadVideoViewController.swift */; };
 		503FA62A2609C7DA00CAD1AF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FA6292609C7DA00CAD1AF /* Utilities.swift */; };
+		5060B5782648FA18007ED75A /* MyUploadedVideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5060B5772648FA18007ED75A /* MyUploadedVideosViewController.swift */; };
 		5073E2C5260DD68400266674 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5073E2C4260DD68400266674 /* VideoViewController.swift */; };
 		5073E2D3260DDD5C00266674 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5073E2D2260DDD5C00266674 /* VideoTableViewCell.swift */; };
 		5073E2D8260DDE6D00266674 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5073E2D7260DDE6D00266674 /* Video.swift */; };
@@ -137,6 +138,7 @@
 		3E4DEDEA396C7DD64A7BA469 /* Pods-KeepFitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepFitTests.release.xcconfig"; path = "Target Support Files/Pods-KeepFitTests/Pods-KeepFitTests.release.xcconfig"; sourceTree = "<group>"; };
 		5026E8E7263C06910034AB27 /* UploadVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoViewController.swift; sourceTree = "<group>"; };
 		503FA6292609C7DA00CAD1AF /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		5060B5772648FA18007ED75A /* MyUploadedVideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUploadedVideosViewController.swift; sourceTree = "<group>"; };
 		5073E2C4260DD68400266674 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		5073E2D2260DDD5C00266674 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		5073E2D7260DDE6D00266674 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				50B5592126124596006030D0 /* WorkoutNowViewController.swift */,
 				1C0521692625828F00D032C3 /* DeleteAccountViewController.swift */,
 				5026E8E7263C06910034AB27 /* UploadVideoViewController.swift */,
+				5060B5772648FA18007ED75A /* MyUploadedVideosViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				1C6F66C225FC85AA0085F2C2 /* PersonalAccount.swift in Sources */,
 				1CBFFCE32605E211000D2AB1 /* MyStreamingViewController.swift in Sources */,
 				1C6F668125FB5B8C0085F2C2 /* CreateAccountViewController.swift in Sources */,
+				5060B5782648FA18007ED75A /* MyUploadedVideosViewController.swift in Sources */,
 				1C3D489D25E38BDA004D7AB1 /* AppDelegate.swift in Sources */,
 				1C3D489F25E38BDA004D7AB1 /* SceneDelegate.swift in Sources */,
 				1C05216A2625828F00D032C3 /* DeleteAccountViewController.swift in Sources */,
