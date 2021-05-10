@@ -85,12 +85,27 @@ class UploadVideoViewController: UIViewController, UIImagePickerControllerDelega
                                     print(error!.localizedDescription)
                                 }
                             }
+                            
+                            let user = Auth.auth().currentUser
+                            if let user = user {
+                                let currentUID = user.uid as! String
+                                let userRef = db.collection("users").document(currentUID)
+                                let uploadedVideosRef = userRef.collection("UploadedVideos")
+                                uploadedVideosRef.addDocument(data: [
+                                    "link" : downloadUrl.absoluteString,
+                                    "title": self.videoTitle.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+                                ]) { (error) in
+                                    if error != nil
+                                    {
+                                        print(error!.localizedDescription)
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
         }
-        
         
         //        let metadata = StorageMetadata()
         //        metadata.contentType = "video/quicktime"

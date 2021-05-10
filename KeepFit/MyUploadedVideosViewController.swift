@@ -29,24 +29,29 @@ class MyUploadedVideosViewController: UIViewController, UITableViewDelegate, UIT
     
     func loadVideos()
     {
-        let videosRef = db.collection("videos")
-        videosRef.getDocuments { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                if let actualquery = querySnapshot
-                {
-                    if !actualquery.isEmpty
+        let user = Auth.auth().currentUser
+        if let user = user {
+            let currentUID = user.uid as! String
+            let userRef = db.collection("users").document(currentUID)
+            let uploadedVideosRef = userRef.collection("UploadedVideos")
+            uploadedVideosRef.getDocuments { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    if let actualquery = querySnapshot
                     {
-                        self.videos.removeAll()
-                        for document in querySnapshot!.documents {
-                            let videoObj = document.data() as? [String: AnyObject]
-                            let title = videoObj?["title"]
-                            let link = videoObj?["link"]
-                            let video = Video(title: title as!String, link: link as! String)
-                            self.videos.append(video)
+                        if !actualquery.isEmpty
+                        {
+                            self.videos.removeAll()
+                            for document in querySnapshot!.documents {
+                                let videoObj = document.data() as? [String: AnyObject]
+                                let title = videoObj?["title"]
+                                let link = videoObj?["link"]
+                                let video = Video(title: title as!String, link: link as! String)
+                                self.videos.append(video)
+                            }
+                            self.tableView.reloadData()
                         }
-                        self.tableView.reloadData()
                     }
                 }
             }
