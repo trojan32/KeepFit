@@ -42,9 +42,7 @@ class UploadVideoViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func PlayThePickedVideo(_ sender: Any) {
-//        print("1")
         if let videoURL = videoURL{
-//            print("2")
             let player = AVPlayer(url: videoURL as URL)
             let playerViewController = AVPlayerViewController()
             playerViewController.player = player
@@ -59,9 +57,6 @@ class UploadVideoViewController: UIViewController, UIImagePickerControllerDelega
         
         let randomID = UUID.init().uuidString
         let storageRef = Storage.storage().reference(withPath: "Videos/\(randomID).mp4")
-        
-//        let videoData = NSData(contentsOf: videoURL as URL)
-//        storageRef.putData(videoData! as Data)
         
         storageRef.putFile(from: videoURL as URL, metadata: nil) { (metaData, error) in
              // IMPORTANT: this is where I got the error from
@@ -84,35 +79,13 @@ class UploadVideoViewController: UIViewController, UIImagePickerControllerDelega
                                 "id" : newVideoRef.documentID
                             ]
                             newVideoRef.setData(newVideo)
-                            
-//                            db.collection("videos").addDocument(data: [
-//                                "link" : downloadUrl.absoluteString,
-//                                "title": self.videoTitle.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//                            ]) { (error) in
-//                                if error != nil
-//                                {
-//                                    print(error!.localizedDescription)
-//                                }
-//                            }
-                            
+
                             let user = Auth.auth().currentUser
                             if let user = user {
                                 let currentUID = user.uid as! String
                                 let userRef = db.collection("users").document(currentUID)
                                 let uploadedVideosRef = userRef.collection("UploadedVideos")
-                                
                                 uploadedVideosRef.document(newVideoRef.documentID).setData(newVideo)
-                                
-//                                uploadedVideosRef.addDocument(data: [
-//                                    "link" : downloadUrl.absoluteString,
-//                                    "title": self.videoTitle.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//                                ]) { (error) in
-//                                    if error != nil
-//                                    {
-//                                        print(error!.localizedDescription)
-//                                    }
-//                                }
-                                
                             }
                         }
                     }
