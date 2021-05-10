@@ -131,8 +131,6 @@ class MyUploadedVideosViewController: UIViewController, UITableViewDelegate, UIT
         }
         searching = true
         tableView.reloadData()
-        
-//        searchVideos = videos.filter($0.title.prefix(searchText.count))
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -140,16 +138,4 @@ class MyUploadedVideosViewController: UIViewController, UITableViewDelegate, UIT
         searchBar.text = ""
         tableView.reloadData()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

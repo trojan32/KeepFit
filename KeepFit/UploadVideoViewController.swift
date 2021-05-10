@@ -106,51 +106,6 @@ class UploadVideoViewController: UIViewController, UIImagePickerControllerDelega
                 }
             }
         }
-        
-        //        let metadata = StorageMetadata()
-        //        metadata.contentType = "video/quicktime"
-        //        print("Ready1")
-        //        if let videoData = NSData(contentsOf: videoURL as URL) as Data? {
-        //            print("Ready2")
-        //            storageRef.putData(videoData, metadata: metadata) { (metaData, error) in
-        //                 // IMPORTANT: this is where I got the error from
-        //                if error != nil {
-        //                    print("error uploading video: \(error!.localizedDescription)")
-        //                } else {
-        //                    print("!!!")
-        //                    // successfully uploaded the video
-        //                    storageRef.downloadURL { (url, error) in
-        //                        if error != nil {
-        //                            print("error downloading uploaded videos Url: \(error!.localizedDescription)")
-        //                        } else {
-        //                            if let downloadUrl = url {
-        //                                let db = Firestore.firestore()
-        //                                db.collection("videos").addDocument(data: [
-        //                                    "link" : downloadUrl,
-        //                                    "title": self.videoTitle.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        //                                ]) { (error) in
-        //                                    if error != nil
-        //                                    {
-        //                                        print(error!.localizedDescription)
-        //                                    }
-        //                                }
-        //                            }
-        //                        }
-        //                    }
-        //                }
-        //            }
-        //        }
-    
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
